@@ -17,8 +17,6 @@
   --err:#EF4444;--warn:#D4611A;
 }
 html,body{height:100%;background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;font-size:14px;line-height:1.5;}
-
-/* LAYOUT */
 .app{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
 .topnav{background:var(--yellow);display:flex;align-items:center;padding:0 2rem;height:62px;flex-shrink:0;}
 .logo{font-family:'Hammersmith One',sans-serif;font-size:20px;color:#1A1D2E;}
@@ -33,8 +31,6 @@ html,body{height:100%;background:var(--bg);color:var(--white);font-family:'Inter
 .sb-item:hover{color:var(--white);}
 .sb-item.active{color:var(--white);background:rgba(255,255,255,.06);}
 .main{flex:1;overflow-y:auto;padding:1.75rem 2rem;}
-
-/* INPUTS */
 input[type="text"],input[type="date"],input[type="time"],textarea,select{
   background:var(--card);border:1.5px solid transparent;border-radius:var(--radius-sm);
   color:var(--white);padding:10px 13px;font-family:'Inter',sans-serif;font-size:14px;
@@ -45,11 +41,7 @@ input[type="text"]:focus,input[type="date"]:focus,input[type="time"]:focus,texta
 textarea{resize:vertical;min-height:72px;}
 select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.4)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;}
 select option{background:var(--card);}
-
-/* LABELS */
 .flabel{font-family:'Khula',sans-serif;font-weight:700;font-size:14px;color:var(--yellow);margin-bottom:5px;display:block;}
-
-/* BUTTONS */
 .btn-yellow{background:var(--yellow);color:#1A1D2E;border:none;border-radius:var(--radius-sm);padding:11px 20px;font-family:'Khula',sans-serif;font-weight:700;font-size:15px;cursor:pointer;width:100%;transition:opacity .15s,transform .1s;}
 .btn-yellow:hover{opacity:.88;}
 .btn-yellow:active{transform:scale(.98);}
@@ -58,41 +50,27 @@ select option{background:var(--card);}
 .btn-sm-yellow{background:var(--yellow);color:#1A1D2E;border:none;border-radius:var(--radius-sm);padding:5px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Khula',sans-serif;}
 .btn-sm-yellow:hover{opacity:.85;}
 .filter-btn{width:40px;height:40px;background:var(--yellow);border:none;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;font-size:16px;}
-
-/* STATUS DOTS */
 .dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;display:inline-block;}
 .dp{background:var(--pending);}
 .da{background:var(--assigned);}
 .di{background:var(--inprog);}
 .dd{background:var(--done);}
-
-/* BADGES */
 .badge{font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500;white-space:nowrap;}
 .bp{background:rgba(255,255,255,.12);color:#fff;}
 .ba{background:rgba(59,130,246,.2);color:#93C5FD;}
 .bi{background:rgba(249,115,22,.2);color:#FCA97A;}
 .bd{background:rgba(34,197,94,.2);color:#86EFAC;}
-
-/* AVATARS */
 .avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0;user-select:none;}
 .avatar-sm{width:26px;height:26px;font-size:9px;}
 .avatar-lg{width:44px;height:44px;font-size:14px;}
-
-/* SEARCH */
 .search-wrap{position:relative;flex:1;}
 .search-wrap input{padding-left:36px;height:40px;}
 .search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px;pointer-events:none;}
-
-/* ══════════════════════════════
-   FIGMA MODALS
-══════════════════════════════ */
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9000;align-items:center;justify-content:center;animation:fadeIn .2s ease;}
 .overlay.open{display:flex;}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-
 .fmodal{background:var(--card);border:1px solid rgba(255,255,255,.13);border-radius:var(--radius-lg);padding:2rem 1.75rem 1.75rem;width:90%;max-width:400px;text-align:center;animation:popIn .25s cubic-bezier(.34,1.56,.64,1);}
 @keyframes popIn{from{opacity:0;transform:scale(.88);}to{opacity:1;transform:scale(1);}}
-
 .fmodal-icon{width:64px;height:64px;border-radius:50%;margin:0 auto 1.25rem;display:flex;align-items:center;justify-content:center;}
 .fmodal-icon.success{background:#22C55E;}
 .fmodal-icon.success::after{content:'✓';color:#fff;font-size:26px;font-weight:700;}
@@ -100,25 +78,20 @@ select option{background:var(--card);}
 .fmodal-icon.warning::after{content:'!';color:#1A1D2E;font-size:28px;font-family:'Khula',sans-serif;font-weight:700;}
 .fmodal-icon.danger{background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.15);}
 .fmodal-icon.danger::after{content:'!';color:var(--warn);font-size:28px;font-family:'Khula',sans-serif;font-weight:700;}
-
 .fmodal-title{font-weight:700;font-size:20px;line-height:1.25;margin-bottom:10px;color:#fff;}
 .fmodal-title.warn{color:var(--warn);}
 .fmodal-sub{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:1.5rem;max-width:280px;margin-left:auto;margin-right:auto;}
-
 .fmodal-btn{width:100%;padding:12px;border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:#fff;font-size:14px;font-family:'Inter',sans-serif;font-weight:500;cursor:pointer;transition:background .15s;margin-top:6px;}
 .fmodal-btn:hover{background:rgba(255,255,255,.13);}
 .fmodal-btns{display:flex;gap:10px;margin-top:6px;}
 .fmodal-btns .fmodal-btn{margin-top:0;}
 .fmodal-btn-red{background:#DC2626;border-color:#DC2626;color:#fff;}
 .fmodal-btn-red:hover{background:#B91C1C;border-color:#B91C1C;}
-
 .fmodal-input-wrap{margin-bottom:1rem;text-align:left;}
 .fmodal-input-wrap input{border:1.5px solid rgba(255,255,255,.15);}
 .fmodal-input-wrap input:focus{border-color:var(--yellow);}
 .ferr-inline{color:var(--err);font-size:12px;margin-top:4px;display:none;}
 .ferr-inline.show{display:block;}
-
-/* KANBAN */
 .kanban{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
 .kcol{background:var(--card);border-radius:var(--radius);padding:1rem;display:flex;flex-direction:column;gap:8px;min-height:300px;}
 .kcol-head{display:flex;align-items:center;gap:8px;font-weight:600;font-size:13px;margin-bottom:4px;}
@@ -126,70 +99,50 @@ select option{background:var(--card);}
 .ktask:hover{background:var(--card3);}
 .ktask-name{font-size:13px;font-weight:500;}
 .ktask-sub{font-size:11px;color:var(--muted);margin-top:2px;}
-
-/* TWO PANEL */
 .two-panel{display:grid;grid-template-columns:1fr 1fr;gap:0;}
 .panel-l{border-right:1px solid rgba(255,255,255,.06);padding-right:2rem;}
 .panel-r{padding-left:2rem;}
-
-/* TASK LIST */
 .titem{background:var(--card);border-radius:var(--radius-sm);padding:9px 12px;display:flex;align-items:center;gap:10px;margin-bottom:8px;}
 .titem-icon{width:32px;height:32px;background:var(--card2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
 .titem-name{flex:1;font-size:13px;font-weight:500;}
-
-/* MEMBER LIST */
 .mitem{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer;}
 .mitem:hover .mitem-name,.mitem.active .mitem-name{color:var(--yellow);}
 .mitem.active .mitem-name{font-weight:600;}
 .mitem-name{flex:1;font-size:14px;transition:color .15s;}
 .mitem-time{font-size:11px;color:var(--muted);text-align:center;}
 .mitem-dot{width:6px;height:6px;border-radius:50%;background:var(--yellow);margin:3px auto 0;}
-
-/* ASSIGNED TASKS */
 .aitem{background:var(--card2);border-radius:var(--radius-sm);padding:10px 13px;display:flex;align-items:center;gap:10px;margin-bottom:8px;}
 .aitem-info{flex:1;}
 .aitem-name{font-size:13px;font-weight:600;}
 .aitem-sub{font-size:11px;color:var(--muted);}
-
-/* CREAR HOGAR */
 .hogar-split{display:grid;grid-template-columns:300px 1fr;min-height:100%;}
 .hogar-left{background:#E2E2DE;padding:3rem 2rem;display:flex;flex-direction:column;gap:1rem;}
 .hogar-left h2{font-family:'Hammersmith One',sans-serif;font-size:30px;color:#1A1D2E;line-height:1.2;}
 .hogar-left p{color:#666;font-size:14px;line-height:1.6;}
 .hogar-right{background:var(--bg);padding:2rem 3rem;display:flex;flex-direction:column;}
-
-/* MEMBER TAGS */
 .mtag{display:inline-flex;align-items:center;gap:6px;background:var(--card);border-radius:20px;padding:4px 8px 4px 4px;font-size:12px;}
 .mtag-rm{background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px;line-height:1;padding:0;}
 .mtag-rm:hover{color:#fff;}
 .btn-add-m{width:36px;height:36px;background:var(--yellow);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;color:#1A1D2E;font-weight:700;flex-shrink:0;}
-
-/* MEMBER CARDS */
 .mcard{background:var(--card);border-radius:var(--radius);padding:1rem 1.25rem;display:flex;align-items:center;gap:12px;margin-bottom:10px;}
 .mcard-info{flex:1;}
 .mcard-name{font-size:14px;font-weight:500;}
 .mcard-role{font-size:11px;color:var(--muted);}
 .mcard-rm{background:none;border:1px solid rgba(255,255,255,.15);color:var(--muted);border-radius:var(--radius-sm);padding:4px 10px;font-size:11px;cursor:pointer;}
 .mcard-rm:hover{color:var(--err);border-color:var(--err);}
-
-/* IMAGE UPLOAD */
 .img-field{display:flex;align-items:center;background:var(--card);border:1.5px solid transparent;border-radius:var(--radius-sm);padding:9px 13px;gap:10px;cursor:pointer;transition:border-color .15s;}
 .img-field:hover{border-color:rgba(255,255,255,.2);}
 .img-icon{width:30px;height:30px;background:var(--yellow);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;}
 .img-text{color:var(--muted);font-size:13px;flex:1;}
 .img-text.has{color:#fff;}
-
-/* MISC */
 .section-title{font-family:'Khula',sans-serif;font-weight:700;font-size:11px;color:var(--yellow);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem;}
 .empty{color:var(--muted);font-size:13px;text-align:center;padding:1.5rem 0;}
 .ht-chip{display:flex;align-items:center;gap:8px;background:var(--card);border-radius:var(--radius-sm);padding:7px 12px;flex:1;}
 .ht-chip-label{font-size:10px;color:var(--muted);}
 .ht-chip-val{font-size:13px;font-weight:500;}
-
 ::-webkit-scrollbar{width:4px;}
 ::-webkit-scrollbar-track{background:transparent;}
 ::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px;}
-
 @media(max-width:960px){
   .kanban{grid-template-columns:repeat(2,1fr);}
   .two-panel{grid-template-columns:1fr;}
@@ -217,12 +170,102 @@ select option{background:var(--card);}
   <div class="fmodal" style="text-align:left;">
     <h3 style="font-size:16px;font-weight:600;margin-bottom:1rem;">Agregar miembro</h3>
     <div class="fmodal-input-wrap">
+      <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px;">Nombre completo *</label>
       <input type="text" id="modal-member-input" placeholder="Nombre del miembro...">
       <div class="ferr-inline" id="modal-member-err">El nombre es obligatorio.</div>
+    </div>
+    <div class="fmodal-input-wrap">
+      <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px;">Correo electrónico *</label>
+      <input type="text" id="modal-member-email" placeholder="correo@ejemplo.com">
+      <div class="ferr-inline" id="modal-member-email-err">El correo es obligatorio.</div>
+      <div class="ferr-inline" id="modal-member-email-fmt">El formato del correo no es válido.</div>
+      <div class="ferr-inline" id="modal-member-email-dup">Este correo ya está en uso por otro miembro.</div>
     </div>
     <div class="fmodal-btns">
       <button class="fmodal-btn" onclick="closeModal('modal-member')">Cancelar</button>
       <button class="fmodal-btn" style="background:var(--yellow);border-color:var(--yellow);color:#1A1D2E;font-weight:600;" onclick="confirmAddMember()">Agregar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL EDITAR TAREA -->
+<div class="overlay" id="modal-edit-task">
+  <div class="fmodal" style="text-align:left;max-width:460px;">
+    <h3 style="font-size:16px;font-weight:600;margin-bottom:1.25rem;">Editar tarea</h3>
+    <div class="fmodal-input-wrap">
+      <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px;">Nombre *</label>
+      <input type="text" id="edit-nombre" placeholder="Nombre de la tarea">
+      <div class="ferr-inline" id="edit-nombre-err">El nombre es obligatorio.</div>
+    </div>
+    <div class="fmodal-input-wrap">
+      <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px;">Descripción</label>
+      <textarea id="edit-desc" rows="2" placeholder="Descripción opcional..." style="background:var(--card);border:1.5px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;padding:9px 12px;font-family:Inter,sans-serif;font-size:14px;width:100%;resize:vertical;min-height:60px;outline:none;"></textarea>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem;">
+      <div>
+        <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px;">Dificultad *</label>
+        <select id="edit-dif" style="background:var(--card);border:1.5px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;padding:9px 12px;font-size:14px;width:100%;outline:none;appearance:none;">
+          <option value="">Seleccionar...</option>
+          <option>Baja</option><option>Media</option><option>Alta</option>
+        </select>
+      </div>
+      <div>
+        <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px;">Prioridad *</label>
+        <select id="edit-pri" style="background:var(--card);border:1.5px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;padding:9px 12px;font-size:14px;width:100%;outline:none;appearance:none;">
+          <option value="">Seleccionar...</option>
+          <option>Baja</option><option>Media</option><option>Alta</option>
+        </select>
+      </div>
+    </div>
+    <div class="fmodal-input-wrap">
+      <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px;">Fecha límite *</label>
+      <input type="date" id="edit-fecha" style="background:var(--card);border:1.5px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;padding:9px 12px;font-size:14px;width:100%;outline:none;">
+      <div class="ferr-inline" id="edit-fecha-err">La fecha no puede ser anterior a hoy.</div>
+    </div>
+    <input type="hidden" id="edit-task-id">
+    <div class="fmodal-btns">
+      <button class="fmodal-btn" onclick="closeModal('modal-edit-task')">Cancelar</button>
+      <button class="fmodal-btn" style="background:var(--yellow);border-color:var(--yellow);color:#1A1D2E;font-weight:600;" onclick="confirmEditTask()">Guardar cambios</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL FILTROS -->
+<div class="overlay" id="modal-filtros">
+  <div class="fmodal" style="text-align:left;max-width:420px;">
+    <h3 style="font-size:16px;font-weight:600;margin-bottom:1.25rem;">Filtrar tareas</h3>
+    <div class="fmodal-input-wrap">
+      <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px;">Estado</label>
+      <select id="f-estado" style="background:var(--card);border:1.5px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;padding:9px 12px;font-size:14px;width:100%;outline:none;appearance:none;">
+        <option value="">Todos</option>
+        <option>Pendiente</option><option>Asignada</option><option>En proceso</option><option>Finalizada</option>
+      </select>
+    </div>
+    <div class="fmodal-input-wrap">
+      <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px;">Miembro asignado</label>
+      <select id="f-miembro" style="background:var(--card);border:1.5px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;padding:9px 12px;font-size:14px;width:100%;outline:none;appearance:none;">
+        <option value="">Todos</option>
+      </select>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem;">
+      <div>
+        <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px;">Prioridad</label>
+        <select id="f-prioridad" style="background:var(--card);border:1.5px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;padding:9px 12px;font-size:14px;width:100%;outline:none;appearance:none;">
+          <option value="">Todas</option>
+          <option>Baja</option><option>Media</option><option>Alta</option>
+        </select>
+      </div>
+      <div>
+        <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px;">Dificultad</label>
+        <select id="f-dificultad" style="background:var(--card);border:1.5px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;padding:9px 12px;font-size:14px;width:100%;outline:none;appearance:none;">
+          <option value="">Todas</option>
+          <option>Baja</option><option>Media</option><option>Alta</option>
+        </select>
+      </div>
+    </div>
+    <div class="fmodal-btns">
+      <button class="fmodal-btn" onclick="limpiarFiltros()">Limpiar filtros</button>
+      <button class="fmodal-btn" style="background:var(--yellow);border-color:var(--yellow);color:#1A1D2E;font-weight:600;" onclick="aplicarFiltros()">Aplicar</button>
     </div>
   </div>
 </div>
@@ -258,40 +301,36 @@ function showModal(cfg){
   const title   = document.getElementById('fm-title');
   const sub     = document.getElementById('fm-sub');
   const actions = document.getElementById('fm-actions');
-
   icon.className  = 'fmodal-icon ' + (cfg.type || 'warning');
   title.textContent = cfg.title || '';
   title.className   = 'fmodal-title' + (cfg.warn ? ' warn' : '');
   sub.textContent   = cfg.sub || '';
-
   if(cfg.buttons && cfg.buttons.length > 1){
     const row = document.createElement('div');
     row.className = 'fmodal-btns';
-    cfg.buttons.forEach(b => {
+    cfg.buttons.forEach(function(b){
       const btn = document.createElement('button');
       btn.className = 'fmodal-btn' + (b.red ? ' fmodal-btn-red' : '');
       btn.textContent = b.label;
-      btn.onclick = () => { closeModal('fmodal-overlay'); if(b.cb) b.cb(); };
+      btn.onclick = function(){ closeModal('fmodal-overlay'); if(b.cb) b.cb(); };
       row.appendChild(btn);
     });
     actions.innerHTML = '';
     actions.appendChild(row);
   } else {
     const b = (cfg.buttons && cfg.buttons[0]) || { label: 'Entendido' };
-    actions.innerHTML = `<button class="fmodal-btn">${b.label}</button>`;
-    actions.querySelector('button').onclick = () => {
+    actions.innerHTML = '<button class="fmodal-btn">' + b.label + '</button>';
+    actions.querySelector('button').onclick = function(){
       closeModal('fmodal-overlay');
       if(b.cb) b.cb();
     };
   }
   openModal('fmodal-overlay');
 }
-
 function openModal(id){ document.getElementById(id).classList.add('open'); }
 function closeModal(id){ document.getElementById(id).classList.remove('open'); }
 
-// Cerrar modal al hacer clic en el overlay
-document.getElementById('fmodal-overlay').addEventListener('click', e => {
+document.getElementById('fmodal-overlay').addEventListener('click', function(e){
   if(e.target === document.getElementById('fmodal-overlay')) closeModal('fmodal-overlay');
 });
 
@@ -306,14 +345,13 @@ const AV_COLORS = [
 const DIF_SCORE = { Alta:3, Media:2, Baja:1 };
 const ICONS = {
   barrer:'🧹', lavar:'🧺', limpiar:'🧽', cocinar:'🍳', comprar:'🛒',
-  bañar:'🐶', planchar:'👕', regar:'🌱', aspirar:'💨', organizar:'📦',
+  banar:'🐶', planchar:'👕', regar:'🌱', aspirar:'💨', organizar:'📦',
 };
 function taskIcon(t){
-  const imgData = t.imgData || IMG_CACHE.get(t.id);
-  if(imgData) return `<img src="${imgData}" style="width:32px;height:32px;border-radius:50%;object-fit:cover;flex-shrink:0;">`;
+  if(t.imgData) return '<img src="' + t.imgData + '" style="width:32px;height:32px;border-radius:50%;object-fit:cover;flex-shrink:0;">';
   const low = (t.nombre||'').toLowerCase();
-  for(const [k,v] of Object.entries(ICONS)) if(low.includes(k)) return `<div class="titem-icon">${v}</div>`;
-  return `<div class="titem-icon">✔</div>`;
+  for(const k in ICONS){ if(low.includes(k)) return '<div class="titem-icon">' + ICONS[k] + '</div>'; }
+  return '<div class="titem-icon">✔</div>';
 }
 function badgeClass(e){ return {Pendiente:'bp',Asignada:'ba','En proceso':'bi',Finalizada:'bd'}[e]||'bp'; }
 function getWeek(){
@@ -323,11 +361,8 @@ function getWeek(){
   return 100*d.getFullYear()+Math.round(((d-w1)/864e5-3+(w1.getDay()+6)%7)/7);
 }
 
-const API = 'https://code-factory-20261-back.onrender.com/api'; 
-
-let S = { page:'hogar', hogar:null, hogarId:null, miembros:[], tareas:[], colorIdx:0, lastWeek:null, selMiembro:null, searchQ:'' };
+let S = { page:'hogar', hogar:null, miembros:[], tareas:[], colorIdx:0, lastWeek:null, selMiembro:null, searchQ:'', filterEstado:'', filterMiembro:'', filterPri:'', filterDif:'' };
 let _imgData = null;
-const IMG_CACHE = new Map(); 
 
 function save(){ try{ localStorage.setItem('ht2',JSON.stringify(S)); }catch(e){} }
 
@@ -342,27 +377,22 @@ function load(){
 // ═══════════════════════════════════════
 // ROUTING
 // ═══════════════════════════════════════
-async function go(page){
-  S.page=page; save();
-  render();
-}
+function go(page){ S.page=page; save(); render(); }
 
 function render(){
   const hasH = !!S.hogar;
   document.getElementById('topnav').style.display  = hasH ? 'flex'  : 'none';
   document.getElementById('sidebar').style.display = hasH ? 'block' : 'none';
-
   if(hasH){
-    ['inicio','tareas','miembros'].forEach(id=>{
+    ['inicio','tareas','miembros'].forEach(function(id){
       const el=document.getElementById('nl-'+id);
       if(el) el.classList.toggle('active', S.page===id);
     });
-    ['inicio','tareas','asignar','miembros'].forEach(id=>{
+    ['inicio','tareas','asignar','miembros'].forEach(function(id){
       const el=document.getElementById('sb-'+id);
       if(el) el.classList.toggle('active', S.page===id);
     });
   }
-
   const pages = { hogar:pgHogar, inicio:pgInicio, tareas:pgTareas, asignar:pgAsignar, miembros:pgMiembros };
   document.getElementById('main').innerHTML = (pages[S.page]||pgInicio)();
 }
@@ -371,194 +401,164 @@ function render(){
 // PÁGINA: CREAR HOGAR
 // ═══════════════════════════════════════
 function pgHogar(){
-  const tags = S.miembros.map((m,i)=>`
-    <div class="mtag">
-      <div class="avatar avatar-sm" style="background:${m.c.bg};color:${m.c.fg};">${m.ini}</div>
-      <span>${m.nombre}</span>
-      <button class="mtag-rm" onclick="rmTmpMember(${i})">×</button>
-    </div>`).join('');
-
-  return `
-  <div class="hogar-split">
-    <div class="hogar-left">
-      <div style="font-family:'Hammersmith One',sans-serif;font-size:18px;color:#1A1D2E;">HOMETASK</div>
-      <h2>Crea tu<br>Hogar</h2>
-      <p>Crea tu grupo familiar y empieza a repartir las tareas del hogar.</p>
-    </div>
-    <div class="hogar-right">
-      <h1 style="font-family:'Hammersmith One',sans-serif;font-size:28px;text-align:center;margin-bottom:4px;">Crear hogar</h1>
-      <p style="color:var(--muted);text-align:center;font-size:13px;margin-bottom:2rem;">Completa los datos para comenzar</p>
-
-      <div style="margin-bottom:1rem;">
-        <label class="flabel">Nombre del Hogar</label>
-        <input type="text" id="h-nombre" placeholder="Ingresa el nombre de tu hogar" oninput="updateHogarCounter()">
-        <div style="display:flex;justify-content:flex-end;margin-top:4px;">
-          <span id="h-nombre-counter" style="font-size:11px;color:var(--muted);transition:color .15s;">0/50</span>
-        </div>
-      </div>
-
-      <div style="margin-bottom:1.5rem;">
-        <label class="flabel">Descripción <span style="font-weight:400;color:var(--muted);font-size:12px;">(opcional)</span></label>
-        <textarea id="h-desc" placeholder="Agrega una descripción breve de tu hogar." rows="3"></textarea>
-      </div>
-
-      <div style="margin-bottom:2rem;">
-        <label class="flabel">Agregar miembros <span style="font-weight:400;color:var(--muted);font-size:12px;">(opcional)</span></label>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;" id="mtags-wrap">
-          ${tags}
-          <button class="btn-add-m" onclick="openAddMember()">+</button>
-        </div>
-        <p style="color:var(--muted);font-size:11px;margin-top:8px;">Serás asignado automáticamente como administrador.</p>
-      </div>
-
-      <button class="btn-yellow" onclick="crearHogar()">Crear Hogar</button>
-    </div>
-  </div>`;
+  const tags = S.miembros.map(function(m,i){
+    return '<div class="mtag"><div class="avatar avatar-sm" style="background:' + m.c.bg + ';color:' + m.c.fg + ';">' + m.ini + '</div><span>' + m.nombre + '</span><button class="mtag-rm" onclick="rmTmpMember(' + i + ')">×</button></div>';
+  }).join('');
+  return '<div class="hogar-split"><div class="hogar-left"><div style="font-family:\'Hammersmith One\',sans-serif;font-size:18px;color:#1A1D2E;">HOMETASK</div><h2>Crea tu<br>Hogar</h2><p>Crea tu grupo familiar y empieza a repartir las tareas del hogar.</p></div><div class="hogar-right"><h1 style="font-family:\'Hammersmith One\',sans-serif;font-size:28px;text-align:center;margin-bottom:4px;">Crear hogar</h1><p style="color:var(--muted);text-align:center;font-size:13px;margin-bottom:2rem;">Completa los datos para comenzar</p><div style="margin-bottom:1rem;"><label class="flabel">Nombre del Hogar</label><input type="text" id="h-nombre" placeholder="Ingresa el nombre de tu hogar" oninput="updateHogarCounter()"><div style="display:flex;justify-content:flex-end;margin-top:4px;"><span id="h-nombre-counter" style="font-size:11px;color:var(--muted);transition:color .15s;">0/50</span></div></div><div style="margin-bottom:1.5rem;"><label class="flabel">Descripción <span style="font-weight:400;color:var(--muted);font-size:12px;">(opcional)</span></label><textarea id="h-desc" placeholder="Agrega una descripción breve de tu hogar." rows="3"></textarea></div><div style="margin-bottom:2rem;"><label class="flabel">Agregar miembros <span style="font-weight:400;color:var(--muted);font-size:12px;">(opcional)</span></label><div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;" id="mtags-wrap">' + tags + '<button class="btn-add-m" onclick="openAddMember()">+</button></div><p style="color:var(--muted);font-size:11px;margin-top:8px;">Serás asignado automáticamente como administrador.</p></div><button class="btn-yellow" onclick="crearHogar()">Crear Hogar</button></div></div>';
 }
 
 function openAddMember(){
   document.getElementById('modal-member-input').value = '';
+  document.getElementById('modal-member-email').value = '';
   document.getElementById('modal-member-err').classList.remove('show');
+  document.getElementById('modal-member-email-err').classList.remove('show');
+  document.getElementById('modal-member-email-fmt').classList.remove('show');
+  document.getElementById('modal-member-email-dup').classList.remove('show');
   openModal('modal-member');
-  setTimeout(()=>document.getElementById('modal-member-input').focus(), 120);
+  setTimeout(function(){ document.getElementById('modal-member-input').focus(); }, 120);
 }
 
 function confirmAddMember(){
   const v = document.getElementById('modal-member-input').value.trim();
-  if(!v){ document.getElementById('modal-member-err').classList.add('show'); return; }
+  const emailVal = document.getElementById('modal-member-email').value.trim();
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  document.getElementById('modal-member-err').classList.remove('show');
+  document.getElementById('modal-member-email-err').classList.remove('show');
+  document.getElementById('modal-member-email-fmt').classList.remove('show');
+  document.getElementById('modal-member-email-dup').classList.remove('show');
+  let hasErr = false;
+  if(!v){ document.getElementById('modal-member-err').classList.add('show'); hasErr=true; }
+  if(!emailVal){ document.getElementById('modal-member-email-err').classList.add('show'); hasErr=true; }
+  else if(!emailRe.test(emailVal) || emailVal.length>254){ document.getElementById('modal-member-email-fmt').classList.add('show'); hasErr=true; }
+  else if(S.miembros.some(function(m){ return m.email && m.email.toLowerCase()===emailVal.toLowerCase(); })){ document.getElementById('modal-member-email-dup').classList.add('show'); hasErr=true; }
+  if(hasErr) return;
   const c = AV_COLORS[S.colorIdx % AV_COLORS.length]; S.colorIdx++;
-  const ini = v.split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase();
-  S.miembros.push({ id:Date.now(), nombre:v, ini, c, rol:'Miembro' });
+  const ini = v.split(' ').map(function(w){ return w[0]; }).join('').substring(0,2).toUpperCase();
+  S.miembros.push({ id:Date.now(), nombre:v, email:emailVal, ini:ini, c:c, rol:'Miembro' });
   closeModal('modal-member');
   render();
 }
 
 function rmTmpMember(i){ S.miembros.splice(i,1); render(); }
 
-document.getElementById('modal-member-input').addEventListener('keydown', e=>{
+document.getElementById('modal-member-input').addEventListener('keydown', function(e){
   if(e.key==='Enter') confirmAddMember();
   if(e.key==='Escape') closeModal('modal-member');
 });
 
-async function crearHogar(){
+function crearHogar(){
   if(S.hogar){
     showModal({ type:'danger', warn:true, title:'Ya perteneces a un hogar',
       sub:'No puedes crear otro hogar mientras perteneces a uno.',
       buttons:[{ label:'Entendido' }] });
     return;
   }
-
   const nombre = document.getElementById('h-nombre').value.trim();
-
   if(!nombre){
     showModal({ type:'warning', title:'Campo obligatorio',
       sub:'El nombre del hogar es obligatorio para continuar.',
-      buttons:[{ label:'Entendido', cb:()=>document.getElementById('h-nombre').focus() }] });
+      buttons:[{ label:'Entendido', cb:function(){ document.getElementById('h-nombre').focus(); } }] });
     return;
   }
   if(nombre.length < 3){
     showModal({ type:'danger', warn:true, title:'Nombre no válido',
       sub:'El nombre del hogar debe tener al menos 3 caracteres.',
-      buttons:[{ label:'Cancelar' },{ label:'Corregir', red:true, cb:()=>document.getElementById('h-nombre').focus() }] });
+      buttons:[{ label:'Cancelar' },{ label:'Corregir', red:true, cb:function(){ document.getElementById('h-nombre').focus(); } }] });
     return;
   }
   if(nombre.length > 50){
     showModal({ type:'danger', warn:true, title:'Nombre no válido',
       sub:'El nombre del hogar no puede superar los 50 caracteres.',
-      buttons:[{ label:'Cancelar' },{ label:'Corregir', red:true, cb:()=>document.getElementById('h-nombre').focus() }] });
+      buttons:[{ label:'Cancelar' },{ label:'Corregir', red:true, cb:function(){ document.getElementById('h-nombre').focus(); } }] });
     return;
   }
+  const c = AV_COLORS[S.colorIdx % AV_COLORS.length]; S.colorIdx++;
+  S.miembros.unshift({ id:1, nombre:'Tú (Admin)', ini:'DL', c:c, rol:'Administrador' });
+  const desc = document.getElementById('h-desc').value.trim();
 
-  const descripcion = document.getElementById('h-desc').value.trim();
-  try {
-    const res = await fetch(`${API}/hogares`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ usuarioId: Math.floor(Math.random() * 900000) + 100000, nombreUsuario:'Tú (Admin)', correoUsuario:'admin@hometask.com', nombreHogar:nombre, descripcion })
-    });
-    const data = await res.json();
-    if(!res.ok){
-      showModal({ type:'danger', warn:true, title:'Error al crear hogar',
-        sub: data.mensaje || 'Algo salió mal, inténtelo de nuevo.',
-        buttons:[{ label:'Entendido' }] });
-      return;
-    }
-    const c = AV_COLORS[S.colorIdx % AV_COLORS.length]; S.colorIdx++;
-    S.miembros.unshift({ id:1, backendId:1, nombre:'Tú (Admin)', ini:'DL', c, rol:'Administrador' });
-    S.hogar = { nombre: data.nombreHogar, descripcion: data.descripcion };
-    S.hogarId = data.hogarId;
+  fetch('http://localhost:8080/hogares', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ nombre: nombre, direccion: desc })
+  })
+  .then(function(res){ return res.json(); })
+  .then(function(data){
+    S.hogar = { id: data.id, nombre: data.nombre, descripcion: desc };
     save();
     showModal({ type:'success', title:'Hogar creado exitosamente',
       sub:'Ya puedes agregar tareas e invitar miembros a tu hogar.',
-      buttons:[{ label:'Continuar', cb:()=>go('inicio') }] });
-  } catch(e){
-    showModal({ type:'danger', warn:true, title:'Sin conexión',
-      sub:'No se pudo conectar con el servidor. Verifica que el backend esté activo.',
-      buttons:[{ label:'Entendido' }] });
-  }
+      buttons:[{ label:'Continuar', cb:function(){ go('inicio'); } }] });
+  })
+  .catch(function(){
+    S.hogar = { nombre: nombre, descripcion: desc };
+    save();
+    showModal({ type:'success', title:'Hogar creado exitosamente',
+      sub:'Ya puedes agregar tareas e invitar miembros a tu hogar.',
+      buttons:[{ label:'Continuar', cb:function(){ go('inicio'); } }] });
+  });
 }
 
 // ═══════════════════════════════════════
 // PÁGINA: INICIO (Kanban)
 // ═══════════════════════════════════════
 function pgInicio(){
-  if(!S.hogar) return `<div class="empty" style="margin-top:4rem;"><p>No tienes un hogar aún.</p><br><button class="btn-yellow" style="max-width:200px;margin-top:1rem;" onclick="go('hogar')">Crear hogar</button></div>`;
-
+  if(!S.hogar) return '<div class="empty" style="margin-top:4rem;"><p>No tienes un hogar aún.</p><br><button class="btn-yellow" style="max-width:200px;margin-top:1rem;" onclick="go(\'hogar\')">Crear hogar</button></div>';
   const now = new Date();
   const monthName = now.toLocaleDateString('es-ES',{month:'long'});
-  const pending = S.tareas.filter(t=>t.estado==='Pendiente').length;
-  const avs = S.miembros.slice(0,4).map(m=>`<div class="avatar" style="background:${m.c.bg};color:${m.c.fg};" title="${m.nombre}">${m.ini}</div>`).join('');
-  const more = S.miembros.length>4 ? `<div class="avatar" style="background:var(--card2);color:var(--muted);">+${S.miembros.length-4}</div>` : '';
+  const pending = S.tareas.filter(function(t){ return t.estado==='Pendiente'; }).length;
+  const avs = S.miembros.slice(0,4).map(function(m){ return '<div class="avatar" style="background:' + m.c.bg + ';color:' + m.c.fg + ';" title="' + m.nombre + '">' + m.ini + '</div>'; }).join('');
+  const more = S.miembros.length>4 ? '<div class="avatar" style="background:var(--card2);color:var(--muted);">+' + (S.miembros.length-4) + '</div>' : '';
   const q = (S.searchQ||'').toLowerCase();
-
   const cols = [
     {key:'Pendiente',  cls:'dp'},
     {key:'Asignada',   cls:'da'},
     {key:'En proceso', cls:'di'},
     {key:'Finalizada', cls:'dd'},
   ];
-
-  const kanban = cols.map(col=>{
-    let tasks = S.tareas.filter(t=>t.estado===col.key);
-    if(q) tasks = tasks.filter(t=>t.nombre.toLowerCase().includes(q));
-    const cards = tasks.map(t=>`
-      <div class="ktask" onclick="cambiarEstado(${t.id})" title="Clic para avanzar estado">
-        <div class="ktask-name">${t.nombre}</div>
-        ${t.asignadoA ? `<div class="ktask-sub">${t.asignadoA} · ${t.dificultad}</div>` : t.prioridad ? `<div class="ktask-sub">Prioridad: ${t.prioridad}</div>` : ''}
-      </div>`).join('');
-    return `<div class="kcol">
-      <div class="kcol-head"><span class="dot ${col.cls}"></span>${col.key}</div>
-      ${cards||'<div class="empty" style="padding:.5rem 0;font-size:12px;">Sin tareas</div>'}
-    </div>`;
+  const kanban = cols.map(function(col){
+    let tasks = S.tareas.filter(function(t){ return t.estado===col.key; });
+    if(q) tasks = tasks.filter(function(t){ return t.nombre.toLowerCase().includes(q); });
+    const cards = tasks.map(function(t){
+      return '<div class="ktask" onclick="cambiarEstado(' + t.id + ')" title="Clic para avanzar estado"><div class="ktask-name">' + t.nombre + '</div>' +
+        (t.asignadoA ? '<div class="ktask-sub">' + t.asignadoA + ' · ' + t.dificultad + '</div>' : t.prioridad ? '<div class="ktask-sub">Prioridad: ' + t.prioridad + '</div>' : '') +
+        '</div>';
+    }).join('');
+    return '<div class="kcol"><div class="kcol-head"><span class="dot ' + col.cls + '"></span>' + col.key + '</div>' +
+      (cards||'<div class="empty" style="padding:.5rem 0;font-size:12px;">Sin tareas</div>') + '</div>';
   }).join('');
 
-  return `
-  <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap;">
-    <div style="flex:1;min-width:200px;">
-      <h1 style="font-family:'Hammersmith One',sans-serif;font-size:24px;color:var(--yellow);">${S.hogar.nombre.toUpperCase()}</h1>
-      <p style="color:var(--muted);font-size:13px;">Semana del ${now.getDate()} de ${monthName} &nbsp;·&nbsp; <span style="color:#fff;font-weight:500;">${pending} pendiente${pending!==1?'s':''}</span></p>
-      <div style="display:flex;gap:6px;margin-top:10px;align-items:center;">
-        ${avs}${more}
-        <div class="avatar" style="background:transparent;border:1.5px dashed rgba(255,255,255,.25);color:var(--muted);cursor:pointer;" onclick="go('miembros')">+</div>
-      </div>
-    </div>
-    <div style="display:flex;gap:10px;align-items:center;">
-      <div class="search-wrap" style="width:200px;">
-        <span class="search-icon">🔍</span>
-        <input type="text" placeholder="Buscar tarea..." value="${S.searchQ||''}" oninput="S.searchQ=this.value;render();" style="height:40px;">
-      </div>
-      <button class="filter-btn" onclick="go('tareas')">+</button>
-    </div>
-  </div>
-  <div class="section-title">Tareas esta semana</div>
-  <div class="kanban">${kanban}</div>
-  <p style="color:var(--muted);font-size:11px;margin-top:.75rem;">💡 Haz clic en una tarea para avanzar su estado.</p>`;
+  return '<div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap;"><div style="flex:1;min-width:200px;"><h1 style="font-family:\'Hammersmith One\',sans-serif;font-size:24px;color:var(--yellow);">' + S.hogar.nombre.toUpperCase() + '</h1><p style="color:var(--muted);font-size:13px;">Semana del ' + now.getDate() + ' de ' + monthName + ' &nbsp;·&nbsp; <span style="color:#fff;font-weight:500;">' + pending + ' pendiente' + (pending!==1?'s':'') + '</span></p><div style="display:flex;gap:6px;margin-top:10px;align-items:center;">' + avs + more + '<div class="avatar" style="background:transparent;border:1.5px dashed rgba(255,255,255,.25);color:var(--muted);cursor:pointer;" onclick="go(\'miembros\')">+</div></div></div><div style="display:flex;gap:10px;align-items:center;"><div class="search-wrap" style="width:200px;"><span class="search-icon">🔍</span><input type="text" placeholder="Buscar tarea..." value="' + (S.searchQ||'') + '" oninput="S.searchQ=this.value;render();" style="height:40px;"></div><button class="filter-btn" onclick="go(\'tareas\')">+</button></div></div><div class="section-title">Tareas esta semana</div><div class="kanban">' + kanban + '</div><p style="color:var(--muted);font-size:11px;margin-top:.75rem;">💡 Haz clic en una tarea para avanzar su estado.</p>';
 }
 
 function cambiarEstado(id){
-  const t = S.tareas.find(t=>t.id===id); if(!t) return;
+  const t = S.tareas.find(function(t){ return t.id===id; }); if(!t) return;
   const order = ['Pendiente','Asignada','En proceso','Finalizada'];
-  t.estado = order[(order.indexOf(t.estado)+1) % order.length];
+  const currentIdx = order.indexOf(t.estado);
+
+  if(t.estado === 'Finalizada'){
+    if(t.finalizedWeek === getWeek()){
+      showModal({
+        type:'warning',
+        title:'Espera al inicio de la próxima semana',
+        sub:'Las tareas finalizadas solo pueden reiniciarse cuando comience una nueva semana.',
+        buttons:[{ label:'Entendido' }]
+      });
+      return;
+    }
+    t.estado = 'Pendiente';
+    t.finalizedWeek = undefined;
+    t.asignadoA = null;
+    save(); render();
+    return;
+  }
+
+  const nextEstado = order[currentIdx + 1];
+  t.estado = nextEstado;
+
+  if(nextEstado === 'Finalizada'){
+    t.finalizedWeek = getWeek();
+  }
+
   save(); render();
 }
 
@@ -567,106 +567,46 @@ function cambiarEstado(id){
 // ═══════════════════════════════════════
 function taskListHtml(filter){
   const q = (filter||S.searchQ||'').toLowerCase();
-  const list = S.tareas.filter(t=>!q||t.nombre.toLowerCase().includes(q));
-  return list.length ? list.map(t=>`
-    <div class="titem">
-      ${taskIcon(t)}
-      <span class="titem-name">${t.nombre}</span>
-      <span class="badge ${badgeClass(t.estado)}" style="margin-right:6px;">${t.estado}</span>
-      <button class="btn-sm-yellow" onclick="eliminarTarea(${t.id})">Eliminar</button>
-    </div>`).join('')
-    : `<p class="empty">No hay tareas${q?' con ese nombre':' aún'}.</p>`;
+  const fEstado = S.filterEstado||'';
+  const fMiembro = S.filterMiembro||'';
+  const fPri = S.filterPri||'';
+  const fDif = S.filterDif||'';
+  let list = S.tareas.filter(function(t){
+    if(q && !t.nombre.toLowerCase().includes(q)) return false;
+    if(fEstado && t.estado!==fEstado) return false;
+    if(fMiembro && t.asignadoA!==fMiembro) return false;
+    if(fPri && t.prioridad!==fPri) return false;
+    if(fDif && t.dificultad!==fDif) return false;
+    return true;
+  });
+  const hasFilters = fEstado||fMiembro||fPri||fDif;
+  const filterTag = hasFilters ? '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">' +
+    (fEstado?'<span style="background:rgba(254,211,106,.15);color:var(--yellow);font-size:11px;padding:3px 9px;border-radius:20px;border:1px solid rgba(254,211,106,.3);">Estado: '+fEstado+'</span>':'') +
+    (fMiembro?'<span style="background:rgba(254,211,106,.15);color:var(--yellow);font-size:11px;padding:3px 9px;border-radius:20px;border:1px solid rgba(254,211,106,.3);">Miembro: '+fMiembro+'</span>':'') +
+    (fPri?'<span style="background:rgba(254,211,106,.15);color:var(--yellow);font-size:11px;padding:3px 9px;border-radius:20px;border:1px solid rgba(254,211,106,.3);">Prioridad: '+fPri+'</span>':'') +
+    (fDif?'<span style="background:rgba(254,211,106,.15);color:var(--yellow);font-size:11px;padding:3px 9px;border-radius:20px;border:1px solid rgba(254,211,106,.3);">Dificultad: '+fDif+'</span>':'') +
+    '<button onclick="limpiarFiltros()" style="background:none;border:none;color:var(--muted);font-size:11px;cursor:pointer;padding:3px 6px;">✕ Limpiar</button></div>' : '';
+  if(!list.length) return filterTag + '<p class="empty">No hay tareas' + (q||hasFilters?' con esos filtros':' aún') + '.</p>';
+  return filterTag + list.map(function(t){
+    return '<div class="titem">' + taskIcon(t) +
+      '<div style="flex:1;min-width:0;"><span class="titem-name">' + t.nombre + '</span>' +
+      '<div style="display:flex;gap:6px;margin-top:3px;flex-wrap:wrap;">' +
+      (t.dificultad?'<span style="font-size:10px;background:rgba(255,255,255,.08);color:var(--muted);padding:1px 7px;border-radius:10px;">'+t.dificultad+'</span>':'') +
+      (t.prioridad?'<span style="font-size:10px;background:rgba(254,211,106,.12);color:var(--yellow);padding:1px 7px;border-radius:10px;">'+t.prioridad+'</span>':'') +
+      '</div></div>' +
+      '<span class="badge ' + badgeClass(t.estado) + '" style="margin-right:6px;">' + t.estado + '</span>' +
+      '<div style="display:flex;gap:6px;">' +
+      '<button class="btn-sm-yellow" style="background:transparent;border:1px solid var(--yellow);color:var(--yellow);" onclick="abrirEditarTarea(' + t.id + ')">Editar</button>' +
+      '<button class="btn-sm-yellow" onclick="eliminarTarea(' + t.id + ')">Eliminar</button>' +
+      '</div></div>';
+  }).join('');
 }
 
 function pgTareas(){
   const now = new Date();
-  const duelabel = `${now.getDate()} ${now.toLocaleDateString('es-ES',{month:'long'})}`;
-  const avsMini = S.miembros.slice(0,3).map(m=>`<div class="avatar" style="width:20px;height:20px;font-size:8px;background:${m.c.bg};color:${m.c.fg};">${m.ini}</div>`).join('');
-
-  return `
-  <div class="two-panel">
-    <div class="panel-l">
-      <button class="btn-ghost" onclick="go('inicio')">← Volver</button>
-      <h2 style="font-family:'Hammersmith One',sans-serif;font-size:22px;margin:1rem 0 1.5rem;">Crear nueva tarea</h2>
-
-      <div style="margin-bottom:1rem;">
-        <label class="flabel">Nombre de la tarea</label>
-        <input type="text" id="t-nombre" placeholder="Ej: Barrer la casa">
-      </div>
-
-      <div style="margin-bottom:1rem;">
-        <label class="flabel">Descripción <span style="font-weight:400;color:var(--muted);font-size:12px;">(opcional)</span></label>
-        <textarea id="t-desc" placeholder="Añade una descripción breve de la tarea." rows="3"></textarea>
-      </div>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
-        <div>
-          <label class="flabel">Dificultad</label>
-          <select id="t-dif">
-            <option value="">Seleccionar...</option>
-            <option>Baja</option><option selected>Media</option><option>Alta</option>
-          </select>
-        </div>
-        <div>
-          <label class="flabel">Prioridad</label>
-          <select id="t-pri">
-            <option value="">Seleccionar...</option>
-            <option>Baja</option><option>Media</option><option selected>Alta</option>
-          </select>
-        </div>
-      </div>
-
-      <div style="margin-bottom:1rem;">
-        <label class="flabel">Fecha</label>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-          <div style="display:flex;align-items:center;gap:8px;background:var(--card);border-radius:var(--radius-sm);padding:8px 12px;">
-            <span>🕐</span>
-            <input type="time" id="t-hora" value="10:30" style="background:transparent;border:none;padding:0;flex:1;min-width:0;">
-          </div>
-          <div style="display:flex;align-items:center;gap:8px;background:var(--card);border-radius:var(--radius-sm);padding:8px 12px;" id="t-fecha-wrap">
-            <span>📅</span>
-            <input type="date" id="t-fecha" style="background:transparent;border:none;padding:0;flex:1;min-width:0;">
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-bottom:1.5rem;">
-        <label class="flabel">Imagen <span style="font-weight:400;color:var(--muted);font-size:12px;">(solo JPG, opcional)</span></label>
-        <div class="img-field" id="img-area" onclick="document.getElementById('t-img').click()">
-          <input type="file" id="t-img" accept=".jpg,.jpeg" style="display:none;" onchange="onImgChange(this)">
-          <div class="img-icon" id="img-icon-wrap">🖼</div>
-          <span class="img-text" id="img-txt">Subir imagen JPG</span>
-        </div>
-      </div>
-
-      <button class="btn-yellow" onclick="crearTarea()">Crear Tarea</button>
-    </div>
-
-    <div class="panel-r">
-      <div style="display:flex;gap:10px;margin-bottom:1.25rem;align-items:center;">
-        <div class="search-wrap">
-          <span class="search-icon">🔍</span>
-          <input type="text" placeholder="Buscar Tarea" value="${S.searchQ||''}"
-            oninput="S.searchQ=this.value;document.getElementById('task-list').innerHTML=taskListHtml();" style="height:40px;">
-        </div>
-        <button class="filter-btn">≡</button>
-      </div>
-
-      <div style="display:flex;gap:1rem;margin-bottom:1.25rem;">
-        <div class="ht-chip">
-          <span style="font-size:18px;">📅</span>
-          <div><div class="ht-chip-label">Due Date</div><div class="ht-chip-val">${duelabel}</div></div>
-        </div>
-        <div class="ht-chip">
-          <span style="font-size:18px;">👥</span>
-          <div><div class="ht-chip-label">Mi hogar</div><div style="display:flex;gap:3px;margin-top:3px;">${avsMini}</div></div>
-        </div>
-      </div>
-
-      <div class="section-title">Todas las tareas</div>
-      <div id="task-list">${taskListHtml()}</div>
-    </div>
-  </div>`;
+  const duelabel = now.getDate() + ' ' + now.toLocaleDateString('es-ES',{month:'long'});
+  const avsMini = S.miembros.slice(0,3).map(function(m){ return '<div class="avatar" style="width:20px;height:20px;font-size:8px;background:' + m.c.bg + ';color:' + m.c.fg + ';">' + m.ini + '</div>'; }).join('');
+  return '<div class="two-panel"><div class="panel-l"><button class="btn-ghost" onclick="go(\'inicio\')">← Volver</button><h2 style="font-family:\'Hammersmith One\',sans-serif;font-size:22px;margin:1rem 0 1.5rem;">Crear nueva tarea</h2><div style="margin-bottom:1rem;"><label class="flabel">Nombre de la tarea</label><input type="text" id="t-nombre" placeholder="Ej: Barrer la casa"></div><div style="margin-bottom:1rem;"><label class="flabel">Descripción <span style="font-weight:400;color:var(--muted);font-size:12px;">(opcional)</span></label><textarea id="t-desc" placeholder="Añade una descripción breve de la tarea." rows="3" maxlength="200" oninput="updateDescCounter()"></textarea><div style="display:flex;justify-content:flex-end;margin-top:4px;"><span id="desc-counter" style="font-size:11px;color:var(--muted);transition:color .15s;">0/200</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;"><div><label class="flabel">Dificultad</label><select id="t-dif"><option value="">Seleccionar...</option><option>Baja</option><option selected>Media</option><option>Alta</option></select></div><div><label class="flabel">Prioridad</label><select id="t-pri"><option value="">Seleccionar...</option><option>Baja</option><option>Media</option><option selected>Alta</option></select></div></div><div style="margin-bottom:1rem;"><label class="flabel">Fecha</label><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;"><div style="display:flex;align-items:center;gap:8px;background:var(--card);border-radius:var(--radius-sm);padding:8px 12px;"><span>🕐</span><input type="time" id="t-hora" value="10:30" style="background:transparent;border:none;padding:0;flex:1;min-width:0;"></div><div style="display:flex;align-items:center;gap:8px;background:var(--card);border-radius:var(--radius-sm);padding:8px 12px;"><span>📅</span><input type="date" id="t-fecha" style="background:transparent;border:none;padding:0;flex:1;min-width:0;"></div></div></div><div style="margin-bottom:1.5rem;"><label class="flabel">Imagen <span style="font-weight:400;color:var(--muted);font-size:12px;">(solo JPG, opcional)</span></label><div class="img-field" id="img-area" onclick="document.getElementById(\'t-img\').click()"><input type="file" id="t-img" accept=".jpg,.jpeg" style="display:none;" onchange="onImgChange(this)"><div class="img-icon" id="img-icon-wrap">🖼</div><span class="img-text" id="img-txt">Subir imagen JPG</span></div></div><button class="btn-yellow" onclick="crearTarea()">Crear Tarea</button></div><div class="panel-r"><div style="display:flex;gap:10px;margin-bottom:1.25rem;align-items:center;"><div class="search-wrap"><span class="search-icon">🔍</span><input type="text" placeholder="Buscar Tarea" value="' + (S.searchQ||'') + '" oninput="S.searchQ=this.value;document.getElementById(\'task-list\').innerHTML=taskListHtml();" style="height:40px;"></div><button class="filter-btn" onclick="abrirFiltros()">≡</button></div><div style="display:flex;gap:1rem;margin-bottom:1.25rem;flex-wrap:wrap;"><div class="ht-chip"><span style="font-size:18px;">📅</span><div><div class="ht-chip-label">Due Date</div><div class="ht-chip-val">' + duelabel + '</div></div></div><div class="ht-chip"><span style="font-size:18px;">👥</span><div><div class="ht-chip-label">Mi hogar</div><div style="display:flex;gap:3px;margin-top:3px;">' + avsMini + '</div></div></div></div><div class="section-title" style="display:flex;align-items:center;justify-content:space-between;">Todas las tareas <span id="task-count" style="font-size:11px;color:var(--muted);font-weight:400;">' + S.tareas.length + ' total</span></div><div id="task-list">' + taskListHtml() + '</div></div></div>';
 }
 
 function onImgChange(inp){
@@ -682,10 +622,9 @@ function onImgChange(inp){
     _imgData = null; inp.value = ''; return;
   }
   const reader = new FileReader();
-  reader.onload = e => {
+  reader.onload = function(e){
     _imgData = e.target.result;
-    document.getElementById('img-icon-wrap').innerHTML =
-      `<img src="${_imgData}" style="width:30px;height:30px;border-radius:6px;object-fit:cover;">`;
+    document.getElementById('img-icon-wrap').innerHTML = '<img src="' + _imgData + '" style="width:30px;height:30px;border-radius:6px;object-fit:cover;">';
   };
   reader.readAsDataURL(f);
   document.getElementById('img-area').style.borderColor = 'transparent';
@@ -693,15 +632,13 @@ function onImgChange(inp){
   document.getElementById('img-txt').classList.add('has');
 }
 
-async function crearTarea(){
+function crearTarea(){
   const nombre = document.getElementById('t-nombre').value.trim();
   const dif    = document.getElementById('t-dif').value;
   const pri    = document.getElementById('t-pri').value;
   const fecha  = document.getElementById('t-fecha').value;
   const desc   = document.getElementById('t-desc').value.trim();
   const imgF   = document.getElementById('t-img').files[0];
-
-  // Validar formato imagen si fue seleccionada
   if(imgF){
     const ext = imgF.name.split('.').pop().toLowerCase();
     if(ext!=='jpg' && ext!=='jpeg'){
@@ -711,114 +648,91 @@ async function crearTarea(){
       return;
     }
   }
-
-  // ① Nombre vacío
   if(!nombre){
     showModal({ type:'warning', title:'Campo obligatorio',
       sub:'El nombre de la tarea es obligatorio para continuar.',
-      buttons:[{ label:'Entendido', cb:()=>document.getElementById('t-nombre').focus() }] });
+      buttons:[{ label:'Entendido', cb:function(){ document.getElementById('t-nombre').focus(); } }] });
     return;
   }
-
-  // ② Nombre muy corto
   if(nombre.length < 3){
     showModal({ type:'danger', warn:true, title:'Nombre no válido',
       sub:'El nombre de la tarea debe tener al menos 3 caracteres.',
-      buttons:[{ label:'Cancelar' },{ label:'Corregir', red:true, cb:()=>document.getElementById('t-nombre').focus() }] });
+      buttons:[{ label:'Cancelar' },{ label:'Corregir', red:true, cb:function(){ document.getElementById('t-nombre').focus(); } }] });
     return;
   }
-
-  // ③ Nombre muy largo
   if(nombre.length > 30){
     showModal({ type:'danger', warn:true, title:'Nombre no válido',
       sub:'El nombre de la tarea no puede superar los 30 caracteres.',
-      buttons:[{ label:'Cancelar' },{ label:'Corregir', red:true, cb:()=>document.getElementById('t-nombre').focus() }] });
+      buttons:[{ label:'Cancelar' },{ label:'Corregir', red:true, cb:function(){ document.getElementById('t-nombre').focus(); } }] });
     return;
   }
-
-  // ④ Nombre duplicado (sin distinguir mayúsculas)
-  const duplicada = S.tareas.some(t => t.nombre && t.nombre.toLowerCase() === nombre.toLowerCase());
+  const duplicada = S.tareas.some(function(t){ return t.nombre.toLowerCase() === nombre.toLowerCase(); });
   if(duplicada){
     showModal({ type:'danger', warn:true, title:'Tarea duplicada',
-      sub:`Ya existe una tarea llamada "${nombre}" en el hogar. Por favor elige un nombre diferente.`,
+      sub:'Ya existe una tarea llamada "' + nombre + '" en el hogar. Por favor elige un nombre diferente.',
       buttons:[
         { label:'Cancelar' },
-        { label:'Corregir', red:true, cb:()=>{
-          document.getElementById('t-nombre').focus();
-          document.getElementById('t-nombre').select();
-        }},
+        { label:'Corregir', red:true, cb:function(){ document.getElementById('t-nombre').focus(); document.getElementById('t-nombre').select(); } },
       ] });
     return;
   }
-
-  // ⑤ Dificultad vacía
   if(!dif){
     showModal({ type:'warning', title:'Campo obligatorio',
       sub:'Debes seleccionar una dificultad (Baja, Media o Alta).',
-      buttons:[{ label:'Entendido', cb:()=>document.getElementById('t-dif').focus() }] });
+      buttons:[{ label:'Entendido', cb:function(){ document.getElementById('t-dif').focus(); } }] });
     return;
   }
-
-  // ⑥ Prioridad vacía
   if(!pri){
     showModal({ type:'warning', title:'Campo obligatorio',
       sub:'Debes seleccionar una prioridad (Baja, Media o Alta).',
-      buttons:[{ label:'Entendido', cb:()=>document.getElementById('t-pri').focus() }] });
+      buttons:[{ label:'Entendido', cb:function(){ document.getElementById('t-pri').focus(); } }] });
     return;
   }
-
-  // ⑦ Fecha vacía
   if(!fecha){
     showModal({ type:'warning', title:'Campo obligatorio',
       sub:'La fecha límite de la tarea es obligatoria.',
-      buttons:[{ label:'Entendido', cb:()=>document.getElementById('t-fecha').focus() }] });
+      buttons:[{ label:'Entendido', cb:function(){ document.getElementById('t-fecha').focus(); } }] });
     return;
   }
-
-  // ⑧ Fecha anterior a hoy
   const sel = new Date(fecha+'T00:00:00');
   const hoy = new Date(); hoy.setHours(0,0,0,0);
   if(sel < hoy){
     showModal({ type:'warning', title:'Fecha no válida',
       sub:'La fecha límite no puede ser anterior a la fecha actual.',
-      buttons:[{ label:'Corregir', cb:()=>document.getElementById('t-fecha').focus() }] });
+      buttons:[{ label:'Corregir', cb:function(){ document.getElementById('t-fecha').focus(); } }] });
+    return;
+  }
+  var maxFecha = new Date(hoy);
+  maxFecha.setFullYear(maxFecha.getFullYear() + 1);
+  if(sel > maxFecha){
+    showModal({ type:'warning', title:'Fecha no válida',
+      sub:'La fecha límite no puede superar un año a partir de la fecha actual.',
+      buttons:[{ label:'Corregir', cb:function(){ document.getElementById('t-fecha').focus(); } }] });
     return;
   }
 
-  // ✅ Crear tarea — llamada al backend
-  const hora = document.getElementById('t-hora').value || '23:59';
-  const fechaLimite = `${fecha}T${hora}:00`;
-  try {
-    const res = await fetch(`${API}/tareas`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        hogarId: S.hogarId,
-        nombre,
-        foto: imgF ? imgF.name : null,
-        fechaLimite,
-        dificultad: dif.toUpperCase(),
-        prioridad: pri.toUpperCase()
-      })
-    });
-    const data = await res.json();
-    if(!res.ok){
-      const msg = typeof data === 'string' ? data : (data.mensaje || data.message || 'Algo salió mal, inténtelo de nuevo.');
-      showModal({ type:'warning', title:'Error al crear tarea', sub: msg, buttons:[{ label:'Entendido' }] });
-      return;
-    }
-    S.tareas.push({
-      id: data.idTarea, nombre: nombre,
-      dificultad: capitalize(data.dificultad), prioridad: capitalize(data.prioridad),
-      fecha, hora, imagen: imgF ? imgF.name : null, imgData: _imgData || null,
-      estado: 'Pendiente', asignadoA: null,
-    });
-    if(_imgData) IMG_CACHE.set(data.idTarea, _imgData);
-    save();
+  const nuevaTarea = {
+    id: Date.now(), nombre: nombre, descripcion: desc,
+    dificultad: dif, prioridad: pri, fecha: fecha,
+    hora: document.getElementById('t-hora').value,
+    imagen: imgF ? imgF.name : null,
+    imgData: _imgData || null,
+    estado: 'Pendiente', asignadoA: null,
+  };
 
-    // Reset form
+  fetch('http://localhost:8080/tareas', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ nombre: nombre, descripcion: desc, dificultad: dif, prioridad: pri, fecha: fecha })
+  })
+  .then(function(res){ return res.json(); })
+  .then(function(data){ nuevaTarea.backendId = data.id; })
+  .catch(function(){})
+  .finally(function(){
+    S.tareas.push(nuevaTarea);
+    save();
     document.getElementById('t-nombre').value = '';
-    document.getElementById('t-desc').value = '';
+    document.getElementById('t-desc').value = ''; const dc=document.getElementById('desc-counter'); if(dc){dc.textContent='0/200';dc.style.color='var(--muted)';}
     document.getElementById('t-fecha').value = '';
     document.getElementById('t-hora').value = '10:30';
     document.getElementById('t-dif').value = 'Media';
@@ -829,18 +743,12 @@ async function crearTarea(){
     document.getElementById('img-area').style.borderColor = 'transparent';
     document.getElementById('img-icon-wrap').innerHTML = '🖼';
     _imgData = null;
-
     const listEl = document.getElementById('task-list');
     if(listEl) listEl.innerHTML = taskListHtml();
-
     showModal({ type:'success', title:'Tarea creada exitosamente',
       sub:'La tarea fue agregada al listado del hogar correctamente.',
       buttons:[{ label:'Ver tareas' }] });
-  } catch(e){
-    showModal({ type:'danger', warn:true, title:'Sin conexión',
-      sub:'No se pudo conectar con el servidor. Verifica que el backend esté activo.',
-      buttons:[{ label:'Entendido' }] });
-  }
+  });
 }
 
 function eliminarTarea(id){
@@ -848,7 +756,17 @@ function eliminarTarea(id){
     sub:'¿Deseas eliminar esta tarea permanentemente? Esta acción no se puede deshacer.',
     buttons:[
       { label:'Cancelar' },
-      { label:'Eliminar', red:true, cb:()=>{ S.tareas=S.tareas.filter(t=>t.id!==id); save(); render(); } }
+      { label:'Eliminar', red:true, cb:function(){
+        const tarea = S.tareas.find(function(t){ return t.id === id; });
+        const backendId = tarea && tarea.backendId ? tarea.backendId : id;
+        fetch('http://localhost:8080/tareas/' + backendId, { method: 'DELETE' })
+          .catch(function(){})
+          .finally(function(){
+            S.tareas = S.tareas.filter(function(t){ return t.id !== id; });
+            save();
+            render();
+          });
+      }}
     ] });
 }
 
@@ -856,62 +774,42 @@ function eliminarTarea(id){
 // PÁGINA: ASIGNAR
 // ═══════════════════════════════════════
 function pgAsignar(){
-  const mListHtml = S.miembros.length ? S.miembros.map(m=>{
-    const cnt = S.tareas.filter(t=>t.asignadoA===m.nombre).length;
-    return `<div class="mitem ${S.selMiembro===m.id?'active':''}" onclick="selMiembro(${m.id})">
-      <div class="avatar" style="background:${m.c.bg};color:${m.c.fg};">${m.ini}</div>
-      <span class="mitem-name">${m.nombre}</span>
-      <div class="mitem-time"><div>${cnt>0?cnt*18+' min':'— min'}</div><div class="mitem-dot"></div></div>
-    </div>`;
-  }).join('') : `<p class="empty">Sin miembros. <button class="btn-ghost" style="display:inline;" onclick="go('miembros')">Agregar →</button></p>`;
+  const mListHtml = S.miembros.length ? S.miembros.map(function(m){
+    const cnt = S.tareas.filter(function(t){ return t.asignadoA===m.nombre; }).length;
+    return '<div class="mitem ' + (S.selMiembro===m.id?'active':'') + '" onclick="selMiembro(' + m.id + ')"><div class="avatar" style="background:' + m.c.bg + ';color:' + m.c.fg + ';">' + m.ini + '</div><span class="mitem-name">' + m.nombre + '</span><div class="mitem-time"><div>' + (cnt>0?cnt*18+' min':'— min') + '</div><div class="mitem-dot"></div></div></div>';
+  }).join('') : '<p class="empty">Sin miembros. <button class="btn-ghost" style="display:inline;" onclick="go(\'miembros\')">Agregar →</button></p>';
 
   let rightHtml = '';
   if(S.selMiembro){
-    const m = S.miembros.find(m=>m.id===S.selMiembro);
+    const m = S.miembros.find(function(m){ return m.id===S.selMiembro; });
     if(m){
-      const asig = S.tareas.filter(t=>t.asignadoA===m.nombre && t.estado==='Asignada');
-      const asigHtml = asig.length ? asig.map(t=>`
-        <div class="aitem">
-          <span class="dot da"></span>
-          <div class="aitem-info"><div class="aitem-name">${t.nombre}</div><div class="aitem-sub">${t.asignadoA} - ${t.dificultad}</div></div>
-          <span class="badge ba">Asignada</span>
-        </div>`).join('') : `<p class="empty" style="padding:.5rem 0;">Sin tareas asignadas.</p>`;
-      const sinAsig = S.tareas.filter(t=>t.estado==='Pendiente' && !t.asignadoA);
-      const sinHtml = sinAsig.length ? `
-        <h3 style="font-size:14px;font-weight:600;color:var(--muted);margin:1.5rem 0 .75rem;">Tareas sin asignar</h3>
-        ${sinAsig.map(t=>`<div class="aitem"><span class="dot di"></span><div class="aitem-info"><div class="aitem-name">${t.nombre}</div></div><span class="badge bp">Pendiente</span></div>`).join('')}` : '';
-      rightHtml = `<h3 style="font-size:15px;font-weight:600;margin-bottom:1rem;">${m.nombre} — Tareas asignadas</h3>${asigHtml}${sinHtml}`;
+      const asig = S.tareas.filter(function(t){ return t.asignadoA===m.nombre && t.estado==='Asignada'; });
+      const asigHtml = asig.length ? asig.map(function(t){
+        return '<div class="aitem"><span class="dot da"></span><div class="aitem-info"><div class="aitem-name">' + t.nombre + '</div><div class="aitem-sub">' + t.asignadoA + ' - ' + t.dificultad + '</div></div><span class="badge ba">Asignada</span></div>';
+      }).join('') : '<p class="empty" style="padding:.5rem 0;">Sin tareas asignadas.</p>';
+      const sinAsig = S.tareas.filter(function(t){ return t.estado==='Pendiente' && !t.asignadoA; });
+      const sinHtml = sinAsig.length ? '<h3 style="font-size:14px;font-weight:600;color:var(--muted);margin:1.5rem 0 .75rem;">Tareas sin asignar</h3>' + sinAsig.map(function(t){ return '<div class="aitem"><span class="dot di"></span><div class="aitem-info"><div class="aitem-name">' + t.nombre + '</div></div><span class="badge bp">Pendiente</span></div>'; }).join('') : '';
+      rightHtml = '<h3 style="font-size:15px;font-weight:600;margin-bottom:1rem;">' + m.nombre + ' — Tareas asignadas</h3>' + asigHtml + sinHtml;
     }
   } else {
-    const sinAsig = S.tareas.filter(t=>t.estado==='Pendiente');
-    rightHtml = `<h3 style="font-size:15px;font-weight:600;margin-bottom:1rem;">Tareas sin asignar</h3>
-      ${sinAsig.length ? sinAsig.map(t=>`<div class="aitem"><span class="dot di"></span><div class="aitem-info"><div class="aitem-name">${t.nombre}</div></div><span class="badge bp">Pendiente</span></div>`).join('') : '<p class="empty">No hay tareas pendientes.</p>'}`;
+    const sinAsig = S.tareas.filter(function(t){ return t.estado==='Pendiente'; });
+    rightHtml = '<h3 style="font-size:15px;font-weight:600;margin-bottom:1rem;">Tareas sin asignar</h3>' +
+      (sinAsig.length ? sinAsig.map(function(t){ return '<div class="aitem"><span class="dot di"></span><div class="aitem-info"><div class="aitem-name">' + t.nombre + '</div></div><span class="badge bp">Pendiente</span></div>'; }).join('') : '<p class="empty">No hay tareas pendientes.</p>');
   }
 
-  return `
-  <div class="two-panel">
-    <div class="panel-l">
-      <button class="btn-ghost" onclick="go('inicio')">← Volver</button>
-      <div style="margin:1rem 0;">
-        <button class="btn-yellow" onclick="asignarAleatorio()">Asignar tareas semanales</button>
-        <p style="color:var(--muted);font-size:12px;margin-top:6px;">Selecciona un miembro para ver su carga semanal</p>
-      </div>
-      <div>${mListHtml}</div>
-    </div>
-    <div class="panel-r">${rightHtml}</div>
-  </div>`;
+  return '<div class="two-panel"><div class="panel-l"><button class="btn-ghost" onclick="go(\'inicio\')">← Volver</button><div style="margin:1rem 0;"><button class="btn-yellow" onclick="asignarAleatorio()">Asignar tareas semanales</button><p style="color:var(--muted);font-size:12px;margin-top:6px;">Selecciona un miembro para ver su carga semanal</p></div><div>' + mListHtml + '</div></div><div class="panel-r">' + rightHtml + '</div></div>';
 }
 
 function selMiembro(id){ S.selMiembro = (S.selMiembro===id ? null : id); render(); }
 
-async function asignarAleatorio(){
+function asignarAleatorio(){
   if(S.lastWeek === getWeek()){
     showModal({ type:'warning', title:'Asignación no disponible',
       sub:'Las tareas ya fueron asignadas esta semana. Vuelve el próximo lunes.',
       buttons:[{ label:'Entendido' }] });
     return;
   }
-  const pendientes = S.tareas.filter(t=>t.estado==='Pendiente');
+  const pendientes = S.tareas.filter(function(t){ return t.estado==='Pendiente'; });
   if(!pendientes.length){
     showModal({ type:'warning', title:'Sin tareas',
       sub:'No hay tareas pendientes para asignar en este momento.',
@@ -921,63 +819,37 @@ async function asignarAleatorio(){
   if(!S.miembros.length){
     showModal({ type:'danger', warn:true, title:'Sin miembros',
       sub:'Agrega miembros al hogar antes de asignar tareas.',
-      buttons:[{ label:'Ir a miembros', cb:()=>go('miembros') }] });
+      buttons:[{ label:'Ir a miembros', cb:function(){ go('miembros'); } }] });
     return;
   }
-  try {
-    const res = await fetch(`${API}/tareas/hogares/${S.hogarId}/asignacion-semanal`, { method:'POST' });
-    const data = await res.json();
-    if(!res.ok){
-      showModal({ type:'warning', title:'No se pudo asignar',
-        sub: data.error || 'Algo salió mal, inténtelo de nuevo.',
-        buttons:[{ label:'Entendido' }] });
-      return;
-    }
-    // Actualizar estado local con la respuesta del backend
-    data.tareasAsignadas.forEach(ta => {
-      const local = S.tareas.find(t => t.id == ta.idTarea);
-      if(local){
-        local.estado = 'Asignada';
-        const miembro = S.miembros.find(m => m.backendId == ta.usuarioAsignado)
-                     || S.miembros[ta.usuarioAsignado - 1]
-                     || S.miembros[0];
-        local.asignadoA = miembro ? miembro.nombre : `Usuario ${ta.usuarioAsignado}`;
-      }
-    });
-    S.lastWeek = getWeek();
-    save();
-    const cnt = data.tareasAsignadas.length;
-    const exc = data.tareasExcedentes ? data.tareasExcedentes.length : 0;
-    showModal({ type:'success', title:'¡Tareas asignadas!',
-      sub:`Se asignaron ${cnt} tarea${cnt!==1?'s':''} correctamente.${exc>0?' '+exc+' tarea'+(exc!==1?'s':'')+' quedaron pendientes para el próximo ciclo.':''}`,
-      buttons:[{ label:'Ver asignaciones', cb:()=>render() }] });
-  } catch(e){
-    showModal({ type:'danger', warn:true, title:'Sin conexión',
-      sub:'No se pudo conectar con el servidor. Verifica que el backend esté activo.',
-      buttons:[{ label:'Entendido' }] });
-  }
+  const sorted = pendientes.slice().sort(function(a,b){ return (DIF_SCORE[b.dificultad]||1)-(DIF_SCORE[a.dificultad]||1); });
+  const load = {};
+  S.miembros.forEach(function(m){ load[m.id]=0; });
+  let cnt = 0;
+  sorted.forEach(function(tarea){
+    const chosen = S.miembros.reduce(function(a,b){ return load[a.id]<=load[b.id]?a:b; });
+    const idx = S.tareas.findIndex(function(t){ return t.id===tarea.id; });
+    S.tareas[idx].estado = 'Asignada';
+    S.tareas[idx].asignadoA = chosen.nombre;
+    load[chosen.id] += (DIF_SCORE[tarea.dificultad]||1);
+    cnt++;
+  });
+  S.lastWeek = getWeek();
+  save();
+  showModal({ type:'success', title:'¡Tareas asignadas!',
+    sub:'Se asignaron ' + cnt + ' tarea' + (cnt!==1?'s':'') + ' correctamente entre los miembros del hogar.',
+    buttons:[{ label:'Ver asignaciones', cb:function(){ render(); } }] });
 }
 
 // ═══════════════════════════════════════
 // PÁGINA: MIEMBROS
 // ═══════════════════════════════════════
 function pgMiembros(){
-  const mHtml = S.miembros.length ? S.miembros.map((m,i)=>`
-    <div class="mcard">
-      <div class="avatar avatar-lg" style="background:${m.c.bg};color:${m.c.fg};">${m.ini}</div>
-      <div class="mcard-info">
-        <div class="mcard-name">${m.nombre}</div>
-        <div class="mcard-role">${m.rol||'Miembro'} · ${S.tareas.filter(t=>t.asignadoA===m.nombre).length} tarea(s)</div>
-      </div>
-      ${m.ini!=='DL' ? `<button class="mcard-rm" onclick="rmMiembro(${i})">Eliminar</button>` : '<span style="font-size:11px;color:var(--yellow);">Admin</span>'}
-    </div>`).join('') : `<p class="empty">No hay miembros aún.</p>`;
-
-  return `
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;">
-      <h2 style="font-family:'Hammersmith One',sans-serif;font-size:22px;">Miembros del hogar</h2>
-      <button class="btn-yellow" style="max-width:180px;" onclick="openAddMember()">+ Agregar</button>
-    </div>
-    <div>${mHtml}</div>`;
+  const mHtml = S.miembros.length ? S.miembros.map(function(m,i){
+    return '<div class="mcard"><div class="avatar avatar-lg" style="background:' + m.c.bg + ';color:' + m.c.fg + ';">' + m.ini + '</div><div class="mcard-info"><div class="mcard-name">' + m.nombre + '</div><div class="mcard-role">' + (m.rol||'Miembro') + ' · ' + S.tareas.filter(function(t){ return t.asignadoA===m.nombre; }).length + ' tarea(s)' + (m.email ? ' · ' + m.email : '') + '</div></div>' +
+      (m.ini!=='DL' ? '<button class="mcard-rm" onclick="rmMiembro(' + i + ')">Eliminar</button>' : '<span style="font-size:11px;color:var(--yellow);">Admin</span>') + '</div>';
+  }).join('') : '<p class="empty">No hay miembros aún.</p>';
+  return '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;"><h2 style="font-family:\'Hammersmith One\',sans-serif;font-size:22px;">Miembros del hogar</h2><button class="btn-yellow" style="max-width:180px;" onclick="openAddMember()">+ Agregar</button></div><div>' + mHtml + '</div>';
 }
 
 function rmMiembro(i){
@@ -989,11 +861,11 @@ function rmMiembro(i){
     return;
   }
   showModal({ type:'danger', warn:true, title:'Eliminar miembro',
-    sub:`¿Deseas eliminar a "${m.nombre}" del hogar? Sus tareas volverán a "Pendiente".`,
+    sub:'¿Deseas eliminar a "' + m.nombre + '" del hogar? Sus tareas volverán a "Pendiente".',
     buttons:[
       { label:'Cancelar' },
-      { label:'Eliminar', red:true, cb:()=>{
-        S.tareas.forEach(t=>{ if(t.asignadoA===m.nombre){ t.asignadoA=null; t.estado='Pendiente'; } });
+      { label:'Eliminar', red:true, cb:function(){
+        S.tareas.forEach(function(t){ if(t.asignadoA===m.nombre){ t.asignadoA=null; t.estado='Pendiente'; } });
         S.miembros.splice(i,1); save(); render();
       }},
     ] });
@@ -1002,6 +874,25 @@ function rmMiembro(i){
 // ═══════════════════════════════════════
 // CONTADOR NOMBRE HOGAR
 // ═══════════════════════════════════════
+function updateDescCounter(){
+  const ta = document.getElementById('t-desc');
+  const counter = document.getElementById('desc-counter');
+  if(!ta || !counter) return;
+  const len = ta.value.length;
+  counter.textContent = len + '/200';
+  if(len >= 200){
+    counter.style.color = 'var(--err)';
+    ta.style.borderColor = 'var(--err)';
+    counter.textContent = '200/200 — Límite de caracteres alcanzado';
+  } else if(len >= 180){
+    counter.style.color = 'var(--warn)';
+    ta.style.borderColor = 'transparent';
+  } else {
+    counter.style.color = 'var(--muted)';
+    ta.style.borderColor = 'transparent';
+  }
+}
+
 function updateHogarCounter(){
   const inp = document.getElementById('h-nombre');
   const counter = document.getElementById('h-nombre-counter');
@@ -1013,57 +904,143 @@ function updateHogarCounter(){
 }
 
 // ═══════════════════════════════════════
-// HELPERS DE INTEGRACIÓN
+// FILTROS
 // ═══════════════════════════════════════
-function capitalize(str){
-  if(!str) return '';
-  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+function abrirFiltros(){
+  openModal('modal-filtros');
+  const sel = document.getElementById('f-miembro');
+  sel.innerHTML = '<option value="">Todos</option>' +
+    S.miembros.map(function(m){ return '<option value="'+m.nombre+'">'+m.nombre+'</option>'; }).join('');
+  if(S.filterEstado) document.getElementById('f-estado').value = S.filterEstado;
+  if(S.filterMiembro) document.getElementById('f-miembro').value = S.filterMiembro;
+  if(S.filterPri) document.getElementById('f-prioridad').value = S.filterPri;
+  if(S.filterDif) document.getElementById('f-dificultad').value = S.filterDif;
 }
 
-function mapEstado(backendEstado){
-  const m = { PENDIENTE:'Pendiente', ASIGNADO:'Asignada', EN_PROCESO:'En proceso', FINALIZADO:'Finalizada' };
-  return m[backendEstado] || 'Pendiente';
+function aplicarFiltros(){
+  S.filterEstado = document.getElementById('f-estado').value;
+  S.filterMiembro = document.getElementById('f-miembro').value;
+  S.filterPri = document.getElementById('f-prioridad').value;
+  S.filterDif = document.getElementById('f-dificultad').value;
+  closeModal('modal-filtros');
+  const tl = document.getElementById('task-list');
+  if(tl) tl.innerHTML = taskListHtml();
+  else render();
 }
 
-function mapUsuario(backendId){
-  const m = S.miembros.find(m => m.backendId == backendId)
-         || S.miembros[(backendId||1) - 1];
-  return m ? m.nombre : `Usuario ${backendId}`;
+function limpiarFiltros(){
+  S.filterEstado = ''; S.filterMiembro = ''; S.filterPri = ''; S.filterDif = '';
+  closeModal('modal-filtros');
+  const tl = document.getElementById('task-list');
+  if(tl) tl.innerHTML = taskListHtml();
+  else render();
 }
 
-async function cargarTareas(){
-  if(!S.hogarId) return;
-  try {
-    const res = await fetch(`${API}/tareas/hogares/${S.hogarId}`);
-    if(!res.ok) return;
-    const data = await res.json();
-    const tareasLocales = S.tareas; // guardar las tareas locales antes de sobreescribir
-    S.tareas = data.map(t => {
-      const local = tareasLocales.find(l => l.id == t.idTarea);
-      const imgData = (local && local.imgData) || IMG_CACHE.get(t.idTarea) || null;
-      return {
-        id: t.idTarea,
-        nombre: t.nombre,
-        dificultad: capitalize(t.dificultad),
-        prioridad: capitalize(t.prioridad),
-        fecha: t.fechaLimite ? t.fechaLimite.substring(0,10) : null,
-        hora: t.fechaLimite ? t.fechaLimite.substring(11,16) : null,
-        estado: mapEstado(t.estado),
-        asignadoA: t.usuarioAsignado && t.usuarioAsignado !== 'Sin asignar'
-                   ? mapUsuario(t.usuarioAsignado) : null,
-        imgData: imgData,
-        imagen: local ? local.imagen : null,
-      };
-    });
-    save();
-  } catch(e){ console.error('Error al cargar tareas:', e); }
+// ═══════════════════════════════════════
+// EDITAR TAREA
+// ═══════════════════════════════════════
+function abrirEditarTarea(id){
+  const t = S.tareas.find(function(t){ return t.id===id; }); if(!t) return;
+  if(t.estado==='Asignada' || t.estado==='En proceso'){
+    showModal({ type:'warning', title:'Tarea no editable',
+      sub:'Esta tarea no puede editarse porque ya está asignada o en proceso.',
+      buttons:[{ label:'Entendido' }] });
+    return;
+  }
+  document.getElementById('edit-task-id').value = id;
+  document.getElementById('edit-nombre').value = t.nombre||'';
+  document.getElementById('edit-desc').value = t.descripcion||'';
+  document.getElementById('edit-dif').value = t.dificultad||'';
+  document.getElementById('edit-pri').value = t.prioridad||'';
+  document.getElementById('edit-fecha').value = t.fecha||'';
+  document.getElementById('edit-nombre-err').classList.remove('show');
+  document.getElementById('edit-fecha-err').classList.remove('show');
+  openModal('modal-edit-task');
 }
+
+function confirmEditTask(){
+  const id = parseInt(document.getElementById('edit-task-id').value);
+  const nombre = document.getElementById('edit-nombre').value.trim();
+  const desc = document.getElementById('edit-desc').value.trim();
+  const dif = document.getElementById('edit-dif').value;
+  const pri = document.getElementById('edit-pri').value;
+  const fecha = document.getElementById('edit-fecha').value;
+  document.getElementById('edit-nombre-err').classList.remove('show');
+  document.getElementById('edit-fecha-err').classList.remove('show');
+  let hasErr = false;
+  if(!nombre){ document.getElementById('edit-nombre-err').classList.add('show'); hasErr=true; }
+  if(fecha){
+    const sel = new Date(fecha+'T00:00:00'); const hoy = new Date(); hoy.setHours(0,0,0,0);
+    if(sel<hoy){ document.getElementById('edit-fecha-err').classList.add('show'); hasErr=true; }
+  }
+  if(hasErr) return;
+  const idx = S.tareas.findIndex(function(t){ return t.id===id; });
+  if(idx===-1) return;
+  S.tareas[idx].nombre = nombre;
+  S.tareas[idx].descripcion = desc;
+  if(dif) S.tareas[idx].dificultad = dif;
+  if(pri) S.tareas[idx].prioridad = pri;
+  if(fecha) S.tareas[idx].fecha = fecha;
+  save();
+  closeModal('modal-edit-task');
+  const tl = document.getElementById('task-list');
+  if(tl) tl.innerHTML = taskListHtml();
+  else render();
+  showModal({ type:'success', title:'Tarea actualizada',
+    sub:'Los cambios fueron guardados exitosamente.',
+    buttons:[{ label:'Entendido' }] });
+}
+
 // ═══════════════════════════════════════
 // BOOT
 // ═══════════════════════════════════════
 load();
 if(!S.hogar) S.page='hogar';
 render();
+
+// Sincronizar con backend: si el backend está vacío, limpiar estado local
+fetch('http://localhost:8080/hogares')
+  .then(function(res){ return res.json(); })
+  .then(function(data){
+    if(!data || data.length === 0){
+      S.hogar = null;
+      S.tareas = [];
+      S.miembros = [];
+      S.page = 'hogar';
+      S.lastWeek = null;
+      save();
+      render();
+    } else {
+      return fetch('http://localhost:8080/tareas')
+        .then(function(res){ return res.json(); })
+        .then(function(tareas){
+          if(!tareas || tareas.length === 0){
+            S.tareas = [];
+            S.lastWeek = null;
+            save();
+            render();
+          } else {
+            S.tareas = tareas.map(function(t){
+              return {
+                id: t.id,
+                backendId: t.id,
+                nombre: t.nombre,
+                dificultad: t.dificultad,
+                prioridad: t.prioridad,
+                fecha: t.fecha,
+                estado: t.estado,
+                descripcion: '',
+                asignadoA: null,
+                imgData: null
+              };
+            });
+            save();
+            render();
+          }
+        });
+    }
+  })
+  .catch(function(){});
 </script>
 </body>
 </html>
