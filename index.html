@@ -434,7 +434,18 @@ function confirmAddMember(){
   if(hasErr) return;
   const c = AV_COLORS[S.colorIdx % AV_COLORS.length]; S.colorIdx++;
   const ini = v.split(' ').map(function(w){ return w[0]; }).join('').substring(0,2).toUpperCase();
-  S.miembros.push({ id:Date.now(), nombre:v, email:emailVal, ini:ini, c:c, rol:'Miembro' });
+  const newMember = { id:Date.now(), nombre:v, email:emailVal, ini:ini, c:c, rol:'Miembro' };
+  S.miembros.push(newMember);
+  if(S.hogar && S.hogar.id){
+    fetch('http://localhost:8080/api/hogares/' + S.hogar.id + '/miembros', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ idAdministrador: S.adminId || 1, nombre: v, correo: emailVal })
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){ if(data && data.miembro && data.miembro.idUsuario) { newMember.backendId = data.miembro.idUsuario; save(); } })
+    .catch(function(){});
+  }
   closeModal('modal-member');
   render();
 }
@@ -476,14 +487,21 @@ function crearHogar(){
   S.miembros.unshift({ id:1, nombre:'Tú (Admin)', ini:'DL', c:c, rol:'Administrador' });
   const desc = document.getElementById('h-desc').value.trim();
 
-  fetch('http://localhost:8080/hogares', {
+  fetch('http://localhost:8080/api/hogares', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ nombre: nombre, direccion: desc })
+    body: JSON.stringify({
+      usuarioId: 1,
+      nombreUsuario: 'Admin',
+      correoUsuario: 'admin@hometask.com',
+      nombreHogar: nombre,
+      descripcion: desc
+    })
   })
   .then(function(res){ return res.json(); })
   .then(function(data){
-    S.hogar = { id: data.id, nombre: data.nombre, descripcion: desc };
+    S.hogar = { id: data.idHogar, nombre: nombre, descripcion: desc };
+    S.adminId = data.usuarioId;
     save();
     showModal({ type:'success', title:'Hogar creado exitosamente',
       sub:'Ya puedes agregar tareas e invitar miembros a tu hogar.',
@@ -491,6 +509,7 @@ function crearHogar(){
   })
   .catch(function(){
     S.hogar = { nombre: nombre, descripcion: desc };
+    S.adminId = 1;
     save();
     showModal({ type:'success', title:'Hogar creado exitosamente',
       sub:'Ya puedes agregar tareas e invitar miembros a tu hogar.',
@@ -533,6 +552,7 @@ function pgInicio(){
 function cambiarEstado(id){
   const t = S.tareas.find(function(t){ return t.id===id; }); if(!t) return;
   const order = ['Pendiente','Asignada','En proceso','Finalizada'];
+  const estadoMap = { 'Pendiente':'PENDIENTE', 'Asignada':'ASIGNADO', 'En proceso':'EN_PROCESO', 'Finalizada':'FINALIZADO' };
   const currentIdx = order.indexOf(t.estado);
 
   if(t.estado === 'Finalizada'){
@@ -548,16 +568,22 @@ function cambiarEstado(id){
     t.estado = 'Pendiente';
     t.finalizedWeek = undefined;
     t.asignadoA = null;
+    fetch('http://localhost:8080/api/tareas/' + (t.backendId||t.id) + '/estado', {
+      method:'PATCH', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ nuevoEstado: 'PENDIENTE' })
+    }).catch(function(){});
     save(); render();
     return;
   }
 
   const nextEstado = order[currentIdx + 1];
   t.estado = nextEstado;
+  if(nextEstado === 'Finalizada') t.finalizedWeek = getWeek();
 
-  if(nextEstado === 'Finalizada'){
-    t.finalizedWeek = getWeek();
-  }
+  fetch('http://localhost:8080/api/tareas/' + (t.backendId||t.id) + '/estado', {
+    method:'PATCH', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ nuevoEstado: estadoMap[nextEstado] })
+  }).catch(function(){});
 
   save(); render();
 }
@@ -720,10 +746,18 @@ function crearTarea(){
     estado: 'Pendiente', asignadoA: null,
   };
 
-  fetch('http://localhost:8080/tareas', {
+  fetch('http://localhost:8080/api/tareas', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ nombre: nombre, descripcion: desc, dificultad: dif, prioridad: pri, fecha: fecha })
+    body: JSON.stringify({
+      idHogar: S.hogar ? S.hogar.id : null,
+      nombre: nombre,
+      descripcion: desc,
+      foto: null,
+      fechaLimite: fecha + 'T23:59:00',
+      dificultad: dif.toUpperCase(),
+      prioridad: pri.toUpperCase()
+    })
   })
   .then(function(res){ return res.json(); })
   .then(function(data){ nuevaTarea.backendId = data.id; })
@@ -759,7 +793,7 @@ function eliminarTarea(id){
       { label:'Eliminar', red:true, cb:function(){
         const tarea = S.tareas.find(function(t){ return t.id === id; });
         const backendId = tarea && tarea.backendId ? tarea.backendId : id;
-        fetch('http://localhost:8080/tareas/' + backendId, { method: 'DELETE' })
+        fetch('http://localhost:8080/api/tareas/' + backendId, { method: 'DELETE' })
           .catch(function(){})
           .finally(function(){
             S.tareas = S.tareas.filter(function(t){ return t.id !== id; });
@@ -836,6 +870,12 @@ function asignarAleatorio(){
   });
   S.lastWeek = getWeek();
   save();
+  if(S.hogar && S.hogar.id){
+    fetch('http://localhost:8080/api/tareas/hogares/' + S.hogar.id + '/asignacion-semanal', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
+    }).catch(function(){});
+  }
   showModal({ type:'success', title:'¡Tareas asignadas!',
     sub:'Se asignaron ' + cnt + ' tarea' + (cnt!==1?'s':'') + ' correctamente entre los miembros del hogar.',
     buttons:[{ label:'Ver asignaciones', cb:function(){ render(); } }] });
@@ -866,6 +906,13 @@ function rmMiembro(i){
       { label:'Cancelar' },
       { label:'Eliminar', red:true, cb:function(){
         S.tareas.forEach(function(t){ if(t.asignadoA===m.nombre){ t.asignadoA=null; t.estado='Pendiente'; } });
+        if(S.hogar && S.hogar.id && m.backendId){
+          fetch('http://localhost:8080/api/hogares/' + S.hogar.id + '/miembros', {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ idAdministrador: S.adminId || 1, idMiembro: m.backendId })
+          }).catch(function(){});
+        }
         S.miembros.splice(i,1); save(); render();
       }},
     ] });
@@ -981,6 +1028,18 @@ function confirmEditTask(){
   if(dif) S.tareas[idx].dificultad = dif;
   if(pri) S.tareas[idx].prioridad = pri;
   if(fecha) S.tareas[idx].fecha = fecha;
+  const backendId = S.tareas[idx].backendId || id;
+  fetch('http://localhost:8080/api/tareas/' + backendId, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      nombre: nombre,
+      descripcion: desc,
+      dificultad: dif ? dif.toUpperCase() : undefined,
+      prioridad: pri ? pri.toUpperCase() : undefined,
+      fechaLimite: fecha ? fecha + 'T23:59:00' : undefined
+    })
+  }).catch(function(){});
   save();
   closeModal('modal-edit-task');
   const tl = document.getElementById('task-list');
@@ -999,7 +1058,7 @@ if(!S.hogar) S.page='hogar';
 render();
 
 // Sincronizar con backend: si el backend está vacío, limpiar estado local
-fetch('http://localhost:8080/hogares')
+fetch('http://localhost:8080/api/hogares')
   .then(function(res){ return res.json(); })
   .then(function(data){
     if(!data || data.length === 0){
@@ -1011,9 +1070,10 @@ fetch('http://localhost:8080/hogares')
       save();
       render();
     } else {
-      return fetch('http://localhost:8080/tareas')
+      return fetch('http://localhost:8080/api/tareas')
         .then(function(res){ return res.json(); })
         .then(function(tareas){
+          const estadoInvMap = { 'PENDIENTE':'Pendiente', 'ASIGNADO':'Asignada', 'EN_PROCESO':'En proceso', 'FINALIZADO':'Finalizada' };
           if(!tareas || tareas.length === 0){
             S.tareas = [];
             S.lastWeek = null;
@@ -1022,14 +1082,14 @@ fetch('http://localhost:8080/hogares')
           } else {
             S.tareas = tareas.map(function(t){
               return {
-                id: t.id,
-                backendId: t.id,
+                id: t.idTarea,
+                backendId: t.idTarea,
                 nombre: t.nombre,
-                dificultad: t.dificultad,
-                prioridad: t.prioridad,
-                fecha: t.fecha,
-                estado: t.estado,
-                descripcion: '',
+                dificultad: t.dificultad ? t.dificultad.charAt(0) + t.dificultad.slice(1).toLowerCase() : '',
+                prioridad: t.prioridad ? t.prioridad.charAt(0) + t.prioridad.slice(1).toLowerCase() : '',
+                fecha: t.fechaLimite ? t.fechaLimite.split('T')[0] : '',
+                estado: estadoInvMap[t.estado] || 'Pendiente',
+                descripcion: t.descripcion || '',
                 asignadoA: null,
                 imgData: null
               };
