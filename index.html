@@ -9,27 +9,27 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --bg:#1A1D2E;--card:#212832;--card2:#2C3347;--card3:#333d52;
-  --yellow:#FED36A;--white:#FFFFFF;
+  --bg:#0E1829;--card:#14213A;--card2:#1C304F;--card3:#243D63;
+  --yellow:#378ADD;--white:#FFFFFF;
   --muted:rgba(255,255,255,0.42);
   --radius:12px;--radius-sm:8px;--radius-lg:18px;
-  --pending:#FFFFFF;--assigned:#3B82F6;--inprog:#F97316;--done:#22C55E;
-  --err:#EF4444;--warn:#D4611A;
+  --pending:#FFFFFF;--assigned:#378ADD;--inprog:#F97316;--done:#22C55E;
+  --err:#EF4444;--warn:#185FA5;
 }
 html,body{height:100%;background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;font-size:14px;line-height:1.5;}
 .app{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
-.topnav{background:var(--yellow);display:flex;align-items:center;padding:0 2rem;height:62px;flex-shrink:0;}
-.logo{font-family:'Hammersmith One',sans-serif;font-size:20px;color:#1A1D2E;}
+.topnav{background:#185FA5;display:flex;align-items:center;padding:0 2rem;height:62px;flex-shrink:0;}
+.logo{font-family:'Hammersmith One',sans-serif;font-size:20px;color:#E6F1FB;}
 .nav-links{display:flex;gap:2rem;margin-left:auto;align-items:center;}
-.nav-link{font-weight:600;font-size:13px;color:#1A1D2E;cursor:pointer;padding-bottom:3px;border-bottom:2.5px solid transparent;text-transform:uppercase;letter-spacing:.06em;user-select:none;}
-.nav-link.active{border-bottom-color:#1A1D2E;}
-.user-av{width:36px;height:36px;border-radius:50%;background:#fff;color:#1A1D2E;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;cursor:pointer;margin-left:.5rem;}
+.nav-link{font-weight:600;font-size:13px;color:#E6F1FB;cursor:pointer;padding-bottom:3px;border-bottom:2.5px solid transparent;text-transform:uppercase;letter-spacing:.06em;user-select:none;}
+.nav-link.active{border-bottom-color:#E6F1FB;}
+.user-av{width:36px;height:36px;border-radius:50%;background:#E6F1FB;color:#0C447C;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;cursor:pointer;margin-left:.5rem;}
 .body-wrap{display:flex;flex:1;overflow:hidden;}
 .sidebar{width:220px;background:var(--bg);padding:1.5rem 0;flex-shrink:0;border-right:1px solid rgba(255,255,255,.05);}
 .sb-item{display:flex;align-items:center;gap:10px;padding:10px 1.5rem;cursor:pointer;color:var(--muted);font-size:14px;transition:color .15s,background .15s;user-select:none;}
 .sb-item::before{content:'●';font-size:9px;flex-shrink:0;}
 .sb-item:hover{color:var(--white);}
-.sb-item.active{color:var(--white);background:rgba(255,255,255,.06);}
+.sb-item.active{color:#E6F1FB;background:rgba(55,138,221,.2);border-left:3px solid #85B7EB;}
 .main{flex:1;overflow-y:auto;padding:1.75rem 2rem;}
 input[type="text"],input[type="date"],input[type="time"],textarea,select{
   background:var(--card);border:1.5px solid transparent;border-radius:var(--radius-sm);
@@ -42,14 +42,14 @@ textarea{resize:vertical;min-height:72px;}
 select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.4)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;}
 select option{background:var(--card);}
 .flabel{font-family:'Khula',sans-serif;font-weight:700;font-size:14px;color:var(--yellow);margin-bottom:5px;display:block;}
-.btn-yellow{background:var(--yellow);color:#1A1D2E;border:none;border-radius:var(--radius-sm);padding:11px 20px;font-family:'Khula',sans-serif;font-weight:700;font-size:15px;cursor:pointer;width:100%;transition:opacity .15s,transform .1s;}
+.btn-yellow{background:var(--yellow);color:#E6F1FB;border:none;border-radius:var(--radius-sm);padding:11px 20px;font-family:'Khula',sans-serif;font-weight:700;font-size:15px;cursor:pointer;width:100%;transition:opacity .15s,transform .1s;}
 .btn-yellow:hover{opacity:.88;}
 .btn-yellow:active{transform:scale(.98);}
 .btn-ghost{background:transparent;color:var(--yellow);border:none;cursor:pointer;font-size:13px;padding:0;display:inline-flex;align-items:center;gap:5px;}
 .btn-ghost:hover{opacity:.75;}
-.btn-sm-yellow{background:var(--yellow);color:#1A1D2E;border:none;border-radius:var(--radius-sm);padding:5px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Khula',sans-serif;}
+.btn-sm-yellow{background:var(--yellow);color:#E6F1FB;border:none;border-radius:var(--radius-sm);padding:5px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Khula',sans-serif;}
 .btn-sm-yellow:hover{opacity:.85;}
-.filter-btn{width:40px;height:40px;background:var(--yellow);border:none;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;font-size:16px;}
+.filter-btn{width:40px;height:40px;background:var(--yellow);border:none;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;font-size:16px;color:#E6F1FB;}
 .dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;display:inline-block;}
 .dp{background:var(--pending);}
 .da{background:var(--assigned);}
@@ -75,7 +75,7 @@ select option{background:var(--card);}
 .fmodal-icon.success{background:#22C55E;}
 .fmodal-icon.success::after{content:'✓';color:#fff;font-size:26px;font-weight:700;}
 .fmodal-icon.warning{background:var(--yellow);}
-.fmodal-icon.warning::after{content:'!';color:#1A1D2E;font-size:28px;font-family:'Khula',sans-serif;font-weight:700;}
+.fmodal-icon.warning::after{content:'!';color:#E6F1FB;font-size:28px;font-family:'Khula',sans-serif;font-weight:700;}
 .fmodal-icon.danger{background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.15);}
 .fmodal-icon.danger::after{content:'!';color:var(--warn);font-size:28px;font-family:'Khula',sans-serif;font-weight:700;}
 .fmodal-title{font-weight:700;font-size:20px;line-height:1.25;margin-bottom:10px;color:#fff;}
@@ -116,14 +116,14 @@ select option{background:var(--card);}
 .aitem-name{font-size:13px;font-weight:600;}
 .aitem-sub{font-size:11px;color:var(--muted);}
 .hogar-split{display:grid;grid-template-columns:300px 1fr;min-height:100%;}
-.hogar-left{background:#E2E2DE;padding:3rem 2rem;display:flex;flex-direction:column;gap:1rem;}
-.hogar-left h2{font-family:'Hammersmith One',sans-serif;font-size:30px;color:#1A1D2E;line-height:1.2;}
+.hogar-left{background:#185FA5;padding:3rem 2rem;display:flex;flex-direction:column;gap:1rem;}
+.hogar-left h2{font-family:'Hammersmith One',sans-serif;font-size:30px;color:#E6F1FB;line-height:1.2;}
 .hogar-left p{color:#666;font-size:14px;line-height:1.6;}
 .hogar-right{background:var(--bg);padding:2rem 3rem;display:flex;flex-direction:column;}
 .mtag{display:inline-flex;align-items:center;gap:6px;background:var(--card);border-radius:20px;padding:4px 8px 4px 4px;font-size:12px;}
 .mtag-rm{background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px;line-height:1;padding:0;}
 .mtag-rm:hover{color:#fff;}
-.btn-add-m{width:36px;height:36px;background:var(--yellow);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;color:#1A1D2E;font-weight:700;flex-shrink:0;}
+.btn-add-m{width:36px;height:36px;background:var(--yellow);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;color:#E6F1FB;font-weight:700;flex-shrink:0;}
 .mcard{background:var(--card);border-radius:var(--radius);padding:1rem 1.25rem;display:flex;align-items:center;gap:12px;margin-bottom:10px;}
 .mcard-info{flex:1;}
 .mcard-name{font-size:14px;font-weight:500;}
@@ -143,6 +143,342 @@ select option{background:var(--card);}
 ::-webkit-scrollbar{width:4px;}
 ::-webkit-scrollbar-track{background:transparent;}
 ::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px;}
+/* ── AUTH ── */
+.auth-wrap{min-height:100vh;display:flex;align-items:stretch;}
+.auth-left{width:360px;background:#185FA5;display:flex;flex-direction:column;justify-content:center;padding:3rem 2.5rem;flex-shrink:0;}
+.auth-left-logo{font-family:'Hammersmith One',sans-serif;font-size:22px;color:#E6F1FB;margin-bottom:2.5rem;}
+.auth-left h2{font-family:'Hammersmith One',sans-serif;font-size:32px;color:#E6F1FB;line-height:1.2;margin-bottom:1rem;}
+.auth-left p{color:rgba(230,241,251,.7);font-size:13px;line-height:1.7;}
+.auth-feature{display:flex;align-items:flex-start;gap:12px;margin-top:1.4rem;}
+.auth-feature-dot{width:30px;height:30px;border-radius:50%;background:rgba(230,241,251,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;}
+.auth-feature-title{font-weight:600;color:#E6F1FB;font-size:12px;}
+.auth-feature-text{font-size:12px;color:rgba(230,241,251,.65);line-height:1.5;}
+.auth-right{flex:1;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:2rem;}
+.auth-card{width:100%;max-width:400px;}
+.auth-title{font-family:'Hammersmith One',sans-serif;font-size:24px;color:#fff;margin-bottom:4px;}
+.auth-sub{font-size:13px;color:var(--muted);margin-bottom:1.75rem;}
+.auth-field{margin-bottom:.9rem;}
+.auth-field label{display:block;font-size:11px;font-weight:600;color:var(--yellow);margin-bottom:4px;letter-spacing:.04em;text-transform:uppercase;}
+.auth-inp{background:var(--card);border:1.5px solid rgba(255,255,255,.1);border-radius:var(--radius-sm);color:#fff;padding:11px 14px;font-size:14px;width:100%;outline:none;transition:border-color .15s;font-family:'Inter',sans-serif;box-sizing:border-box;}
+.auth-inp:focus{border-color:var(--yellow);}
+.auth-inp::placeholder{color:var(--muted);}
+.auth-inp.err{border-color:var(--err);}
+.auth-err{color:var(--err);font-size:11px;margin-top:3px;display:none;}
+.auth-err.show{display:block;}
+.auth-btn{background:var(--yellow);color:#E6F1FB;border:none;border-radius:var(--radius-sm);padding:12px;font-family:'Khula',sans-serif;font-weight:700;font-size:15px;cursor:pointer;width:100%;margin-top:.25rem;transition:opacity .15s,transform .1s;}
+.auth-btn:hover{opacity:.88;}
+.auth-btn:active{transform:scale(.98);}
+.auth-link{text-align:center;margin-top:1.1rem;font-size:13px;color:var(--muted);}
+.auth-link a{color:var(--yellow);cursor:pointer;font-weight:500;}
+.auth-link a:hover{opacity:.75;}
+.pass-wrap{position:relative;}
+.pass-toggle{position:absolute;right:11px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);cursor:pointer;font-size:15px;padding:0;line-height:1;}
+.pass-toggle:hover{color:#fff;}
+.pw-bar{height:3px;border-radius:2px;margin-top:5px;transition:width .3s,background .3s;width:0%;}
+.pw-hint{font-size:10px;margin-top:3px;}
+/* sin-hogar */
+.sh-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:72vh;text-align:center;padding:2rem;}
+.sh-icon{font-size:52px;margin-bottom:1rem;}
+.sh-title{font-family:'Hammersmith One',sans-serif;font-size:26px;color:var(--yellow);margin-bottom:.5rem;}
+.sh-sub{font-size:14px;color:var(--muted);max-width:400px;line-height:1.7;margin-bottom:1.75rem;}
+.sh-btn{background:var(--yellow);color:#E6F1FB;border:none;border-radius:var(--radius-sm);padding:12px 32px;font-family:'Khula',sans-serif;font-weight:700;font-size:15px;cursor:pointer;}
+.sh-btn:hover{opacity:.88;}
+/* tabs */
+.tab-row{display:flex;border-radius:var(--radius-sm);overflow:hidden;border:1px solid rgba(255,255,255,.1);margin-bottom:1.1rem;}
+.tab-btn{flex:1;padding:9px;font-size:13px;font-weight:500;cursor:pointer;border:none;background:var(--card2);color:var(--muted);transition:all .15s;}
+.tab-btn.active{background:var(--yellow);color:#E6F1FB;font-weight:700;}
+/* inv badge */
+.inv-badge{background:#185FA5;color:#E6F1FB;border-radius:50%;width:15px;height:15px;font-size:9px;display:none;align-items:center;justify-content:center;margin-left:4px;font-weight:700;}
+.inv-badge.show{display:inline-flex;}
+@media(max-width:720px){.auth-left{display:none;}.auth-right{padding:1.25rem;}}
+
+
+/* ── DASHBOARD ── */
+.dash-wrap{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07);}
+.dash-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:1.25rem;}
+.dash-card{background:var(--card);border-radius:10px;padding:14px 16px;}
+.dash-card-val{font-family:'Hammersmith One',sans-serif;font-size:26px;color:var(--yellow);line-height:1;}
+.dash-card-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-top:4px;}
+.dash-card-sub{font-size:11px;color:rgba(255,255,255,.35);margin-top:2px;}
+.dash-two{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.dash-panel{background:var(--card);border-radius:10px;padding:16px;}
+.dash-panel-title{font-size:11px;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.04em;margin-bottom:12px;}
+.dash-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.dash-bar-name{font-size:12px;color:#fff;width:90px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex-shrink:0;}
+.dash-bar-track{flex:1;height:6px;border-radius:3px;background:rgba(255,255,255,.08);}
+.dash-bar-fill{height:6px;border-radius:3px;background:var(--yellow);}
+.dash-bar-pts{font-size:11px;color:var(--muted);width:36px;text-align:right;flex-shrink:0;}
+.dash-status-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.dash-status-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dash-status-label{font-size:12px;color:var(--white);flex:1;}
+.dash-status-count{font-size:12px;font-weight:700;color:var(--yellow);}
+.dash-deadline{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05);}
+.dash-deadline:last-child{border-bottom:none;}
+.dash-deadline-name{font-size:12px;color:#fff;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.dash-deadline-date{font-size:11px;color:var(--muted);flex-shrink:0;}
+.dash-deadline-urgent{color:#EF4444;font-weight:600;}
+.hist-btn{background:var(--card);border:1px solid rgba(255,255,255,.12);color:var(--muted);border-radius:8px;padding:8px 11px;cursor:pointer;font-size:17px;line-height:1;transition:all .15s;}
+.hist-btn:hover{border-color:var(--yellow);color:var(--yellow);}
+.hist-list{max-height:380px;overflow-y:auto;padding-right:2px;}
+.hist-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);}
+.hist-item:last-child{border-bottom:none;}
+.hist-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;margin-top:1px;}
+.hist-body{flex:1;min-width:0;}
+.hist-title{font-size:13px;color:#fff;font-weight:500;}
+.hist-task{font-size:11px;color:var(--yellow);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hist-time{font-size:11px;color:var(--muted);white-space:nowrap;flex-shrink:0;}
+
+
+/* ── LIGHT MODE ── */
+:root.light{
+  --bg:#F0F6FD;--card:#FFFFFF;--card2:#E6F1FB;--card3:#B5D4F4;
+  --white:#042C53;--muted:rgba(4,44,83,0.50);
+  --pending:#374151;--assigned:#185FA5;--inprog:#C2410C;--done:#15803D;
+  --yellow:#185FA5;
+}
+:root.light html,
+:root.light body{ background:var(--bg);color:#042C53;}
+:root.light .sidebar{ border-right-color:rgba(55,138,221,.15);}
+:root.light .kcol{ border:1px solid rgba(55,138,221,.12);}
+:root.light .ktask{ box-shadow:0 1px 3px rgba(55,138,221,.08);}
+:root.light .fmodal{ border-color:rgba(55,138,221,.15);}
+:root.light .overlay{ background:rgba(4,44,83,.45);}
+:root.light input,
+:root.light textarea,
+:root.light select{ background:var(--card2)!important;color:var(--white)!important;border-color:rgba(0,0,0,.15)!important;}
+:root.light .hist-item{ border-bottom-color:rgba(0,0,0,.07);}
+:root.light .dash-card{ box-shadow:0 1px 4px rgba(0,0,0,.08);}
+:root.light .dash-panel{ box-shadow:0 1px 4px rgba(0,0,0,.08);}
+:root.light .dash-deadline{ border-bottom-color:rgba(0,0,0,.07);}
+:root.light .dash-bar-track{ background:rgba(0,0,0,.08);}
+:root.light .mcard{ border-color:rgba(0,0,0,.08);}
+:root.light .titem{ background:var(--card2);}
+:root.light .auth-right{ background:var(--bg);}
+
+:root.light .ferr-inline{ color:#DC2626;}
+:root.light .dash-status-label{ color:#111111!important; }
+:root.light .dash-status-count{ color:#185FA5!important; font-weight:700; }
+:root.light .dash-status-row{ border-bottom:0.5px solid rgba(55,138,221,.08); padding-bottom:6px; }
+:root.light .nav-link{ color:#E6F1FB!important; }
+:root.light .logo{ color:#E6F1FB!important; }
+:root.light .flabel{ color:#185FA5; }
+:root.light .btn-ghost{ color:#185FA5; }
+:root.light .section-title{ color:#185FA5; }
+:root.light .ht-chip-label{ color:rgba(4,44,83,.55); }
+:root.light .mcard{ border-color:rgba(55,138,221,.1); }
+:root.light .dash-bar-track{ background:rgba(55,138,221,.1); }
+:root.light .dash-panel-title{ color:#185FA5; }
+:root.light .dash-card-val{ color:#185FA5; }
+:root.light .sb-item.active{ color:#E6F1FB!important;background:rgba(55,138,221,.25)!important; }
+:root.light .sb-item:hover{ color:#185FA5; }
+:root.light .auth-inp{ background:var(--card)!important;color:#042C53!important;border-color:rgba(55,138,221,.2)!important;}
+
+
+/* ══════════════════════════════════════
+   UX/UA ENHANCEMENTS v22
+══════════════════════════════════════ */
+
+/* ── 5. REDUCED MOTION ── */
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;}
+  .toast{animation:none!important;}
+  .ktask-new{animation:none!important;}
+  .skeleton{animation:none!important;}
+}
+
+/* ── 4. TOAST NOTIFICATIONS ── */
+.toast-container{position:fixed;top:80px;right:20px;z-index:9500;display:flex;flex-direction:column;gap:8px;pointer-events:none;}
+.toast{pointer-events:all;min-width:280px;max-width:360px;border-radius:10px;padding:12px 16px;display:flex;align-items:flex-start;gap:10px;box-shadow:0 8px 24px rgba(0,0,0,.3);animation:toastIn .3s ease forwards;}
+.toast-success{background:#16532E;border-left:3px solid #22C55E;}
+.toast-error{background:#5C1A1A;border-left:3px solid #EF4444;}
+.toast-warning{background:#4A2B00;border-left:3px solid #F59E0B;}
+.toast-info{background:#0C2A4A;border-left:3px solid var(--yellow);}
+.toast-icon{font-size:16px;flex-shrink:0;margin-top:1px;}
+.toast-body{flex:1;}
+.toast-title{font-size:13px;font-weight:600;color:#fff;margin-bottom:2px;}
+.toast-msg{font-size:12px;color:rgba(255,255,255,.75);}
+.toast-close{background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;font-size:16px;padding:0;line-height:1;flex-shrink:0;}
+.toast-close:hover{color:#fff;}
+.toast-progress{height:2px;border-radius:1px;margin-top:8px;animation:toastProg 3s linear forwards;}
+@keyframes toastIn{from{opacity:0;transform:translateX(20px);}to{opacity:1;transform:translateX(0);}}
+@keyframes toastOut{from{opacity:1;transform:translateX(0);}to{opacity:0;transform:translateX(20px);}}
+@keyframes toastProg{from{width:100%;}to{width:0%;}}
+:root.light .toast-success{background:#DCFCE7;border-left-color:#16A34A;}
+:root.light .toast-success .toast-title{color:#14532D;}
+:root.light .toast-success .toast-msg{color:#166534;}
+:root.light .toast-error{background:#FEE2E2;border-left-color:#DC2626;}
+:root.light .toast-error .toast-title{color:#7F1D1D;}
+:root.light .toast-error .toast-msg{color:#991B1B;}
+:root.light .toast-warning{background:#FEF3C7;border-left-color:#D97706;}
+:root.light .toast-warning .toast-title{color:#78350F;}
+:root.light .toast-info{background:#E6F1FB;border-left-color:#185FA5;}
+:root.light .toast-info .toast-title{color:#042C53;}
+:root.light .toast-info .toast-msg{color:#185FA5;}
+
+/* ── 3. SKELETON LOADING ── */
+.skeleton-wrap{padding:1rem 0;}
+.skel{border-radius:6px;background:linear-gradient(90deg,var(--card) 25%,var(--card2) 50%,var(--card) 75%);background-size:200% 100%;animation:skelShine 1.4s infinite;}
+@keyframes skelShine{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
+.skel-col{background:var(--card);border-radius:var(--radius);padding:12px;flex:1;}
+.skel-head{height:18px;width:60%;margin-bottom:12px;}
+.skel-card{height:52px;margin-bottom:8px;border-radius:8px;}
+.skel-card-sm{height:40px;margin-bottom:8px;border-radius:8px;}
+.kanban-skeleton{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+
+/* ── 1. EMPTY STATES ── */
+.empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 1rem;text-align:center;}
+.empty-state-icon{font-size:44px;margin-bottom:1rem;opacity:.6;}
+.empty-state-title{font-size:15px;font-weight:500;color:var(--white);margin-bottom:.5rem;}
+.empty-state-sub{font-size:13px;color:var(--muted);max-width:260px;line-height:1.6;}
+.empty-state-btn{margin-top:1rem;}
+
+/* ── 2. KANBAN STATUS ICONS ── */
+.kcol-head{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:10px;}
+.kstatus-icon{font-size:14px;}
+
+/* ── 8. SLIDE-IN ANIMATION FOR NEW TASKS ── */
+@keyframes slideIn{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:translateY(0);}}
+.ktask-new{animation:slideIn .25s ease forwards;}
+
+/* ── 9. DRAG & DROP VISUAL ── */
+.kcol.drag-over{border:2px dashed var(--yellow)!important;background:rgba(55,138,221,.08);}
+.ktask.dragging{opacity:.4;transform:scale(.97);cursor:grabbing;}
+.ktask{cursor:grab;}
+.ktask:active{cursor:grabbing;}
+
+/* ── 10. BREADCRUMB ── */
+.breadcrumb{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);margin-bottom:1.25rem;}
+.breadcrumb-sep{opacity:.4;}
+.breadcrumb-link{color:var(--muted);cursor:pointer;}
+.breadcrumb-link:hover{color:var(--white);}
+.breadcrumb-current{color:var(--white);font-weight:500;}
+
+/* ── 11. WEEKLY PROGRESS BAR ── */
+.week-progress-wrap{margin:6px 0 14px;}
+.week-progress-label{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:4px;}
+.week-progress-track{height:6px;border-radius:3px;background:rgba(255,255,255,.08);}
+.week-progress-fill{height:6px;border-radius:3px;background:var(--yellow);transition:width .6s ease;}
+:root.light .week-progress-track{background:rgba(55,138,221,.15);}
+
+/* ── 12. HOVER STATES ── */
+.ktask:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.25);border-color:rgba(255,255,255,.15);}
+.mcard:hover{border-color:var(--yellow);transform:translateX(2px);}
+.sb-item:hover{background:rgba(255,255,255,.04);padding-left:26px;}
+.dash-card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.2);}
+:root.light .ktask:hover{box-shadow:0 6px 16px rgba(55,138,221,.15);}
+:root.light .dash-card:hover{box-shadow:0 6px 16px rgba(55,138,221,.12);}
+
+/* ── 6. FONT SIZE CONTROLS ── */
+.font-controls{display:flex;gap:4px;align-items:center;}
+.font-btn{background:var(--card);border:1px solid rgba(255,255,255,.1);color:var(--muted);border-radius:6px;padding:4px 9px;cursor:pointer;font-weight:600;transition:all .15s;line-height:1;}
+.font-btn:hover{border-color:var(--yellow);color:var(--yellow);}
+.font-size-label{font-size:11px;color:var(--muted);padding:0 4px;}
+:root.light .font-btn{background:#FFFFFF;border-color:rgba(55,138,221,.2);}
+
+/* ── 7. TOOLTIPS ── */
+[data-tooltip]{position:relative;}
+[data-tooltip]::after{content:attr(data-tooltip);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:rgba(0,0,0,.85);color:#fff;font-size:11px;padding:4px 8px;border-radius:4px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .15s;z-index:1000;}
+[data-tooltip]:hover::after{opacity:1;}
+
+/* ── 13. HIGH CONTRAST MODE ── */
+:root.hc{
+  --bg:#000000;--card:#0A0A0A;--card2:#111111;--card3:#1A1A1A;
+  --white:#FFFFFF;--muted:#CCCCCC;--yellow:#FFFF00;--err:#FF4444;
+}
+:root.hc .ktask{border:1.5px solid #444;}
+:root.hc .kcol{border:1px solid #555;}
+:root.hc .topnav{background:#000;border-bottom:2px solid #FFFF00;}
+:root.hc .badge{border:1px solid currentColor;}
+:root.hc :focus-visible{outline:3px solid #FFFF00!important;}
+
+/* ── 15. THEME RIPPLE ── */
+.theme-ripple{position:fixed;border-radius:50%;background:var(--yellow);pointer-events:none;z-index:8999;transform:scale(0);transition:transform .6s ease,opacity .4s ease;opacity:.3;}
+.theme-ripple.active{transform:scale(80);opacity:0;}
+
+/* ── 16. SESSION INDICATOR ── */
+.session-dot{position:absolute;bottom:0;right:0;width:10px;height:10px;background:#22C55E;border-radius:50%;border:2px solid var(--bg);}
+.user-av-wrap{position:relative;display:inline-flex;}
+
+/* ── 17. COMPACT MODE ── */
+:root.compact .ktask{padding:6px 10px;}
+:root.compact .ktask-name{font-size:12px;}
+:root.compact .ktask-sub{font-size:10px;}
+:root.compact .kcol{padding:8px;}
+:root.compact .kanban{gap:8px;}
+.compact-btn{background:var(--card);border:1px solid rgba(255,255,255,.1);color:var(--muted);border-radius:6px;padding:5px 9px;cursor:pointer;font-size:12px;transition:all .15s;line-height:1;}
+.compact-btn.on{border-color:var(--yellow);color:var(--yellow);}
+:root.light .compact-btn{background:#FFFFFF;border-color:rgba(55,138,221,.2);}
+
+/* ── 18. SIDEBAR COUNTERS ── */
+.sb-count{background:var(--yellow);color:#E6F1FB;border-radius:10px;font-size:10px;font-weight:700;padding:1px 6px;margin-left:auto;flex-shrink:0;}
+.sb-item{display:flex;align-items:center;}
+:root.light .sb-count{color:#042C53;}
+
+/* ── TRANSITIONS (suaviza cambio de tema) ── */
+*{ transition:background-color .2s,color .1s,border-color .15s; }
+.ktask,.avatar,.btn-yellow,.filter-btn,.hist-btn,.auth-btn{ transition:background .15s,color .15s,opacity .15s,transform .1s!important; }
+
+/* ── IUAS: FOCUS VISIBLE ── */
+:focus-visible{
+  outline:2.5px solid var(--yellow)!important;
+  outline-offset:2px!important;
+  border-radius:4px;
+}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{
+  outline:2.5px solid var(--yellow)!important;
+  outline-offset:3px!important;
+}
+
+/* ── THEME TOGGLE BUTTON ── */
+.theme-toggle{
+  position:fixed;bottom:24px;right:24px;z-index:9000;
+  width:48px;height:48px;border-radius:50%;
+  background:var(--yellow);border:none;
+  box-shadow:0 4px 16px rgba(0,0,0,.35);
+  cursor:pointer;font-size:20px;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .2s,box-shadow .2s!important;
+}
+.theme-toggle:hover{ transform:scale(1.1);box-shadow:0 6px 20px rgba(0,0,0,.4);}
+.theme-toggle:active{ transform:scale(.95);}
+
+/* ── IUAS: SKIP LINK ── */
+.skip-link{
+  position:absolute;top:-60px;left:1rem;
+  background:var(--yellow);color:#E6F1FB;
+  padding:8px 16px;border-radius:var(--radius-sm);
+  font-weight:700;font-size:13px;z-index:99999;
+  transition:top .15s!important;
+}
+.skip-link:focus{ top:8px; }
+
+/* ── IUAS: SPINNER ── */
+.spinner-overlay{
+  position:fixed;inset:0;background:rgba(26,29,46,.6);
+  display:none;align-items:center;justify-content:center;z-index:8000;
+}
+.spinner-overlay.show{ display:flex; }
+.spinner{
+  width:40px;height:40px;border-radius:50%;
+  border:3px solid rgba(254,211,106,.2);
+  border-top-color:var(--yellow);
+  animation:spin .7s linear infinite;
+}
+@keyframes spin{ to{ transform:rotate(360deg); } }
+
+/* ── IUAS: HIGH CONTRAST BADGE ── */
+.badge.bp{ background:rgba(255,255,255,.12);color:var(--white); }
+.badge.ba{ background:rgba(59,130,246,.2);color:#93C5FD; }
+.badge.bi{ background:rgba(249,115,22,.2);color:#FCA787; }
+.badge.bd{ background:rgba(34,197,94,.2);color:#86EFAC; }
+
+/* ── IUAS: KTASK KEYBOARD FOCUS ── */
+.ktask:focus{ outline:2px solid var(--yellow);outline-offset:2px; }
+.ktask:focus .ktask-name{ color:var(--yellow); }
+
+/* ── ARIA LIVE REGION (invisible) ── */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
 @media(max-width:960px){
   .kanban{grid-template-columns:repeat(2,1fr);}
   .two-panel{grid-template-columns:1fr;}
@@ -167,23 +503,41 @@ select option{background:var(--card);}
 
 <!-- MODAL AGREGAR MIEMBRO -->
 <div class="overlay" id="modal-member">
-  <div class="fmodal" style="text-align:left;">
-    <h3 style="font-size:16px;font-weight:600;margin-bottom:1rem;">Agregar miembro</h3>
+  <div class="fmodal" style="text-align:left;max-width:420px;">
+    <h3 style="font-size:16px;font-weight:600;margin-bottom:.5rem;">Invitar miembro al hogar</h3>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:1.1rem;line-height:1.6;">La persona verá la invitación cuando inicie sesión. Si aún no tiene cuenta, puede registrarse y la verá pendiente.</p>
     <div class="fmodal-input-wrap">
-      <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px;">Nombre completo *</label>
-      <input type="text" id="modal-member-input" placeholder="Nombre del miembro...">
-      <div class="ferr-inline" id="modal-member-err">El nombre es obligatorio.</div>
+      <label style="font-size:11px;color:var(--yellow);display:block;margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;">Nombre completo *</label>
+      <input type="text" id="inv-nombre" placeholder="Nombre del invitado" onkeydown="if(event.key==='Enter')document.getElementById('inv-email').focus()">
+      <div class="ferr-inline" id="inv-nombre-e"></div>
     </div>
     <div class="fmodal-input-wrap">
-      <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:4px;">Correo electrónico *</label>
-      <input type="text" id="modal-member-email" placeholder="correo@ejemplo.com">
-      <div class="ferr-inline" id="modal-member-email-err">El correo es obligatorio.</div>
-      <div class="ferr-inline" id="modal-member-email-fmt">El formato del correo no es válido.</div>
-      <div class="ferr-inline" id="modal-member-email-dup">Este correo ya está en uso por otro miembro.</div>
+      <label style="font-size:11px;color:var(--yellow);display:block;margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;">Correo electrónico *</label>
+      <input type="text" id="inv-email" placeholder="correo@ejemplo.com" onkeydown="if(event.key==='Enter')enviarInvitacion()">
+      <div class="ferr-inline" id="inv-email-e"></div>
     </div>
+    <div style="background:rgba(254,211,106,.08);border:1px solid rgba(254,211,106,.2);border-radius:8px;padding:9px 12px;margin-bottom:1rem;">
+      <p style="font-size:12px;color:var(--yellow);margin:0;">💡 No necesita tener cuenta aún. Cuando se registre con ese correo verá la invitación pendiente.</p>
+    </div>
+    <input type="text" id="modal-member-input" style="display:none;">
+    <input type="text" id="modal-member-email" style="display:none;">
+    <input type="text" id="am-email" style="display:none;">
     <div class="fmodal-btns">
       <button class="fmodal-btn" onclick="closeModal('modal-member')">Cancelar</button>
-      <button class="fmodal-btn" style="background:var(--yellow);border-color:var(--yellow);color:#1A1D2E;font-weight:600;" onclick="confirmAddMember()">Agregar</button>
+      <button class="fmodal-btn" style="background:var(--yellow);border-color:var(--yellow);color:#E6F1FB;font-weight:600;" onclick="enviarInvitacion()">Enviar invitación</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL HISTORIAL -->
+<div class="overlay" id="modal-hist">
+  <div class="fmodal" style="text-align:left;max-width:480px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;">
+      <h3 style="font-size:16px;font-weight:600;margin:0;">⏱ Historial de actividad</h3>
+      <button class="fmodal-btn" style="width:auto;padding:6px 14px;" onclick="closeModal('modal-hist')">Cerrar</button>
+    </div>
+    <div class="hist-list" id="hist-content">
+      <p style="color:var(--muted);font-size:13px;">Sin actividad registrada.</p>
     </div>
   </div>
 </div>
@@ -225,7 +579,7 @@ select option{background:var(--card);}
     <input type="hidden" id="edit-task-id">
     <div class="fmodal-btns">
       <button class="fmodal-btn" onclick="closeModal('modal-edit-task')">Cancelar</button>
-      <button class="fmodal-btn" style="background:var(--yellow);border-color:var(--yellow);color:#1A1D2E;font-weight:600;" onclick="confirmEditTask()">Guardar cambios</button>
+      <button class="fmodal-btn" style="background:var(--yellow);border-color:var(--yellow);color:#E6F1FB;font-weight:600;" onclick="confirmEditTask()">Guardar cambios</button>
     </div>
   </div>
 </div>
@@ -265,30 +619,85 @@ select option{background:var(--card);}
     </div>
     <div class="fmodal-btns">
       <button class="fmodal-btn" onclick="limpiarFiltros()">Limpiar filtros</button>
-      <button class="fmodal-btn" style="background:var(--yellow);border-color:var(--yellow);color:#1A1D2E;font-weight:600;" onclick="aplicarFiltros()">Aplicar</button>
+      <button class="fmodal-btn" style="background:var(--yellow);border-color:var(--yellow);color:#E6F1FB;font-weight:600;" onclick="aplicarFiltros()">Aplicar</button>
     </div>
   </div>
 </div>
 
 <!-- APP -->
-<div class="app">
-  <nav class="topnav" id="topnav" style="display:none;">
-    <span class="logo">HOMETASK</span>
-    <div class="nav-links">
-      <span class="nav-link" id="nl-inicio" onclick="go('inicio')">Inicio</span>
-      <span class="nav-link" id="nl-tareas" onclick="go('tareas')">Tareas</span>
-      <span class="nav-link" id="nl-miembros" onclick="go('miembros')">Miembros</span>
-      <div class="user-av">DL</div>
+<!-- IUAS: Skip link para navegación por teclado -->
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+<!-- IUAS: Región de anuncios para lectores de pantalla -->
+<div id="sr-live" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+
+<!-- IUAS: Spinner de carga -->
+<div class="spinner-overlay" id="spinner" role="status" aria-label="Cargando...">
+  <div class="spinner"></div>
+</div>
+
+<!-- Toast container -->
+<div class="toast-container" id="toast-container" aria-live="assertive" aria-atomic="false"></div>
+
+<!-- Theme ripple -->
+<div class="theme-ripple" id="theme-ripple"></div>
+
+<!-- Botón de tema oscuro/claro -->
+<button class="theme-toggle" id="theme-toggle" onclick="toggleTheme(event)"
+  aria-label="Cambiar a modo claro" data-tooltip="Cambiar tema">🌙</button>
+
+<div class="app" role="application">
+  <nav class="topnav" id="topnav" style="display:none;" aria-label="Navegación principal">
+    <span class="logo" role="img" aria-label="HomeTask - Inicio">HOMETASK</span>
+    <div class="nav-links" role="menubar">
+      <span class="nav-link" id="nl-inicio" role="menuitem" tabindex="0"
+        onclick="go('inicio')" onkeydown="if(event.key==='Enter')go('inicio')">Inicio</span>
+      <span class="nav-link" id="nl-tareas" role="menuitem" tabindex="0"
+        onclick="go('tareas')" onkeydown="if(event.key==='Enter')go('tareas')">Tareas</span>
+      <span class="nav-link" id="nl-miembros-inv" role="menuitem" tabindex="0"
+        onclick="go('miembros')" onkeydown="if(event.key==='Enter')go('miembros')"
+        style="display:flex;align-items:center;gap:2px;">
+        Miembros<span class="inv-badge" id="inv-badge" aria-label="invitaciones pendientes">0</span>
+      </span>
+      <!-- Font controls -->
+      <div class="font-controls" aria-label="Tamaño de texto">
+        <button class="font-btn" onclick="changeFontSize(-1)" data-tooltip="Reducir texto" aria-label="Reducir tamaño de texto">A−</button>
+        <button class="font-btn" onclick="changeFontSize(0)" data-tooltip="Tamaño normal" aria-label="Tamaño normal">A</button>
+        <button class="font-btn" onclick="changeFontSize(1)" data-tooltip="Aumentar texto" aria-label="Aumentar tamaño de texto">A+</button>
+      </div>
+      <!-- High contrast toggle -->
+      <button class="compact-btn" id="hc-btn" onclick="toggleHighContrast()" data-tooltip="Alto contraste" aria-label="Alternar alto contraste">⬛</button>
+      <!-- Session dot + avatar -->
+      <div class="user-av-wrap">
+        <div class="user-av" id="user-avatar" onclick="menuUsuario()"
+          role="button" tabindex="0" aria-label="Menú de usuario"
+          onkeydown="if(event.key==='Enter')menuUsuario()">?</div>
+        <div class="session-dot" title="Sesión activa"></div>
+      </div>
     </div>
   </nav>
   <div class="body-wrap">
-    <aside class="sidebar" id="sidebar" style="display:none;">
-      <div class="sb-item" id="sb-inicio"    onclick="go('inicio')">Inicio</div>
-      <div class="sb-item" id="sb-tareas"    onclick="go('tareas')">Mis tareas</div>
-      <div class="sb-item" id="sb-asignar"   onclick="go('asignar')">Asignar</div>
-      <div class="sb-item" id="sb-miembros"  onclick="go('miembros')">Miembros</div>
+    <aside class="sidebar" id="sidebar" style="display:none;" aria-label="Menú lateral">
+      <nav role="navigation" aria-label="Secciones de la aplicación">
+        <div class="sb-item" id="sb-inicio" role="link" tabindex="0"
+          onclick="go('inicio')" onkeydown="if(event.key==='Enter')go('inicio')">
+          Inicio
+        </div>
+        <div class="sb-item" id="sb-tareas" role="link" tabindex="0"
+          onclick="go('tareas')" onkeydown="if(event.key==='Enter')go('tareas')">
+          Mis tareas <span class="sb-count" id="sb-count-tareas" style="display:none;"></span>
+        </div>
+        <div class="sb-item" id="sb-asignar" role="link" tabindex="0"
+          onclick="go('asignar')" onkeydown="if(event.key==='Enter')go('asignar')">
+          Asignar <span class="sb-count" id="sb-count-asignar" style="display:none;"></span>
+        </div>
+        <div class="sb-item" id="sb-miembros" role="link" tabindex="0"
+          onclick="go('miembros')" onkeydown="if(event.key==='Enter')go('miembros')">
+          Miembros <span class="sb-count" id="sb-count-miembros" style="display:none;"></span>
+        </div>
+      </nav>
     </aside>
-    <main class="main" id="main"></main>
+    <main class="main" id="main" tabindex="-1" aria-label="Contenido principal"></main>
   </div>
 </div>
 
@@ -340,7 +749,7 @@ document.getElementById('fmodal-overlay').addEventListener('click', function(e){
 const AV_COLORS = [
   {bg:'#7B6CDD',fg:'#fff'},{bg:'#45C4A0',fg:'#fff'},{bg:'#BEA27A',fg:'#fff'},
   {bg:'#E07878',fg:'#fff'},{bg:'#A07EE0',fg:'#fff'},{bg:'#E07AB0',fg:'#fff'},
-  {bg:'#6AAEE0',fg:'#fff'},{bg:'#5CC46A',fg:'#fff'},{bg:'#E0B06A',fg:'#1A1D2E'},
+  {bg:'#6AAEE0',fg:'#fff'},{bg:'#5CC46A',fg:'#fff'},{bg:'#E0B06A',fg:'#fff'},
 ];
 const DIF_SCORE = { Alta:3, Media:2, Baja:1 };
 const ICONS = {
@@ -361,40 +770,482 @@ function getWeek(){
   return 100*d.getFullYear()+Math.round(((d-w1)/864e5-3+(w1.getDay()+6)%7)/7);
 }
 
-let S = { page:'hogar', hogar:null, miembros:[], tareas:[], colorIdx:0, lastWeek:null, selMiembro:null, searchQ:'', filterEstado:'', filterMiembro:'', filterPri:'', filterDif:'' };
+let S = { page:'login', hogar:null, miembros:[], tareas:[], colorIdx:0, lastWeek:null, selMiembro:null, searchQ:'', filterEstado:'', filterMiembro:'', filterPri:'', filterDif:'', usuario:null, token:null };
 let _imgData = null;
 
-function save(){ try{ localStorage.setItem('ht2',JSON.stringify(S)); }catch(e){} }
+function save(){
+  try{ localStorage.setItem('ht2',JSON.stringify({page:S.page,token:S.token,usuario:S.usuario})); }catch(e){}
+  if(S.usuario&&S.usuario.email){
+    try{
+      localStorage.setItem('htd_'+S.usuario.email,JSON.stringify({
+        hogar:S.hogar,miembros:S.miembros,tareas:S.tareas,
+        colorIdx:S.colorIdx,lastWeek:S.lastWeek,
+        searchQ:S.searchQ,filterEstado:S.filterEstado,filterMiembro:S.filterMiembro,
+        filterPri:S.filterPri,filterDif:S.filterDif,selMiembro:S.selMiembro
+      }));
+    }catch(e){}
+  }
+}
 
 function load(){
   try{
-    const d = localStorage.getItem('ht2');
-    if(d) Object.assign(S, JSON.parse(d));
-    if(S.hogar && S.page==='hogar') S.page='inicio';
+    const base=localStorage.getItem('ht2');
+    if(base){const b=JSON.parse(base);S.token=b.token||null;S.usuario=b.usuario||null;S.page=b.page||'login';}
+    if(!S.token){S.page='login';return;}
+    if(S.usuario&&S.usuario.email){
+      const ud=localStorage.getItem('htd_'+S.usuario.email);
+      if(ud){const d=JSON.parse(ud);Object.assign(S,d);}
+    }
+    if(S.hogar&&(S.page==='login'||S.page==='registro'||S.page==='sin-hogar'))S.page='inicio';
+    if(!S.hogar&&(S.page==='login'||S.page==='registro'||S.page==='inicio'))S.page='sin-hogar';
   }catch(e){}
+}
+function loadUserData(email){
+  try{
+    const ud=localStorage.getItem('htd_'+email);
+    if(ud){const d=JSON.parse(ud);S.hogar=d.hogar||null;S.miembros=d.miembros||[];S.tareas=d.tareas||[];S.colorIdx=d.colorIdx||0;S.lastWeek=d.lastWeek||null;}
+    else{S.hogar=null;S.miembros=[];S.tareas=[];S.colorIdx=0;S.lastWeek=null;}
+  }catch(e){S.hogar=null;S.miembros=[];S.tareas=[];S.colorIdx=0;S.lastWeek=null;}
+}
+
+
+// ═══════════════════════════════════════
+// HISTORIAL
+// ═══════════════════════════════════════
+function abrirHistorial(){
+  var admin = esAdmin();
+  var iconos = {creada:'🆕', estado:'🔄', asignada:'👤', finalizada:'✅'};
+  var colores = {creada:'rgba(254,211,106,.15)', estado:'rgba(96,165,250,.15)', asignada:'rgba(52,211,153,.15)', finalizada:'rgba(52,211,153,.25)'};
+  var miNombre = S.usuario ? S.usuario.nombre : '';
+
+  var eventos = [];
+  S.tareas.forEach(function(t){
+    if(!t.historial || !t.historial.length) return;
+    // Si es miembro: solo ve eventos de sus propias tareas
+    var mostrar = admin || t.asignadoA === miNombre;
+    if(!mostrar) return;
+    t.historial.forEach(function(h){
+      // Miembro solo ve eventos donde él es el actor o la tarea le pertenece
+      var verEvento = admin || h.por === miNombre || t.asignadoA === miNombre;
+      if(verEvento){
+        eventos.push({tarea:t.nombre, tipo:h.tipo, texto:h.texto, por:h.por, fecha:h.fecha});
+      }
+    });
+  });
+
+  var titulo = admin
+    ? '⏱ Historial de toda la actividad'
+    : '⏱ Mi historial de actividad';
+
+  var html = '';
+  if(!eventos.length){
+    html = '<p style="color:var(--muted);font-size:13px;text-align:center;padding:1rem 0;">' +
+      (admin ? 'Sin actividad registrada aún. Crea o modifica tareas para ver el historial.'
+             : 'Aún no tienes actividad registrada. Tu historial aparecerá cuando tengas tareas asignadas.') +
+    '</p>';
+  } else {
+    html = eventos.map(function(e){
+      var ic = iconos[e.tipo]||'📌';
+      var bg = colores[e.tipo]||'rgba(255,255,255,.05)';
+      return '<div class="hist-item" role="listitem">'+
+        '<div class="hist-icon" style="background:'+bg+';" aria-hidden="true">'+ic+'</div>'+
+        '<div class="hist-body">'+
+          '<div class="hist-title">'+e.texto+'</div>'+
+          '<div class="hist-task">'+e.tarea+'</div>'+
+          (e.por?'<div style="font-size:11px;color:var(--muted);margin-top:1px;">por '+e.por+'</div>':'')+
+        '</div>'+
+        '<div class="hist-time">'+e.fecha+'</div>'+
+      '</div>';
+    }).join('');
+  }
+
+  // Actualizar título del modal dinámicamente
+  var modalTitle = document.querySelector('#modal-hist h3');
+  if(modalTitle) modalTitle.textContent = titulo;
+
+  document.getElementById('hist-content').innerHTML = html;
+  anunciar(titulo + ': ' + eventos.length + ' eventos encontrados');
+  openModal('modal-hist');
+}
+
+
+
+// ═══════════════════════════════════════
+// DRAG & DROP KANBAN (#9)
+// ═══════════════════════════════════════
+var _dragId = null;
+function onDragStart(e, id){
+  _dragId = id;
+  e.dataTransfer.effectAllowed = 'move';
+  setTimeout(function(){ e.target.classList.add('dragging'); }, 0);
+}
+function onDragEnd(e){
+  e.target.classList.remove('dragging');
+  document.querySelectorAll('.kcol').forEach(function(c){ c.classList.remove('drag-over'); });
+}
+function onDragOver(e){
+  e.preventDefault();
+  e.dataTransfer.dropEffect = 'move';
+  e.currentTarget.classList.add('drag-over');
+}
+function onDragLeave(e){
+  e.currentTarget.classList.remove('drag-over');
+}
+function onDrop(e, newEstado){
+  e.preventDefault();
+  e.currentTarget.classList.remove('drag-over');
+  if(!_dragId) return;
+  var t = S.tareas.find(function(t){ return t.id===_dragId; });
+  if(!t || t.estado===newEstado) return;
+  var ahoraD = new Date().toLocaleString('es-ES');
+  if(!t.historial) t.historial=[];
+  t.historial.unshift({tipo:'estado', texto:'Estado cambiado a "'+newEstado+'" (arrastrado)', por:S.usuario?S.usuario.nombre:'', fecha:ahoraD});
+  t.estado = newEstado;
+  if(newEstado==='Finalizada') t.finalizedWeek = getWeek();
+  save(); render();
+  showToast('success', 'Estado actualizado', '"'+t.nombre+'" movida a '+newEstado);
+  anunciar('Tarea '+t.nombre+' movida a '+newEstado);
+  _dragId = null;
 }
 
 // ═══════════════════════════════════════
 // ROUTING
 // ═══════════════════════════════════════
-function go(page){ S.page=page; save(); render(); }
+function go(page){
+  var soloAdmin=['asignar'];
+  if(soloAdmin.includes(page)&&!esAdmin()){
+    showModal({type:'warning',title:'Sin acceso',sub:'Esta sección es solo para el administrador del hogar.',buttons:[{label:'Entendido'}]});
+    return;
+  }
+  S.page=page; save(); render();
+  var nombres={inicio:'Inicio',tareas:'Mis tareas',asignar:'Asignar tareas',miembros:'Miembros',hogar:'Crear hogar','sin-hogar':'Inicio',login:'Iniciar sesión',registro:'Registro'};
+  anunciar('Navegaste a: '+(nombres[page]||page));
+  var main=document.getElementById('main');
+  if(main)main.focus();
+}
 
 function render(){
-  const hasH = !!S.hogar;
-  document.getElementById('topnav').style.display  = hasH ? 'flex'  : 'none';
-  document.getElementById('sidebar').style.display = hasH ? 'block' : 'none';
-  if(hasH){
-    ['inicio','tareas','miembros'].forEach(function(id){
-      const el=document.getElementById('nl-'+id);
-      if(el) el.classList.toggle('active', S.page===id);
+  const authP=['login','registro'];
+  const isAuth=authP.includes(S.page);
+  const hasH=!!S.hogar;
+  const showNav=!isAuth&&!!S.token;
+  document.getElementById('topnav').style.display=showNav?'flex':'none';
+  document.getElementById('sidebar').style.display=(showNav&&hasH)?'block':'none';
+  if(showNav){
+    var admin=esAdmin();
+    // Navbar top links
+    var nlT=document.getElementById('nl-tareas');
+    if(nlT)nlT.style.display='';  // todos ven tareas
+    ['inicio','tareas'].forEach(function(id){
+      var el=document.getElementById('nl-'+id);if(el)el.classList.toggle('active',S.page===id);
     });
+    var mi=document.getElementById('nl-miembros-inv');if(mi)mi.classList.toggle('active',S.page==='miembros');
+    // Sidebar items
+    var sbT=document.getElementById('sb-tareas');
+    var sbA=document.getElementById('sb-asignar');
+    if(sbT)sbT.style.display='flex';   // todos ven tareas
+    if(sbA)sbA.style.display=admin?'flex':'none';  // solo admin ve asignar
     ['inicio','tareas','asignar','miembros'].forEach(function(id){
-      const el=document.getElementById('sb-'+id);
-      if(el) el.classList.toggle('active', S.page===id);
+      var el=document.getElementById('sb-'+id);if(el)el.classList.toggle('active',S.page===id);
     });
+    var uav=document.getElementById('user-avatar');
+    if(uav&&S.usuario)uav.textContent=(S.usuario.nombre||'U').split(' ').map(function(w){return w[0];}).join('').substring(0,2).toUpperCase();
+    actualizarBadgeInv();
+    // Redirigir miembro si intenta acceder a páginas de solo admin
+    if(!admin&&S.page==='asignar'){S.page='inicio';save();}
   }
-  const pages = { hogar:pgHogar, inicio:pgInicio, tareas:pgTareas, asignar:pgAsignar, miembros:pgMiembros };
-  document.getElementById('main').innerHTML = (pages[S.page]||pgInicio)();
+  var pages={login:pgLogin,registro:pgRegistro,'sin-hogar':pgSinHogar,hogar:pgHogar,inicio:pgInicio,tareas:pgTareas,asignar:pgAsignar,miembros:pgMiembros};
+  document.getElementById('main').innerHTML=(pages[S.page]||pgLogin)();
+  updateSidebarCounts();
+  loadCompact();
+}
+function actualizarBadgeInv(){
+  var cnt=getInvPendientes().length;
+  var b=document.getElementById('inv-badge');
+  if(!b)return;
+  if(cnt>0){b.textContent=cnt;b.classList.add('show');}else{b.classList.remove('show');}
+}
+function esAdmin(){
+  if(!S.usuario||!S.miembros.length)return false;
+  var email=(S.usuario.email||'').toLowerCase();
+  // 1. Buscar miembro con mismo email y rol Administrador
+  var yo=S.miembros.find(function(m){
+    return m.email&&m.email.toLowerCase()===email;
+  });
+  if(yo) return yo.rol==='Administrador';
+  // 2. Fallback: si existe un admin sin email en la lista y el usuario tiene los datos
+  //    del hogar (es quien creó la clave htd_email), asumir que es el admin
+  var adminSinEmail=S.miembros.find(function(m){
+    return m.rol==='Administrador'&&(!m.email||m.email==='');
+  });
+  return !!adminSinEmail;
+}
+
+function getInvPendientes(){
+  if(!S.usuario||!S.usuario.email)return[];
+  try{
+    var all=JSON.parse(localStorage.getItem('ht_inv')||'[]');
+    return all.filter(function(i){return i.emailTo.toLowerCase()===S.usuario.email.toLowerCase()&&i.estado==='pendiente';});
+  }catch(e){return[];}
+}
+
+
+// ═══════════════════════════════════════
+// LOGIN
+// ═══════════════════════════════════════
+function pgLogin(){
+  return '<div class="auth-wrap"><div class="auth-left"><div class="auth-left-logo">HOMETASK</div><h2>Bienvenido de nuevo</h2><p>Ingresa a tu hogar y mantén las tareas organizadas entre todos.</p><div class="auth-feature"><div class="auth-feature-dot">🏠</div><div><div class="auth-feature-title">Gestión del hogar</div><div class="auth-feature-text">Organiza y reparte tareas equitativamente.</div></div></div><div class="auth-feature"><div class="auth-feature-dot">📋</div><div><div class="auth-feature-title">Tablero Kanban</div><div class="auth-feature-text">Visualiza el estado de cada tarea.</div></div></div><div class="auth-feature"><div class="auth-feature-dot">⚡</div><div><div class="auth-feature-title">Asignación automática</div><div class="auth-feature-text">Reparte tareas según dificultad y carga.</div></div></div></div><div class="auth-right"><div class="auth-card"><div class="auth-title">Iniciar sesión</div><div class="auth-sub">Ingresa tus datos para continuar</div><div class="auth-field"><label>Correo electrónico</label><input class="auth-inp" type="text" id="l-email" placeholder="correo@ejemplo.com" onkeydown="if(event.key===\'Enter\')doLoginSubmit()"><div class="auth-err" id="l-email-e"></div></div><div class="auth-field"><label>Contraseña</label><div class="pass-wrap"><input class="auth-inp" type="password" id="l-pass" placeholder="Tu contraseña" onkeydown="if(event.key===\'Enter\')doLoginSubmit()"><button class="pass-toggle" onclick="tglPass(\'l-pass\',this)">👁</button></div><div class="auth-err" id="l-pass-e"></div></div><button class="auth-btn" onclick="doLoginSubmit()" style="margin-top:.75rem;">Ingresar</button><div class="auth-link">¿No tienes cuenta? <a onclick="go(\'registro\')">Regístrate aquí</a></div></div></div></div>';
+}
+function doLoginSubmit(){
+  var email=(document.getElementById('l-email').value||'').trim();
+  var pass=(document.getElementById('l-pass').value||'');
+  var re=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  aClrErr(['l-email-e','l-pass-e']);
+  var ok=true;
+  if(!email){aErr('l-email-e','El correo es obligatorio.');ok=false;}
+  else if(!re.test(email)){aErr('l-email-e','Formato inválido.');ok=false;}
+  if(!pass){aErr('l-pass-e','La contraseña es obligatoria.');ok=false;}
+  if(!ok)return;
+  fetch('http://localhost:8080/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,password:pass})})
+  .then(function(r){if(!r.ok)throw 0;return r.json();})
+  .then(function(d){finLogin(d.token||'tok',d.usuario||{nombre:email.split('@')[0],email:email});})
+  .catch(function(){
+    var users=JSON.parse(localStorage.getItem('ht_users')||'[]');
+    var u=users.find(function(u){return u.email.toLowerCase()===email.toLowerCase()&&u.password===pass;});
+    if(u){finLogin('tok-'+Date.now(),{nombre:u.nombre,email:u.email,id:u.id});}
+    else{showModal({type:'danger',warn:true,title:'Credenciales incorrectas',sub:'El correo o la contraseña no son correctos.',buttons:[{label:'Intentar de nuevo'}]});}
+  });
+}
+function finLogin(token,usuario){
+  S.token=token; S.usuario=usuario;
+  loadUserData(usuario.email);
+  // AUTO-REPAIR: si hay un admin sin email (datos creados antes de la corrección),
+  // asignarle el email del usuario actual ya que es quien tiene los datos de ese hogar
+  if(S.hogar && S.miembros.length){
+    var adminSinEmail = S.miembros.find(function(m){
+      return m.rol==='Administrador' && (!m.email || m.email==='');
+    });
+    if(adminSinEmail){
+      adminSinEmail.email = usuario.email;
+      adminSinEmail.nombre = adminSinEmail.nombre==='Tú (Admin)' ? usuario.nombre : adminSinEmail.nombre;
+      // Guardar la reparación
+      try{
+        var ud = JSON.parse(localStorage.getItem('htd_'+usuario.email)||'{}');
+        ud.miembros = S.miembros;
+        localStorage.setItem('htd_'+usuario.email, JSON.stringify(ud));
+      }catch(e){}
+    }
+  }
+  S.page=S.hogar?'inicio':'sin-hogar';
+  save(); render();
+}
+
+// ═══════════════════════════════════════
+// REGISTRO
+// ═══════════════════════════════════════
+function pgRegistro(){
+  return '<div class="auth-wrap"><div class="auth-left"><div class="auth-left-logo">HOMETASK</div><h2>Crea tu<br>cuenta</h2><p>Únete y empieza a organizar las tareas del hogar con tu familia.</p><div class="auth-feature"><div class="auth-feature-dot">✅</div><div><div class="auth-feature-title">Gratis para siempre</div><div class="auth-feature-text">Sin costos ocultos.</div></div></div><div class="auth-feature"><div class="auth-feature-dot">👥</div><div><div class="auth-feature-title">Hasta 6 miembros</div><div class="auth-feature-text">Invita a toda tu familia.</div></div></div><div class="auth-feature"><div class="auth-feature-dot">🔒</div><div><div class="auth-feature-title">Seguro y privado</div><div class="auth-feature-text">Tus datos están protegidos.</div></div></div></div><div class="auth-right"><div class="auth-card"><div class="auth-title">Crear cuenta</div><div class="auth-sub">Completa tus datos para registrarte</div><div class="auth-field"><label>Nombre completo</label><input class="auth-inp" type="text" id="r-nombre" placeholder="Tu nombre" onkeydown="if(event.key===\'Enter\')doRegSubmit()"><div class="auth-err" id="r-nombre-e"></div></div><div class="auth-field"><label>Correo electrónico</label><input class="auth-inp" type="text" id="r-email" placeholder="correo@ejemplo.com" onkeydown="if(event.key===\'Enter\')doRegSubmit()"><div class="auth-err" id="r-email-e"></div></div><div class="auth-field"><label>Contraseña</label><div class="pass-wrap"><input class="auth-inp" type="password" id="r-pass" placeholder="Mínimo 6 caracteres" oninput="chkPw(this)" onkeydown="if(event.key===\'Enter\')doRegSubmit()"><button class="pass-toggle" onclick="tglPass(\'r-pass\',this)">👁</button></div><div class="pw-bar" id="pw-bar"></div><div class="pw-hint" id="pw-hint"></div><div class="auth-err" id="r-pass-e"></div></div><div class="auth-field"><label>Confirmar contraseña</label><div class="pass-wrap"><input class="auth-inp" type="password" id="r-pass2" placeholder="Repite tu contraseña" onkeydown="if(event.key===\'Enter\')doRegSubmit()"><button class="pass-toggle" onclick="tglPass(\'r-pass2\',this)">👁</button></div><div class="auth-err" id="r-pass2-e"></div></div><button class="auth-btn" onclick="doRegSubmit()">Crear cuenta</button><div class="auth-link">¿Ya tienes cuenta? <a onclick="go(\'login\')">Inicia sesión</a></div></div></div></div>';
+}
+function doRegSubmit(){
+  var nombre=(document.getElementById('r-nombre').value||'').trim();
+  var email=(document.getElementById('r-email').value||'').trim();
+  var pass=(document.getElementById('r-pass').value||'');
+  var pass2=(document.getElementById('r-pass2').value||'');
+  var re=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  aClrErr(['r-nombre-e','r-email-e','r-pass-e','r-pass2-e']);
+  var ok=true;
+  if(!nombre||nombre.length<3){aErr('r-nombre-e','Nombre obligatorio (mín. 3 caracteres).');ok=false;}
+  if(!email){aErr('r-email-e','El correo es obligatorio.');ok=false;}
+  else if(!re.test(email)||email.length>254){aErr('r-email-e','Formato de correo inválido.');ok=false;}
+  if(!pass||pass.length<6){aErr('r-pass-e','Contraseña obligatoria (mín. 6 caracteres).');ok=false;}
+  if(pass!==pass2){aErr('r-pass2-e','Las contraseñas no coinciden.');ok=false;}
+  if(!ok)return;
+  fetch('http://localhost:8080/auth/registro',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nombre:nombre,email:email,password:pass})})
+  .then(function(r){if(!r.ok)throw 0;return r.json();})
+  .then(function(){saveUserLocal(nombre,email,pass);regOk();})
+  .catch(function(){
+    var users=JSON.parse(localStorage.getItem('ht_users')||'[]');
+    if(users.find(function(u){return u.email.toLowerCase()===email.toLowerCase();})){
+      aErr('r-email-e','Este correo ya está registrado.');return;
+    }
+    saveUserLocal(nombre,email,pass);regOk();
+  });
+}
+function saveUserLocal(n,e,p){
+  try{var u=JSON.parse(localStorage.getItem('ht_users')||'[]');u.push({nombre:n,email:e,password:p,id:'u'+Date.now()});localStorage.setItem('ht_users',JSON.stringify(u));}catch(x){}
+}
+function regOk(){showModal({type:'success',title:'¡Cuenta creada!',sub:'Tu cuenta fue registrada exitosamente. Ahora inicia sesión.',buttons:[{label:'Ir al login',cb:function(){go('login');}}]});}
+
+// ── AUTH HELPERS ──
+function aErr(id,msg){var e=document.getElementById(id);if(e){e.textContent=msg;e.classList.add('show');}}
+function aClrErr(ids){ids.forEach(function(id){var e=document.getElementById(id);if(e){e.classList.remove('show');e.textContent='';}});}
+function tglPass(inp,btn){var el=document.getElementById(inp);if(!el)return;el.type=el.type==='password'?'text':'password';btn.textContent=el.type==='password'?'👁':'🙈';}
+function chkPw(inp){
+  var v=inp.value,bar=document.getElementById('pw-bar'),hint=document.getElementById('pw-hint');
+  if(!bar||!hint)return;
+  if(!v){bar.style.width='0%';hint.textContent='';return;}
+  var s=0;if(v.length>=6)s++;if(v.length>=10)s++;if(/[A-Z]/.test(v))s++;if(/[0-9]/.test(v))s++;if(/[^A-Za-z0-9]/.test(v))s++;
+  var lv=[{w:'20%',c:'#EF4444',t:'Muy débil'},{w:'40%',c:'#F97316',t:'Débil'},{w:'60%',c:'#EAB308',t:'Regular'},{w:'80%',c:'#84CC16',t:'Buena'},{w:'100%',c:'#22C55E',t:'Muy fuerte'}][Math.min(s,4)];
+  bar.style.width=lv.w;bar.style.background=lv.c;hint.textContent=lv.t;hint.style.color=lv.c;
+}
+
+// ── MENU USUARIO + LOGOUT ──
+function menuUsuario(){
+  if(!S.usuario)return;
+  var inv=getInvPendientes().length;
+  showModal({type:'warning',title:'Mi cuenta',
+    sub:(S.usuario.nombre||'')+' · '+(S.usuario.email||'')+(inv?' \n\n⚠️ Tienes '+inv+' invitación(es) pendiente(s)':''),
+    buttons:[{label:'Cancelar'},{label:'Cerrar sesión',red:true,cb:cerrarSesion}]});
+}
+function cerrarSesion(){
+  save(); // guarda datos actuales antes de limpiar
+  S.token=null;S.usuario=null;S.hogar=null;S.miembros=[];S.tareas=[];
+  S.colorIdx=0;S.lastWeek=null;S.page='login';
+  try{localStorage.setItem('ht2',JSON.stringify({page:'login',token:null,usuario:null}));}catch(e){}
+  render();
+}
+
+// ═══════════════════════════════════════
+// SIN HOGAR
+// ═══════════════════════════════════════
+function pgSinHogar(){
+  var inv=getInvPendientes();
+  var invHtml=inv.length?
+    '<div style="margin-top:2rem;width:100%;max-width:480px;text-align:left;"><div class="section-title">Invitaciones pendientes</div>'+
+    inv.map(function(i){
+      return '<div class="mcard"><div class="titem-icon">🏠</div><div class="mcard-info"><div class="mcard-name">'+i.hogarNombre+'</div><div class="mcard-role">Invitado por '+i.de+'</div></div>'+
+        '<div style="display:flex;gap:8px;"><button class="btn-sm-yellow" onclick="aceptarInv(\''+i.id+'\')">Aceptar</button>'+
+        '<button class="btn-sm-yellow" style="background:transparent;border:1px solid rgba(255,255,255,.2);color:var(--muted);" onclick="rechazarInv(\''+i.id+'\')">Rechazar</button></div></div>';
+    }).join('')+'</div>':'<p style="font-size:13px;color:var(--muted);margin-top:1rem;">O espera a que un administrador te invite a su hogar.</p>';
+  return '<div class="sh-wrap"><div class="sh-icon">🏠</div><div class="sh-title">Hola, '+(S.usuario?S.usuario.nombre.split(' ')[0]:'')+'</div>'+
+    '<div class="sh-sub">Aún no perteneces a ningún hogar. Crea el tuyo o acepta una invitación.</div>'+
+    '<button class="sh-btn" onclick="go(\'hogar\')">+ Crear nuevo hogar</button>'+invHtml+'</div>';
+}
+
+// ═══════════════════════════════════════
+// SISTEMA DE INVITACIONES (localStorage compartido)
+// ═══════════════════════════════════════
+function getInvPendientes(){
+  if(!S.usuario||!S.usuario.email)return[];
+  try{
+    var all=JSON.parse(localStorage.getItem('ht_inv')||'[]');
+    return all.filter(function(i){
+      return i.emailTo.toLowerCase()===S.usuario.email.toLowerCase()&&i.estado==='pendiente';
+    });
+  }catch(e){return[];}
+}
+function aceptarInv(invId){
+  try{
+    var all=JSON.parse(localStorage.getItem('ht_inv')||'[]');
+    var inv=all.find(function(i){return i.id===invId;});
+    if(!inv)return;
+    inv.estado='aceptada';
+    localStorage.setItem('ht_inv',JSON.stringify(all));
+    // Cargar datos del hogar del administrador
+    var adminData=null;
+    try{adminData=JSON.parse(localStorage.getItem('htd_'+inv.emailFrom)||'null');}catch(e){}
+    if(adminData&&adminData.hogar){
+      S.hogar=adminData.hogar;
+      S.miembros=adminData.miembros||[];
+      S.tareas=adminData.tareas||[];
+      S.colorIdx=adminData.colorIdx||0;
+      S.lastWeek=adminData.lastWeek||null;
+    }else{
+      S.hogar={id:inv.hogarId,nombre:inv.hogarNombre};
+      S.miembros=[];S.tareas=[];
+    }
+    // Agregar al nuevo miembro
+    var c=AV_COLORS[S.colorIdx%AV_COLORS.length];S.colorIdx++;
+    var ini=(S.usuario.nombre||'?').split(' ').map(function(w){return w[0];}).join('').substring(0,2).toUpperCase();
+    if(!S.miembros.find(function(m){return m.email===S.usuario.email;})){
+      if(!S.miembros.find(function(m){return m.email&&S.usuario.email&&m.email.toLowerCase()===S.usuario.email.toLowerCase();})){
+      S.miembros.push({id:Date.now(),nombre:S.usuario.nombre,email:S.usuario.email,ini:ini,c:c,rol:'Miembro'});
+    }
+    }
+    // Actualizar también los datos del admin con el nuevo miembro
+    if(adminData){
+      adminData.miembros=S.miembros;
+      localStorage.setItem('htd_'+inv.emailFrom,JSON.stringify(adminData));
+    }
+    S.page='inicio';save();render();
+    showModal({type:'success',title:'¡Te uniste al hogar!',sub:'Ahora eres miembro de "'+inv.hogarNombre+'".',buttons:[{label:'Continuar',cb:function(){render();}}]});
+  }catch(e){showModal({type:'danger',warn:true,title:'Error',sub:'No se pudo procesar la invitación.',buttons:[{label:'Entendido'}]});}
+}
+function rechazarInv(invId){
+  try{
+    var all=JSON.parse(localStorage.getItem('ht_inv')||'[]');
+    var inv=all.find(function(i){return i.id===invId;});
+    if(inv)inv.estado='rechazada';
+    localStorage.setItem('ht_inv',JSON.stringify(all));
+  }catch(e){}
+  render();
+}
+
+// ═══════════════════════════════════════
+// AGREGAR MIEMBROS — DOS OPCIONES
+// ═══════════════════════════════════════
+function openAddMember(){
+  ['inv-email-e','inv-nombre-e'].forEach(function(id){
+    var el=document.getElementById(id);if(el){el.classList.remove('show');el.textContent='';}
+  });
+  var ni=document.getElementById('inv-nombre');if(ni)ni.value='';
+  var ii=document.getElementById('inv-email');if(ii)ii.value='';
+  openModal('modal-member');
+  setTimeout(function(){var el=document.getElementById('inv-nombre');if(el)el.focus();},120);
+}
+function setMTab(t){
+  document.getElementById('mtab-op1').classList.toggle('active',t==='op1');
+  document.getElementById('mtab-op2').classList.toggle('active',t==='op2');
+  document.getElementById('mop1').style.display=t==='op1'?'block':'none';
+  document.getElementById('mop2').style.display=t==='op2'?'block':'none';
+}
+function confirmAddMember(){
+  var email=(document.getElementById('am-email').value||'').trim();
+  var re=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  ['am-email-e','am-email-fmt','am-email-dup','am-email-nouser'].forEach(function(id){
+    var el=document.getElementById(id);if(el){el.classList.remove('show');el.textContent='';}
+  });
+  if(!email){aErr('am-email-e','El correo es obligatorio.');return;}
+  if(!re.test(email)||email.length>254){aErr('am-email-fmt','Formato de correo inválido.');return;}
+  if(S.miembros.some(function(m){return m.email&&m.email.toLowerCase()===email.toLowerCase();})){
+    aErr('am-email-dup','Este correo ya es miembro del hogar.');return;
+  }
+  var users=JSON.parse(localStorage.getItem('ht_users')||'[]');
+  var found=users.find(function(u){return u.email.toLowerCase()===email.toLowerCase();});
+  if(!found){aErr('am-email-nouser','Este correo no está registrado en HomeTask. Pídele que cree una cuenta o usa "Enviar invitación".');return;}
+  var c=AV_COLORS[S.colorIdx%AV_COLORS.length];S.colorIdx++;
+  var ini=found.nombre.split(' ').map(function(w){return w[0];}).join('').substring(0,2).toUpperCase();
+  S.miembros.push({id:Date.now(),nombre:found.nombre,email:found.email,ini:ini,c:c,rol:'Miembro'});
+  // Actualizar también los datos de ese usuario para que vea el hogar
+  try{
+    var ud=JSON.parse(localStorage.getItem('htd_'+found.email)||'{}');
+    ud.hogar=S.hogar;ud.miembros=S.miembros;ud.tareas=S.tareas;ud.colorIdx=S.colorIdx;ud.lastWeek=S.lastWeek;
+    localStorage.setItem('htd_'+found.email,JSON.stringify(ud));
+  }catch(e){}
+  closeModal('modal-member');save();render();
+  showToast('success','Miembro agregado',found.nombre+' fue agregado al hogar.');
+}
+function enviarInvitacion(){
+  var nombre=(document.getElementById('inv-nombre')?document.getElementById('inv-nombre').value||'':'').trim();
+  var email=(document.getElementById('inv-email').value||'').trim();
+  var re=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  ['inv-nombre-e','inv-email-e'].forEach(function(id){var el=document.getElementById(id);if(el){el.classList.remove('show');el.textContent='';}});
+  var ok=true;
+  if(!nombre||nombre.length<2){aErr('inv-nombre-e','El nombre es obligatorio (mín. 2 caracteres).');ok=false;}
+  if(!email){aErr('inv-email-e','El correo es obligatorio.');ok=false;}
+  else if(!re.test(email)||email.length>254){aErr('inv-email-e','Formato de correo inválido.');ok=false;}
+  if(!ok)return;
+  if(S.miembros.some(function(m){return m.email&&m.email.toLowerCase()===email.toLowerCase();})){
+    aErr('inv-email-e','Este correo ya es miembro del hogar.');return;
+  }
+  var all=JSON.parse(localStorage.getItem('ht_inv')||'[]');
+  var yaExiste=all.find(function(i){return i.emailTo.toLowerCase()===email.toLowerCase()&&i.estado==='pendiente'&&i.hogarId===S.hogar.id;});
+  if(yaExiste){aErr('inv-email-e','Ya existe una invitación pendiente para este correo.');return;}
+  var inv={id:'inv-'+Date.now(),emailTo:email,nombreInvitado:nombre,emailFrom:S.usuario?S.usuario.email:'',hogarNombre:S.hogar.nombre,hogarId:S.hogar.id,de:S.usuario?S.usuario.nombre:'Admin',estado:'pendiente'};
+  all.push(inv);
+  localStorage.setItem('ht_inv',JSON.stringify(all));
+  closeModal('modal-member');
+  showToast('info','Invitación enviada','Se envió la invitación a '+nombre+'.');
 }
 
 // ═══════════════════════════════════════
@@ -404,51 +1255,12 @@ function pgHogar(){
   const tags = S.miembros.map(function(m,i){
     return '<div class="mtag"><div class="avatar avatar-sm" style="background:' + m.c.bg + ';color:' + m.c.fg + ';">' + m.ini + '</div><span>' + m.nombre + '</span><button class="mtag-rm" onclick="rmTmpMember(' + i + ')">×</button></div>';
   }).join('');
-  return '<div class="hogar-split"><div class="hogar-left"><div style="font-family:\'Hammersmith One\',sans-serif;font-size:18px;color:#1A1D2E;">HOMETASK</div><h2>Crea tu<br>Hogar</h2><p>Crea tu grupo familiar y empieza a repartir las tareas del hogar.</p></div><div class="hogar-right"><h1 style="font-family:\'Hammersmith One\',sans-serif;font-size:28px;text-align:center;margin-bottom:4px;">Crear hogar</h1><p style="color:var(--muted);text-align:center;font-size:13px;margin-bottom:2rem;">Completa los datos para comenzar</p><div style="margin-bottom:1rem;"><label class="flabel">Nombre del Hogar</label><input type="text" id="h-nombre" placeholder="Ingresa el nombre de tu hogar" oninput="updateHogarCounter()"><div style="display:flex;justify-content:flex-end;margin-top:4px;"><span id="h-nombre-counter" style="font-size:11px;color:var(--muted);transition:color .15s;">0/50</span></div></div><div style="margin-bottom:1.5rem;"><label class="flabel">Descripción <span style="font-weight:400;color:var(--muted);font-size:12px;">(opcional)</span></label><textarea id="h-desc" placeholder="Agrega una descripción breve de tu hogar." rows="3"></textarea></div><div style="margin-bottom:2rem;"><label class="flabel">Agregar miembros <span style="font-weight:400;color:var(--muted);font-size:12px;">(opcional)</span></label><div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;" id="mtags-wrap">' + tags + '<button class="btn-add-m" onclick="openAddMember()">+</button></div><p style="color:var(--muted);font-size:11px;margin-top:8px;">Serás asignado automáticamente como administrador.</p></div><button class="btn-yellow" onclick="crearHogar()">Crear Hogar</button></div></div>';
+  return '<div class="hogar-split"><div class="hogar-left"><div style="font-family:\'Hammersmith One\',sans-serif;font-size:18px;color:#E6F1FB;">HOMETASK</div><h2>Crea tu<br>Hogar</h2><p>Crea tu grupo familiar y empieza a repartir las tareas del hogar.</p></div><div class="hogar-right"><h1 style="font-family:\'Hammersmith One\',sans-serif;font-size:28px;text-align:center;margin-bottom:4px;">Crear hogar</h1><p style="color:var(--muted);text-align:center;font-size:13px;margin-bottom:2rem;">Completa los datos para comenzar</p><div style="margin-bottom:1rem;"><label class="flabel">Nombre del Hogar</label><input type="text" id="h-nombre" placeholder="Ingresa el nombre de tu hogar" oninput="updateHogarCounter()"><div style="display:flex;justify-content:flex-end;margin-top:4px;"><span id="h-nombre-counter" style="font-size:11px;color:var(--muted);transition:color .15s;">0/50</span></div></div><div style="margin-bottom:1.5rem;"><label class="flabel">Descripción <span style="font-weight:400;color:var(--muted);font-size:12px;">(opcional)</span></label><textarea id="h-desc" placeholder="Agrega una descripción breve de tu hogar." rows="3"></textarea></div><div style="margin-bottom:2rem;"><label class="flabel">Agregar miembros <span style="font-weight:400;color:var(--muted);font-size:12px;">(opcional)</span></label><div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;" id="mtags-wrap">' + tags + '<button class="btn-add-m" onclick="openAddMember()">+</button></div><p style="color:var(--muted);font-size:11px;margin-top:8px;">Serás asignado automáticamente como administrador.</p></div><button class="btn-yellow" onclick="crearHogar()">Crear Hogar</button></div></div>';
 }
 
-function openAddMember(){
-  document.getElementById('modal-member-input').value = '';
-  document.getElementById('modal-member-email').value = '';
-  document.getElementById('modal-member-err').classList.remove('show');
-  document.getElementById('modal-member-email-err').classList.remove('show');
-  document.getElementById('modal-member-email-fmt').classList.remove('show');
-  document.getElementById('modal-member-email-dup').classList.remove('show');
-  openModal('modal-member');
-  setTimeout(function(){ document.getElementById('modal-member-input').focus(); }, 120);
-}
 
-function confirmAddMember(){
-  const v = document.getElementById('modal-member-input').value.trim();
-  const emailVal = document.getElementById('modal-member-email').value.trim();
-  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-  document.getElementById('modal-member-err').classList.remove('show');
-  document.getElementById('modal-member-email-err').classList.remove('show');
-  document.getElementById('modal-member-email-fmt').classList.remove('show');
-  document.getElementById('modal-member-email-dup').classList.remove('show');
-  let hasErr = false;
-  if(!v){ document.getElementById('modal-member-err').classList.add('show'); hasErr=true; }
-  if(!emailVal){ document.getElementById('modal-member-email-err').classList.add('show'); hasErr=true; }
-  else if(!emailRe.test(emailVal) || emailVal.length>254){ document.getElementById('modal-member-email-fmt').classList.add('show'); hasErr=true; }
-  else if(S.miembros.some(function(m){ return m.email && m.email.toLowerCase()===emailVal.toLowerCase(); })){ document.getElementById('modal-member-email-dup').classList.add('show'); hasErr=true; }
-  if(hasErr) return;
-  const c = AV_COLORS[S.colorIdx % AV_COLORS.length]; S.colorIdx++;
-  const ini = v.split(' ').map(function(w){ return w[0]; }).join('').substring(0,2).toUpperCase();
-  const newMember = { id:Date.now(), nombre:v, email:emailVal, ini:ini, c:c, rol:'Miembro' };
-  S.miembros.push(newMember);
-  if(S.hogar && S.hogar.id){
-    fetch('https://code-factory-20261-back.onrender.com/api/hogares/' + S.hogar.id + '/miembros', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ idAdministrador: S.adminId || 1, nombre: v, correo: emailVal })
-    })
-    .then(function(res){ return res.json(); })
-    .then(function(data){ if(data && data.miembro && data.miembro.idUsuario) { newMember.backendId = data.miembro.idUsuario; save(); } })
-    .catch(function(){});
-  }
-  closeModal('modal-member');
-  render();
-}
+
+
 
 function rmTmpMember(i){ S.miembros.splice(i,1); render(); }
 
@@ -484,24 +1296,20 @@ function crearHogar(){
     return;
   }
   const c = AV_COLORS[S.colorIdx % AV_COLORS.length]; S.colorIdx++;
-  S.miembros.unshift({ id:1, nombre:'Tú (Admin)', ini:'DL', c:c, rol:'Administrador' });
+  const adminNombre = S.usuario ? S.usuario.nombre : 'Administrador';
+  const adminEmail  = S.usuario ? S.usuario.email  : '';
+  const adminIni    = adminNombre.split(' ').map(function(w){return w[0];}).join('').substring(0,2).toUpperCase();
+  S.miembros.unshift({ id:1, nombre:adminNombre, email:adminEmail, ini:adminIni, c:c, rol:'Administrador' });
   const desc = document.getElementById('h-desc').value.trim();
 
-  fetch('https://code-factory-20261-back.onrender.com/api/hogares', {
+  fetch('http://localhost:8080/hogares', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      usuarioId: 1,
-      nombreUsuario: 'Admin',
-      correoUsuario: 'admin@hometask.com',
-      nombreHogar: nombre,
-      descripcion: desc
-    })
+    body: JSON.stringify({ nombre: nombre, direccion: desc })
   })
   .then(function(res){ return res.json(); })
   .then(function(data){
-    S.hogar = { id: data.idHogar, nombre: nombre, descripcion: desc };
-    S.adminId = data.usuarioId;
+    S.hogar = { id: data.id, nombre: data.nombre, descripcion: desc };
     save();
     showModal({ type:'success', title:'Hogar creado exitosamente',
       sub:'Ya puedes agregar tareas e invitar miembros a tu hogar.',
@@ -509,7 +1317,6 @@ function crearHogar(){
   })
   .catch(function(){
     S.hogar = { nombre: nombre, descripcion: desc };
-    S.adminId = 1;
     save();
     showModal({ type:'success', title:'Hogar creado exitosamente',
       sub:'Ya puedes agregar tareas e invitar miembros a tu hogar.',
@@ -528,6 +1335,7 @@ function pgInicio(){
   const avs = S.miembros.slice(0,4).map(function(m){ return '<div class="avatar" style="background:' + m.c.bg + ';color:' + m.c.fg + ';" title="' + m.nombre + '">' + m.ini + '</div>'; }).join('');
   const more = S.miembros.length>4 ? '<div class="avatar" style="background:var(--card2);color:var(--muted);">+' + (S.miembros.length-4) + '</div>' : '';
   const q = (S.searchQ||'').toLowerCase();
+  const statusIcons = {'Pendiente':'⬜','Asignada':'🔵','En proceso':'🟠','Finalizada':'✅'};
   const cols = [
     {key:'Pendiente',  cls:'dp'},
     {key:'Asignada',   cls:'da'},
@@ -538,21 +1346,109 @@ function pgInicio(){
     let tasks = S.tareas.filter(function(t){ return t.estado===col.key; });
     if(q) tasks = tasks.filter(function(t){ return t.nombre.toLowerCase().includes(q); });
     const cards = tasks.map(function(t){
-      return '<div class="ktask" onclick="cambiarEstado(' + t.id + ')" title="Clic para avanzar estado"><div class="ktask-name">' + t.nombre + '</div>' +
+      return '<div class="ktask" role="button" tabindex="0"' +
+        ' draggable="true"' +
+        ' ondragstart="onDragStart(event,' + t.id + ')"' +
+        ' ondragend="onDragEnd(event)"' +
+        ' onclick="cambiarEstado(' + t.id + ')"' +
+        ' onkeydown="if(event.key===\'Enter\'||event.key===\' \')cambiarEstado(' + t.id + ')"' +
+        ' data-tooltip="Clic para avanzar estado"' +
+        ' class="ktask'+(S._newTaskId===t.id?' ktask-new':''+'"')+' aria-label="' + t.nombre + ', estado: ' + t.estado + (t.asignadoA?', asignada a '+t.asignadoA:'') + '">' +
+        '<div class="ktask-name">' + t.nombre + '</div>' +
         (t.asignadoA ? '<div class="ktask-sub">' + t.asignadoA + ' · ' + t.dificultad + '</div>' : t.prioridad ? '<div class="ktask-sub">Prioridad: ' + t.prioridad + '</div>' : '') +
         '</div>';
     }).join('');
-    return '<div class="kcol"><div class="kcol-head"><span class="dot ' + col.cls + '"></span>' + col.key + '</div>' +
-      (cards||'<div class="empty" style="padding:.5rem 0;font-size:12px;">Sin tareas</div>') + '</div>';
+    var emptyState = '<div class="empty-state" role="listitem">' +
+      '<div class="empty-state-icon" aria-hidden="true">' + (col.key==='Finalizada'?'🏆':col.key==='Asignada'?'👤':'📋') + '</div>' +
+      '<div class="empty-state-title">Sin tareas</div>' +
+      '<div class="empty-state-sub">No hay tareas ' + col.key.toLowerCase() + 's</div>' +
+      '</div>';
+    return '<div class="kcol" role="list" aria-label="Tareas: ' + col.key + '"' +
+      ' ondragover="onDragOver(event)" ondragleave="onDragLeave(event)" ondrop="onDrop(event,\'' + col.key + '\')">' +
+      '<div class="kcol-head"><span class="kstatus-icon" aria-hidden="true">' + (statusIcons[col.key]||'📋') + '</span>' + col.key +
+      '<span style="margin-left:auto;font-size:10px;color:var(--muted);">' + tasks.length + '</span></div>' +
+      (cards||emptyState) + '</div>';
   }).join('');
 
-  return '<div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap;"><div style="flex:1;min-width:200px;"><h1 style="font-family:\'Hammersmith One\',sans-serif;font-size:24px;color:var(--yellow);">' + S.hogar.nombre.toUpperCase() + '</h1><p style="color:var(--muted);font-size:13px;">Semana del ' + now.getDate() + ' de ' + monthName + ' &nbsp;·&nbsp; <span style="color:#fff;font-weight:500;">' + pending + ' pendiente' + (pending!==1?'s':'') + '</span></p><div style="display:flex;gap:6px;margin-top:10px;align-items:center;">' + avs + more + '<div class="avatar" style="background:transparent;border:1.5px dashed rgba(255,255,255,.25);color:var(--muted);cursor:pointer;" onclick="go(\'miembros\')">+</div></div></div><div style="display:flex;gap:10px;align-items:center;"><div class="search-wrap" style="width:200px;"><span class="search-icon">🔍</span><input type="text" placeholder="Buscar tarea..." value="' + (S.searchQ||'') + '" oninput="S.searchQ=this.value;render();" style="height:40px;"></div><button class="filter-btn" onclick="go(\'tareas\')">+</button></div></div><div class="section-title">Tareas esta semana</div><div class="kanban">' + kanban + '</div><p style="color:var(--muted);font-size:11px;margin-top:.75rem;">💡 Haz clic en una tarea para avanzar su estado.</p>';
+  // ── DASHBOARD DATA ──
+  var total = S.tareas.length;
+  var counts = {Pendiente:0,Asignada:0,'En proceso':0,Finalizada:0,Pospuesta:0};
+  S.tareas.forEach(function(t){if(counts[t.estado]!==undefined)counts[t.estado]++;});
+  var completados = counts.Finalizada;
+  var pct = total>0?Math.round((completados/total)*100):0;
+
+  // Carga por miembro
+  var cargaHtml = S.miembros.length ? S.miembros.map(function(m){
+    var pts = S.tareas.filter(function(t){return t.asignadoA===m.nombre;}).length;
+    var max = 6; var pctBar = Math.min(Math.round((pts/max)*100),100);
+    return '<div class="dash-bar-row"><div class="dash-bar-name" title="'+m.nombre+'">'+m.nombre+'</div>'+
+      '<div class="dash-bar-track"><div class="dash-bar-fill" style="width:'+pctBar+'%;"></div></div>'+
+      '<div class="dash-bar-pts">'+pts+'/'+max+'</div></div>';
+  }).join('') : '<p style="font-size:12px;color:var(--muted);">Sin miembros.</p>';
+
+  // Estados
+  var estadosHtml = [
+    {k:'Pendiente',c:'#9CA3AF'},{k:'Asignada',c:'#60A5FA'},
+    {k:'En proceso',c:'#FB923C'},{k:'Finalizada',c:'#34D399'},{k:'Pospuesta',c:'#EF4444'}
+  ].map(function(e){
+    return '<div class="dash-status-row"><div class="dash-status-dot" style="background:'+e.c+';"></div>'+
+      '<div class="dash-status-label">'+e.k+'</div><div class="dash-status-count">'+counts[e.k]+'</div></div>';
+  }).join('');
+
+  // Próximos vencimientos
+  var hoy = new Date(); hoy.setHours(0,0,0,0);
+  var proximas = S.tareas.filter(function(t){
+    return t.fecha&&t.estado!=='Finalizada';
+  }).sort(function(a,b){return new Date(a.fecha)-new Date(b.fecha);}).slice(0,4);
+  var deadlineHtml = proximas.length ? proximas.map(function(t){
+    var d=new Date(t.fecha+'T00:00:00');
+    var diff=Math.ceil((d-hoy)/(1000*60*60*24));
+    var label=diff===0?'Hoy':diff===1?'Mañana':diff<0?'Vencida':diff+' días';
+    var urgent=diff<=2;
+    return '<div class="dash-deadline">'+
+      '<div class="dash-deadline-name" title="'+t.nombre+'">'+t.nombre+'</div>'+
+      '<div class="dash-deadline-date'+(urgent?' dash-deadline-urgent':'')+'">'+label+'</div></div>';
+  }).join('') : '<p style="font-size:12px;color:var(--muted);">Sin fechas próximas.</p>';
+
+  var dashboard = '<div class="dash-wrap">'+
+    '<div class="dash-grid">'+
+      '<div class="dash-card"><div class="dash-card-val">'+total+'</div><div class="dash-card-label">Total tareas</div></div>'+
+      '<div class="dash-card"><div class="dash-card-val">'+counts.Pendiente+'</div><div class="dash-card-label">Pendientes</div></div>'+
+      '<div class="dash-card"><div class="dash-card-val">'+completados+'</div><div class="dash-card-label">Finalizadas</div></div>'+
+      '<div class="dash-card"><div class="dash-card-val">'+pct+'%</div><div class="dash-card-label">Completado</div><div class="dash-card-sub">Semana actual</div></div>'+
+    '</div>'+
+    '<div class="dash-two">'+
+      '<div class="dash-panel"><div class="dash-panel-title">Carga por miembro</div>'+cargaHtml+'</div>'+
+      '<div>'+
+        '<div class="dash-panel" style="margin-bottom:12px;"><div class="dash-panel-title">Tareas por estado</div>'+estadosHtml+'</div>'+
+        '<div class="dash-panel"><div class="dash-panel-title">📅 Próximos vencimientos</div>'+deadlineHtml+'</div>'+
+      '</div>'+
+    '</div>'+
+  '</div>';
+
+  return '<div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap;">'+
+    '<div style="flex:1;min-width:200px;">'+
+      '<h1 style="font-family:\'Hammersmith One\',sans-serif;font-size:24px;color:var(--yellow);">'+S.hogar.nombre.toUpperCase()+'</h1>'+
+      '<p style="color:var(--muted);font-size:13px;">Semana del '+now.getDate()+' de '+monthName+' &nbsp;·&nbsp; <span style="color:#fff;font-weight:500;">'+pending+' pendiente'+(pending!==1?'s':'')+'</span></p>'+
+      '<div style="display:flex;gap:6px;margin-top:10px;align-items:center;">'+avs+more+
+        '<div class="avatar" style="background:transparent;border:1.5px dashed rgba(255,255,255,.25);color:var(--muted);cursor:pointer;" onclick="go(\'miembros\')">+</div>'+
+      '</div>'+
+    '</div>'+
+    '<div style="display:flex;gap:8px;align-items:center;">'+
+      '<div class="search-wrap" style="width:200px;"><span class="search-icon">🔍</span><input type="text" placeholder="Buscar tarea..." value="'+(S.searchQ||'')+'" oninput="S.searchQ=this.value;render();" style="height:40px;"></div>'+
+      '<button class="hist-btn" onclick="abrirHistorial()" title="Ver historial de actividad">⏱</button>'+
+      '<button class="filter-btn" onclick="go(\'tareas\')">+</button>'+
+    '</div>'+
+  '</div>'+
+  '<div class="section-title">Tareas esta semana</div>'+
+  '<div class="kanban">'+kanban+'</div>'+
+  '<p style="color:var(--muted);font-size:11px;margin-top:.75rem;">💡 Haz clic en una tarea para avanzar su estado.</p>'+
+  dashboard;
 }
 
 function cambiarEstado(id){
   const t = S.tareas.find(function(t){ return t.id===id; }); if(!t) return;
   const order = ['Pendiente','Asignada','En proceso','Finalizada'];
-  const estadoMap = { 'Pendiente':'PENDIENTE', 'Asignada':'ASIGNADO', 'En proceso':'EN_PROCESO', 'Finalizada':'FINALIZADO' };
   const currentIdx = order.indexOf(t.estado);
 
   if(t.estado === 'Finalizada'){
@@ -568,22 +1464,21 @@ function cambiarEstado(id){
     t.estado = 'Pendiente';
     t.finalizedWeek = undefined;
     t.asignadoA = null;
-    fetch('https://code-factory-20261-back.onrender.com/api/tareas/' + (t.backendId||t.id) + '/estado', {
-      method:'PATCH', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ nuevoEstado: 'PENDIENTE' })
-    }).catch(function(){});
     save(); render();
     return;
   }
 
   const nextEstado = order[currentIdx + 1];
+  const ahoraE = new Date().toLocaleString('es-ES');
+  if(!t.historial) t.historial = [];
+  t.historial.unshift({tipo:'estado', texto:'Estado cambiado a "'+nextEstado+'"', por: S.usuario ? S.usuario.nombre : '', fecha: ahoraE});
   t.estado = nextEstado;
-  if(nextEstado === 'Finalizada') t.finalizedWeek = getWeek();
+  anunciar('Tarea "'+t.nombre+'" cambió a estado: '+nextEstado);
 
-  fetch('https://code-factory-20261-back.onrender.com/api/tareas/' + (t.backendId||t.id) + '/estado', {
-    method:'PATCH', headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({ nuevoEstado: estadoMap[nextEstado] })
-  }).catch(function(){});
+  if(nextEstado === 'Finalizada'){
+    t.finalizedWeek = getWeek();
+    t.historial.unshift({tipo:'finalizada', texto:'Tarea finalizada', por: S.usuario ? S.usuario.nombre : '', fecha: ahoraE});
+  }
 
   save(); render();
 }
@@ -621,19 +1516,71 @@ function taskListHtml(filter){
       (t.prioridad?'<span style="font-size:10px;background:rgba(254,211,106,.12);color:var(--yellow);padding:1px 7px;border-radius:10px;">'+t.prioridad+'</span>':'') +
       '</div></div>' +
       '<span class="badge ' + badgeClass(t.estado) + '" style="margin-right:6px;">' + t.estado + '</span>' +
-      '<div style="display:flex;gap:6px;">' +
-      '<button class="btn-sm-yellow" style="background:transparent;border:1px solid var(--yellow);color:var(--yellow);" onclick="abrirEditarTarea(' + t.id + ')">Editar</button>' +
-      '<button class="btn-sm-yellow" onclick="eliminarTarea(' + t.id + ')">Eliminar</button>' +
-      '</div></div>';
+      (esAdmin() ? '<div style="display:flex;gap:6px;">' +
+        '<button class="btn-sm-yellow" style="background:transparent;border:1px solid var(--yellow);color:var(--yellow);" onclick="abrirEditarTarea(' + t.id + ')">Editar</button>' +
+        '<button class="btn-sm-yellow" onclick="eliminarTarea(' + t.id + ')">Eliminar</button>' +
+        '</div>' : '') +
+      '</div>';
   }).join('');
 }
 
 function pgTareas(){
+  var admin = esAdmin();
   const now = new Date();
   const duelabel = now.getDate() + ' ' + now.toLocaleDateString('es-ES',{month:'long'});
   const avsMini = S.miembros.slice(0,3).map(function(m){ return '<div class="avatar" style="width:20px;height:20px;font-size:8px;background:' + m.c.bg + ';color:' + m.c.fg + ';">' + m.ini + '</div>'; }).join('');
-  return '<div class="two-panel"><div class="panel-l"><button class="btn-ghost" onclick="go(\'inicio\')">← Volver</button><h2 style="font-family:\'Hammersmith One\',sans-serif;font-size:22px;margin:1rem 0 1.5rem;">Crear nueva tarea</h2><div style="margin-bottom:1rem;"><label class="flabel">Nombre de la tarea</label><input type="text" id="t-nombre" placeholder="Ej: Barrer la casa"></div><div style="margin-bottom:1rem;"><label class="flabel">Descripción <span style="font-weight:400;color:var(--muted);font-size:12px;">(opcional)</span></label><textarea id="t-desc" placeholder="Añade una descripción breve de la tarea." rows="3" maxlength="200" oninput="updateDescCounter()"></textarea><div style="display:flex;justify-content:flex-end;margin-top:4px;"><span id="desc-counter" style="font-size:11px;color:var(--muted);transition:color .15s;">0/200</span></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;"><div><label class="flabel">Dificultad</label><select id="t-dif"><option value="">Seleccionar...</option><option>Baja</option><option selected>Media</option><option>Alta</option></select></div><div><label class="flabel">Prioridad</label><select id="t-pri"><option value="">Seleccionar...</option><option>Baja</option><option>Media</option><option selected>Alta</option></select></div></div><div style="margin-bottom:1rem;"><label class="flabel">Fecha</label><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;"><div style="display:flex;align-items:center;gap:8px;background:var(--card);border-radius:var(--radius-sm);padding:8px 12px;"><span>🕐</span><input type="time" id="t-hora" value="10:30" style="background:transparent;border:none;padding:0;flex:1;min-width:0;"></div><div style="display:flex;align-items:center;gap:8px;background:var(--card);border-radius:var(--radius-sm);padding:8px 12px;"><span>📅</span><input type="date" id="t-fecha" style="background:transparent;border:none;padding:0;flex:1;min-width:0;"></div></div></div><div style="margin-bottom:1.5rem;"><label class="flabel">Imagen <span style="font-weight:400;color:var(--muted);font-size:12px;">(solo JPG, opcional)</span></label><div class="img-field" id="img-area" onclick="document.getElementById(\'t-img\').click()"><input type="file" id="t-img" accept=".jpg,.jpeg" style="display:none;" onchange="onImgChange(this)"><div class="img-icon" id="img-icon-wrap">🖼</div><span class="img-text" id="img-txt">Subir imagen JPG</span></div></div><button class="btn-yellow" onclick="crearTarea()">Crear Tarea</button></div><div class="panel-r"><div style="display:flex;gap:10px;margin-bottom:1.25rem;align-items:center;"><div class="search-wrap"><span class="search-icon">🔍</span><input type="text" placeholder="Buscar Tarea" value="' + (S.searchQ||'') + '" oninput="S.searchQ=this.value;document.getElementById(\'task-list\').innerHTML=taskListHtml();" style="height:40px;"></div><button class="filter-btn" onclick="abrirFiltros()">≡</button></div><div style="display:flex;gap:1rem;margin-bottom:1.25rem;flex-wrap:wrap;"><div class="ht-chip"><span style="font-size:18px;">📅</span><div><div class="ht-chip-label">Due Date</div><div class="ht-chip-val">' + duelabel + '</div></div></div><div class="ht-chip"><span style="font-size:18px;">👥</span><div><div class="ht-chip-label">Mi hogar</div><div style="display:flex;gap:3px;margin-top:3px;">' + avsMini + '</div></div></div></div><div class="section-title" style="display:flex;align-items:center;justify-content:space-between;">Todas las tareas <span id="task-count" style="font-size:11px;color:var(--muted);font-weight:400;">' + S.tareas.length + ' total</span></div><div id="task-list">' + taskListHtml() + '</div></div></div>';
+
+  // Panel izquierdo: formulario crear tarea (solo admin) o mensaje informativo (miembro)
+  var panelL = admin ?
+    '<button class="btn-ghost" onclick="go(\'inicio\')" aria-label="Volver al inicio">← Volver</button>' +
+    '<h2 style="font-family:\'Hammersmith One\',sans-serif;font-size:22px;margin:1rem 0 1.5rem;">Crear nueva tarea</h2>' +
+    '<div style="margin-bottom:1rem;"><label class="flabel" for="t-nombre">Nombre de la tarea</label><input type="text" id="t-nombre" placeholder="Ej: Barrer la casa" aria-required="true"></div>' +
+    '<div style="margin-bottom:1rem;"><label class="flabel" for="t-desc">Descripción <span style="font-weight:400;color:var(--muted);font-size:12px;">(opcional)</span></label>' +
+    '<textarea id="t-desc" placeholder="Añade una descripción breve de la tarea." rows="3" maxlength="200" oninput="updateDescCounter()"></textarea>' +
+    '<div style="display:flex;justify-content:flex-end;margin-top:4px;"><span id="desc-counter" style="font-size:11px;color:var(--muted);">0/200</span></div></div>' +
+    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">' +
+      '<div><label class="flabel" for="t-dif">Dificultad</label><select id="t-dif" aria-required="true"><option value="">Seleccionar...</option><option>Baja</option><option selected>Media</option><option>Alta</option></select></div>' +
+      '<div><label class="flabel" for="t-pri">Prioridad</label><select id="t-pri" aria-required="true"><option value="">Seleccionar...</option><option>Baja</option><option>Media</option><option selected>Alta</option></select></div>' +
+    '</div>' +
+    '<div style="margin-bottom:1rem;"><label class="flabel">Fecha</label>' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">' +
+        '<div style="display:flex;align-items:center;gap:8px;background:var(--card);border-radius:var(--radius-sm);padding:8px 12px;"><span aria-hidden="true">🕐</span><input type="time" id="t-hora" value="10:30" style="background:transparent;border:none;padding:0;flex:1;min-width:0;" aria-label="Hora límite"></div>' +
+        '<div style="display:flex;align-items:center;gap:8px;background:var(--card);border-radius:var(--radius-sm);padding:8px 12px;"><span aria-hidden="true">📅</span><input type="date" id="t-fecha" style="background:transparent;border:none;padding:0;flex:1;min-width:0;" aria-label="Fecha límite"></div>' +
+      '</div></div>' +
+    '<div style="margin-bottom:1.5rem;"><label class="flabel">Imagen <span style="font-weight:400;color:var(--muted);font-size:12px;">(solo JPG, opcional)</span></label>' +
+      '<div class="img-field" id="img-area" onclick="document.getElementById(\'t-img\').click()" role="button" tabindex="0" aria-label="Subir imagen JPG" onkeydown="if(event.key===\'Enter\')document.getElementById(\'t-img\').click()">' +
+        '<input type="file" id="t-img" accept=".jpg,.jpeg" style="display:none;" onchange="onImgChange(this)" aria-label="Seleccionar imagen">' +
+        '<div class="img-icon" id="img-icon-wrap" aria-hidden="true">🖼</div>' +
+        '<span class="img-text" id="img-txt">Subir imagen JPG</span>' +
+      '</div></div>' +
+    '<button class="btn-yellow" onclick="crearTarea()" aria-label="Crear nueva tarea">Crear Tarea</button>'
+    :
+    '<button class="btn-ghost" onclick="go(\'inicio\')" aria-label="Volver al inicio">← Volver</button>' +
+    '<div style="margin-top:2rem;padding:1.5rem;background:var(--card);border-radius:var(--radius);border-left:3px solid var(--yellow);">' +
+      '<div style="font-size:28px;margin-bottom:.75rem;" aria-hidden="true">👁</div>' +
+      '<h3 style="font-family:\'Hammersmith One\',sans-serif;font-size:18px;color:var(--yellow);margin-bottom:.5rem;">Modo visualización</h3>' +
+      '<p style="color:var(--muted);font-size:13px;line-height:1.7;">Como miembro puedes ver todas las tareas del hogar y filtrarlas, pero solo el administrador puede crear, editar o eliminarlas.</p>' +
+    '</div>';
+
+  // Panel derecho: listado y filtros (igual para admin y miembro)
+  var panelR =
+    '<div style="display:flex;gap:10px;margin-bottom:1.25rem;align-items:center;">' +
+      '<div class="search-wrap"><span class="search-icon" aria-hidden="true">🔍</span>' +
+        '<input type="text" placeholder="Buscar Tarea" value="' + (S.searchQ||'') + '" oninput="S.searchQ=this.value;document.getElementById(\'task-list\').innerHTML=taskListHtml();" style="height:40px;" aria-label="Buscar tarea por nombre"></div>' +
+      '<button class="filter-btn" onclick="abrirFiltros()" aria-label="Abrir filtros de tareas">≡</button>' +
+    '</div>' +
+    '<div style="display:flex;gap:1rem;margin-bottom:1.25rem;flex-wrap:wrap;">' +
+      '<div class="ht-chip"><span style="font-size:18px;" aria-hidden="true">📅</span><div><div class="ht-chip-label">Fecha</div><div class="ht-chip-val">' + duelabel + '</div></div></div>' +
+      '<div class="ht-chip"><span style="font-size:18px;" aria-hidden="true">👥</span><div><div class="ht-chip-label">Mi hogar</div><div style="display:flex;gap:3px;margin-top:3px;" aria-label="Miembros del hogar">' + avsMini + '</div></div></div>' +
+    '</div>' +
+    '<div class="section-title" style="display:flex;align-items:center;justify-content:space-between;">' +
+      'Todas las tareas <span id="task-count" style="font-size:11px;color:var(--muted);font-weight:400;" aria-live="polite">' + S.tareas.length + ' total</span>' +
+    '</div>' +
+    '<div id="task-list" role="list" aria-label="Listado de tareas">' + taskListHtml() + '</div>';
+
+  return '<div class="two-panel"><div class="panel-l">' + panelL + '</div><div class="panel-r">' + panelR + '</div></div>';
 }
+
 
 function onImgChange(inp){
   const f = inp.files[0]; if(!f) return;
@@ -737,6 +1684,7 @@ function crearTarea(){
     return;
   }
 
+  const ahoraTarea = new Date().toLocaleString('es-ES');
   const nuevaTarea = {
     id: Date.now(), nombre: nombre, descripcion: desc,
     dificultad: dif, prioridad: pri, fecha: fecha,
@@ -744,20 +1692,13 @@ function crearTarea(){
     imagen: imgF ? imgF.name : null,
     imgData: _imgData || null,
     estado: 'Pendiente', asignadoA: null,
+    historial: [{tipo:'creada', texto:'Tarea creada', por: S.usuario ? S.usuario.nombre : '', fecha: ahoraTarea}]
   };
 
-  fetch('https://code-factory-20261-back.onrender.com/api/tareas', {
+  fetch('http://localhost:8080/tareas', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      idHogar: S.hogar ? S.hogar.id : null,
-      nombre: nombre,
-      descripcion: desc,
-      foto: null,
-      fechaLimite: fecha + 'T23:59:00',
-      dificultad: dif.toUpperCase(),
-      prioridad: pri.toUpperCase()
-    })
+    body: JSON.stringify({ nombre: nombre, descripcion: desc, dificultad: dif, prioridad: pri, fecha: fecha })
   })
   .then(function(res){ return res.json(); })
   .then(function(data){ nuevaTarea.backendId = data.id; })
@@ -766,7 +1707,7 @@ function crearTarea(){
     S.tareas.push(nuevaTarea);
     save();
     document.getElementById('t-nombre').value = '';
-    document.getElementById('t-desc').value = ''; const dc=document.getElementById('desc-counter'); if(dc){dc.textContent='0/200';dc.style.color='var(--muted)';}
+    document.getElementById('t-desc').value = '';
     document.getElementById('t-fecha').value = '';
     document.getElementById('t-hora').value = '10:30';
     document.getElementById('t-dif').value = 'Media';
@@ -793,7 +1734,7 @@ function eliminarTarea(id){
       { label:'Eliminar', red:true, cb:function(){
         const tarea = S.tareas.find(function(t){ return t.id === id; });
         const backendId = tarea && tarea.backendId ? tarea.backendId : id;
-        fetch('https://code-factory-20261-back.onrender.com/api/tareas/' + backendId, { method: 'DELETE' })
+        fetch('http://localhost:8080/tareas/' + backendId, { method: 'DELETE' })
           .catch(function(){})
           .finally(function(){
             S.tareas = S.tareas.filter(function(t){ return t.id !== id; });
@@ -863,6 +1804,9 @@ function asignarAleatorio(){
   sorted.forEach(function(tarea){
     const chosen = S.miembros.reduce(function(a,b){ return load[a.id]<=load[b.id]?a:b; });
     const idx = S.tareas.findIndex(function(t){ return t.id===tarea.id; });
+    const ahoraAs = new Date().toLocaleString('es-ES');
+    if(!S.tareas[idx].historial) S.tareas[idx].historial = [];
+    S.tareas[idx].historial.unshift({tipo:'asignada', texto:'Asignada a "'+chosen.nombre+'"', por: S.usuario ? S.usuario.nombre : 'Admin', fecha: ahoraAs});
     S.tareas[idx].estado = 'Asignada';
     S.tareas[idx].asignadoA = chosen.nombre;
     load[chosen.id] += (DIF_SCORE[tarea.dificultad]||1);
@@ -870,12 +1814,6 @@ function asignarAleatorio(){
   });
   S.lastWeek = getWeek();
   save();
-  if(S.hogar && S.hogar.id){
-    fetch('https://code-factory-20261-back.onrender.com/api/tareas/hogares/' + S.hogar.id + '/asignacion-semanal', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' }
-    }).catch(function(){});
-  }
   showModal({ type:'success', title:'¡Tareas asignadas!',
     sub:'Se asignaron ' + cnt + ' tarea' + (cnt!==1?'s':'') + ' correctamente entre los miembros del hogar.',
     buttons:[{ label:'Ver asignaciones', cb:function(){ render(); } }] });
@@ -885,61 +1823,99 @@ function asignarAleatorio(){
 // PÁGINA: MIEMBROS
 // ═══════════════════════════════════════
 function pgMiembros(){
-  const mHtml = S.miembros.length ? S.miembros.map(function(m,i){
-    return '<div class="mcard"><div class="avatar avatar-lg" style="background:' + m.c.bg + ';color:' + m.c.fg + ';">' + m.ini + '</div><div class="mcard-info"><div class="mcard-name">' + m.nombre + '</div><div class="mcard-role">' + (m.rol||'Miembro') + ' · ' + S.tareas.filter(function(t){ return t.asignadoA===m.nombre; }).length + ' tarea(s)' + (m.email ? ' · ' + m.email : '') + '</div></div>' +
-      (m.ini!=='DL' ? '<button class="mcard-rm" onclick="rmMiembro(' + i + ')">Eliminar</button>' : '<span style="font-size:11px;color:var(--yellow);">Admin</span>') + '</div>';
+  var admin = esAdmin();
+  var mHtml = S.miembros.length ? S.miembros.map(function(m,i){
+    var esYo = S.usuario && m.email && S.usuario.email && m.email.toLowerCase()===S.usuario.email.toLowerCase();
+    var esAdminCard = m.rol==='Administrador';
+    var accion = '';
+    if(esAdminCard){
+      accion = '<span style="font-size:11px;color:var(--yellow);font-weight:600;">Admin</span>';
+    } else if(admin){
+      accion = '<button class="mcard-rm" onclick="rmMiembro('+i+')">Eliminar</button>';
+    } else if(esYo){
+      accion = '<button class="mcard-rm" style="border-color:rgba(249,115,22,.5);color:rgba(249,115,22,.9);" onclick="salirDelHogar()">Salir del hogar</button>';
+    }
+    return '<div class="mcard"><div class="avatar avatar-lg" style="background:'+m.c.bg+';color:'+m.c.fg+';">'+m.ini+'</div>'+
+      '<div class="mcard-info"><div class="mcard-name">'+m.nombre+(esYo?' <span style="font-size:10px;color:var(--muted);">(tú)</span>':'')+'</div>'+
+      '<div class="mcard-role">'+(m.rol||'Miembro')+' · '+S.tareas.filter(function(t){return t.asignadoA===m.nombre;}).length+' tarea(s)'+(m.email?' · '+m.email:'')+'</div></div>'+
+      accion+'</div>';
   }).join('') : '<p class="empty">No hay miembros aún.</p>';
-  return '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;"><h2 style="font-family:\'Hammersmith One\',sans-serif;font-size:22px;">Miembros del hogar</h2><button class="btn-yellow" style="max-width:180px;" onclick="openAddMember()">+ Agregar</button></div><div>' + mHtml + '</div>';
+  var addBtn = admin ? '<button class="btn-yellow" style="max-width:180px;" onclick="openAddMember()">+ Agregar</button>' : '';
+  return '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;"><h2 style="font-family:\'Hammersmith One\',sans-serif;font-size:22px;">Miembros del hogar</h2>'+addBtn+'</div><div>'+mHtml+'</div>';
 }
 
+
 function rmMiembro(i){
-  const m = S.miembros[i];
-  if(m.ini==='DL'){
-    showModal({ type:'warning', title:'Acción no permitida',
-      sub:'No puedes eliminarte a ti mismo del hogar.',
-      buttons:[{ label:'Entendido' }] });
+  if(!esAdmin()){
+    showModal({type:'warning',title:'Sin permisos',sub:'Solo el administrador puede eliminar miembros.',buttons:[{label:'Entendido'}]});
     return;
   }
-  showModal({ type:'danger', warn:true, title:'Eliminar miembro',
-    sub:'¿Deseas eliminar a "' + m.nombre + '" del hogar? Sus tareas volverán a "Pendiente".',
+  const m = S.miembros[i];
+  if(m.rol==='Administrador'){
+    showModal({type:'warning',title:'Acción no permitida',sub:'No puedes eliminar al administrador del hogar.',buttons:[{label:'Entendido'}]});
+    return;
+  }
+  showModal({type:'danger',warn:true,title:'Eliminar miembro',
+    sub:'¿Deseas eliminar a "'+m.nombre+'" del hogar? Sus tareas volverán a "Pendiente".',
     buttons:[
-      { label:'Cancelar' },
-      { label:'Eliminar', red:true, cb:function(){
-        S.tareas.forEach(function(t){ if(t.asignadoA===m.nombre){ t.asignadoA=null; t.estado='Pendiente'; } });
-        if(S.hogar && S.hogar.id && m.backendId){
-          fetch('https://code-factory-20261-back.onrender.com/api/hogares/' + S.hogar.id + '/miembros', {
-            method: 'DELETE',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ idAdministrador: S.adminId || 1, idMiembro: m.backendId })
-          }).catch(function(){});
+      {label:'Cancelar'},
+      {label:'Eliminar',red:true,cb:function(){
+        S.tareas.forEach(function(t){if(t.asignadoA===m.nombre){t.asignadoA=null;t.estado='Pendiente';}});
+        S.miembros.splice(i,1);
+        // Limpiar hogar del usuario eliminado
+        if(m.email){
+          try{
+            var ud=JSON.parse(localStorage.getItem('htd_'+m.email)||'{}');
+            ud.hogar=null;ud.miembros=[];ud.tareas=[];ud.lastWeek=null;
+            localStorage.setItem('htd_'+m.email,JSON.stringify(ud));
+          }catch(e){}
         }
-        S.miembros.splice(i,1); save(); render();
-      }},
-    ] });
+        save();render();
+        showModal({type:'success',title:'Miembro eliminado',sub:m.nombre+' fue eliminado del hogar.',buttons:[{label:'Entendido'}]});
+      }}
+    ]});
 }
+
+function salirDelHogar(){
+  showModal({type:'danger',warn:true,title:'Salir del hogar',
+    sub:'¿Estás seguro de que quieres salir de "'+S.hogar.nombre+'"? Tus tareas asignadas volverán a estado Pendiente.',
+    buttons:[
+      {label:'Cancelar'},
+      {label:'Salir',red:true,cb:function(){
+        // Limpiar tareas asignadas a este usuario
+        S.tareas.forEach(function(t){
+          if(S.usuario&&t.asignadoA===S.usuario.nombre){t.asignadoA=null;t.estado='Pendiente';}
+        });
+        // Quitar al usuario de la lista de miembros
+        var idx=S.miembros.findIndex(function(m){
+          return S.usuario&&m.email&&m.email.toLowerCase()===S.usuario.email.toLowerCase();
+        });
+        if(idx>-1)S.miembros.splice(idx,1);
+        // Actualizar datos del admin para que vea la lista sin este miembro
+        var admin=S.miembros.find(function(m){return m.rol==='Administrador';});
+        if(admin&&admin.email){
+          try{
+            var ad=JSON.parse(localStorage.getItem('htd_'+admin.email)||'{}');
+            ad.miembros=S.miembros;ad.tareas=S.tareas;
+            localStorage.setItem('htd_'+admin.email,JSON.stringify(ad));
+          }catch(e){}
+        }
+        // Limpiar datos propios
+        var myEmail=S.usuario?S.usuario.email:'';
+        S.hogar=null;S.miembros=[];S.tareas=[];S.lastWeek=null;S.colorIdx=0;
+        if(myEmail){
+          try{localStorage.setItem('htd_'+myEmail,JSON.stringify({hogar:null,miembros:[],tareas:[],colorIdx:0,lastWeek:null}));}catch(e){}
+        }
+        S.page='sin-hogar';save();render();
+        showModal({type:'success',title:'Saliste del hogar',sub:'Ya no perteneces a ningún hogar. Puedes crear uno nuevo o esperar una invitación.',buttons:[{label:'Entendido'}]});
+      }}
+    ]});
+}
+
 
 // ═══════════════════════════════════════
 // CONTADOR NOMBRE HOGAR
 // ═══════════════════════════════════════
-function updateDescCounter(){
-  const ta = document.getElementById('t-desc');
-  const counter = document.getElementById('desc-counter');
-  if(!ta || !counter) return;
-  const len = ta.value.length;
-  counter.textContent = len + '/200';
-  if(len >= 200){
-    counter.style.color = 'var(--err)';
-    ta.style.borderColor = 'var(--err)';
-    counter.textContent = '200/200 — Límite de caracteres alcanzado';
-  } else if(len >= 180){
-    counter.style.color = 'var(--warn)';
-    ta.style.borderColor = 'transparent';
-  } else {
-    counter.style.color = 'var(--muted)';
-    ta.style.borderColor = 'transparent';
-  }
-}
-
 function updateHogarCounter(){
   const inp = document.getElementById('h-nombre');
   const counter = document.getElementById('h-nombre-counter');
@@ -1028,18 +2004,6 @@ function confirmEditTask(){
   if(dif) S.tareas[idx].dificultad = dif;
   if(pri) S.tareas[idx].prioridad = pri;
   if(fecha) S.tareas[idx].fecha = fecha;
-  const backendId = S.tareas[idx].backendId || id;
-  fetch('https://code-factory-20261-back.onrender.com/api/tareas/' + backendId, {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      nombre: nombre,
-      descripcion: desc,
-      dificultad: dif ? dif.toUpperCase() : undefined,
-      prioridad: pri ? pri.toUpperCase() : undefined,
-      fechaLimite: fecha ? fecha + 'T23:59:00' : undefined
-    })
-  }).catch(function(){});
   save();
   closeModal('modal-edit-task');
   const tl = document.getElementById('task-list');
@@ -1050,15 +2014,165 @@ function confirmEditTask(){
     buttons:[{ label:'Entendido' }] });
 }
 
+
+// ═══════════════════════════════════════
+// IUAS + TEMA OSCURO/CLARO
+// ═══════════════════════════════════════
+
+// ── 4. TOAST SYSTEM ──
+var _toastId = 0;
+function showToast(type, title, msg, duration){
+  duration = duration||3000;
+  var container = document.getElementById('toast-container');
+  if(!container) return;
+  var icons = {success:'✅',error:'❌',warning:'⚠️',info:'ℹ️'};
+  var colors = {success:'#22C55E',error:'#EF4444',warning:'#F59E0B',info:'var(--yellow)'};
+  var id = 'toast-'+(++_toastId);
+  var el = document.createElement('div');
+  el.className = 'toast toast-'+type;
+  el.id = id;
+  el.setAttribute('role','alert');
+  el.innerHTML = '<div class="toast-icon">'+icons[type]+'</div>'+
+    '<div class="toast-body"><div class="toast-title">'+title+'</div>'+(msg?'<div class="toast-msg">'+msg+'</div>':'')+
+    '<div class="toast-progress" style="background:'+colors[type]+';"></div></div>'+
+    '<button class="toast-close" onclick="removeToast(\'' + id + '\')" aria-label="Cerrar notificación">×</button>';
+  container.appendChild(el);
+  setTimeout(function(){ removeToast(id); }, duration);
+}
+function removeToast(id){
+  var el=document.getElementById(id);
+  if(!el)return;
+  el.style.animation='toastOut .3s ease forwards';
+  setTimeout(function(){ if(el.parentNode)el.parentNode.removeChild(el); },300);
+}
+
+// ── 6. FONT SIZE ──
+var _fontSize = 0;
+var _fontSizes = [12,14,16];
+function changeFontSize(dir){
+  if(dir===0){ _fontSize=1; }
+  else{ _fontSize=Math.max(0,Math.min(2,_fontSize+dir)); }
+  document.documentElement.style.fontSize = _fontSizes[_fontSize]+'px';
+  try{localStorage.setItem('ht_fs',_fontSize);}catch(e){}
+  anunciar('Tamaño de texto: '+(['pequeño','normal','grande'][_fontSize]));
+}
+function loadFontSize(){
+  try{var f=localStorage.getItem('ht_fs');if(f!==null){_fontSize=parseInt(f);document.documentElement.style.fontSize=_fontSizes[_fontSize]+'px';}}catch(e){}
+}
+
+// ── 13. HIGH CONTRAST ──
+function toggleHighContrast(){
+  var isHC = document.documentElement.classList.toggle('hc');
+  var btn = document.getElementById('hc-btn');
+  if(btn){ btn.classList.toggle('on',isHC); btn.setAttribute('aria-pressed',isHC); }
+  try{localStorage.setItem('ht_hc',isHC?'1':'0');}catch(e){}
+  anunciar(isHC?'Alto contraste activado':'Alto contraste desactivado');
+}
+function loadHighContrast(){
+  try{if(localStorage.getItem('ht_hc')==='1'){document.documentElement.classList.add('hc');var b=document.getElementById('hc-btn');if(b)b.classList.add('on');}}catch(e){}
+}
+
+// ── 17. COMPACT MODE ──
+var _compact = false;
+function toggleCompact(){
+  _compact=!_compact;
+  document.documentElement.classList.toggle('compact',_compact);
+  var btn=document.getElementById('compact-btn');
+  if(btn){btn.classList.toggle('on',_compact);btn.textContent=_compact?'⊞':'⊟';}
+  try{localStorage.setItem('ht_compact',_compact?'1':'0');}catch(e){}
+}
+function loadCompact(){
+  try{if(localStorage.getItem('ht_compact')==='1'){_compact=true;document.documentElement.classList.add('compact');}}catch(e){}
+}
+
+// ── 18. SIDEBAR COUNTERS ──
+function updateSidebarCounts(){
+  var pendientes=S.tareas.filter(function(t){return t.estado==='Pendiente'||t.estado==='Pospuesta';}).length;
+  var sinAsignar=S.tareas.filter(function(t){return t.estado==='Pendiente';}).length;
+  var miembros=S.miembros.length;
+  function setSb(id,n){var el=document.getElementById(id);if(!el)return;el.textContent=n;el.style.display=n>0?'inline':'none';}
+  setSb('sb-count-tareas',pendientes);
+  setSb('sb-count-asignar',sinAsignar);
+  setSb('sb-count-miembros',miembros);
+}
+
+// ── 15. THEME RIPPLE ── 
+function toggleTheme(e){
+  var ripple=document.getElementById('theme-ripple');
+  if(ripple&&e){
+    var btn=document.getElementById('theme-toggle');
+    var r=btn.getBoundingClientRect();
+    var x=r.left+r.width/2; var y=r.top+r.height/2;
+    ripple.style.cssText='position:fixed;width:40px;height:40px;left:'+(x-20)+'px;top:'+(y-20)+'px;border-radius:50%;background:var(--yellow);pointer-events:none;z-index:8999;transition:transform .6s ease,opacity .5s ease;opacity:.25;transform:scale(0);';
+    requestAnimationFrame(function(){ripple.style.transform='scale(80)';ripple.style.opacity='0';});
+    setTimeout(function(){ripple.style.transform='scale(0)';},650);
+  }
+  var isLight=document.documentElement.classList.toggle('light');
+  var hc=document.documentElement.classList.contains('hc');
+  if(hc)document.documentElement.classList.remove('hc');
+  var btn=document.getElementById('theme-toggle');
+  if(btn){btn.textContent=isLight?'🌙':'☀️';btn.setAttribute('aria-label',isLight?'Cambiar a modo oscuro':'Cambiar a modo claro');}
+  try{localStorage.setItem('ht_theme',isLight?'light':'dark');}catch(e){}
+}
+function loadTheme(){
+  try{
+    var t=localStorage.getItem('ht_theme');
+    if(t==='light'){
+      document.documentElement.classList.add('light');
+      var btn=document.getElementById('theme-toggle');
+      if(btn){btn.textContent='🌙';btn.setAttribute('aria-label','Cambiar a modo oscuro');}
+    }
+  }catch(e){}
+}
+
+// ── Spinner ──
+function mostrarSpinner(){ var s=document.getElementById('spinner');if(s)s.classList.add('show'); }
+function ocultarSpinner(){ var s=document.getElementById('spinner');if(s)s.classList.remove('show'); }
+
+// ── Screen reader announcer ──
+function anunciar(msg){
+  var el=document.getElementById('sr-live');
+  if(!el)return;
+  el.textContent='';
+  setTimeout(function(){ el.textContent=msg; },50);
+}
+
+// ── Keyboard shortcuts ──
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    var modals=document.querySelectorAll('.overlay');
+    modals.forEach(function(m){ if(m.style.display==='flex'){ closeModal(m.id); } });
+  }
+  if((e.ctrlKey||e.metaKey)&&e.key==='k'){
+    e.preventDefault();
+    var s=document.querySelector('.search-wrap input');
+    if(s){ s.focus(); anunciar('Búsqueda activada'); }
+  }
+});
+
+// ── IUAS: wrap original fetch calls to show spinner ──
+var _origFetch = window.fetch;
+window.fetch = function(){
+  mostrarSpinner();
+  return _origFetch.apply(this,arguments)
+    .catch(function(e){ return Promise.reject(e); })
+    .finally(function(){ ocultarSpinner(); });
+};
+
 // ═══════════════════════════════════════
 // BOOT
 // ═══════════════════════════════════════
+loadTheme();
+loadFontSize();
+loadHighContrast();
+loadCompact();
 load();
-if(!S.hogar) S.page='hogar';
+if(!S.token){S.page='login';}
+else if(!S.hogar){S.page='sin-hogar';}
 render();
 
 // Sincronizar con backend: si el backend está vacío, limpiar estado local
-fetch('https://code-factory-20261-back.onrender.com/api/hogares')
+fetch('http://localhost:8080/hogares')
   .then(function(res){ return res.json(); })
   .then(function(data){
     if(!data || data.length === 0){
@@ -1070,10 +2184,9 @@ fetch('https://code-factory-20261-back.onrender.com/api/hogares')
       save();
       render();
     } else {
-      return fetch('https://code-factory-20261-back.onrender.com/api/tareas')
+      return fetch('http://localhost:8080/tareas')
         .then(function(res){ return res.json(); })
         .then(function(tareas){
-          const estadoInvMap = { 'PENDIENTE':'Pendiente', 'ASIGNADO':'Asignada', 'EN_PROCESO':'En proceso', 'FINALIZADO':'Finalizada' };
           if(!tareas || tareas.length === 0){
             S.tareas = [];
             S.lastWeek = null;
@@ -1082,14 +2195,14 @@ fetch('https://code-factory-20261-back.onrender.com/api/hogares')
           } else {
             S.tareas = tareas.map(function(t){
               return {
-                id: t.idTarea,
-                backendId: t.idTarea,
+                id: t.id,
+                backendId: t.id,
                 nombre: t.nombre,
-                dificultad: t.dificultad ? t.dificultad.charAt(0) + t.dificultad.slice(1).toLowerCase() : '',
-                prioridad: t.prioridad ? t.prioridad.charAt(0) + t.prioridad.slice(1).toLowerCase() : '',
-                fecha: t.fechaLimite ? t.fechaLimite.split('T')[0] : '',
-                estado: estadoInvMap[t.estado] || 'Pendiente',
-                descripcion: t.descripcion || '',
+                dificultad: t.dificultad,
+                prioridad: t.prioridad,
+                fecha: t.fecha,
+                estado: t.estado,
+                descripcion: '',
                 asignadoA: null,
                 imgData: null
               };
